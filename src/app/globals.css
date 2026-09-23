@@ -4,37 +4,37 @@
 
 @layer base {
   :root {
-    --background: 39 43% 92%;
-    --foreground: 30 26% 10%;
-    --card: 41 55% 95%;
-    --card-foreground: 30 26% 10%;
-    --popover: 41 55% 95%;
-    --popover-foreground: 30 26% 10%;
-    --primary: 12 66% 48%;
-    --primary-foreground: 40 60% 96%;
-    --secondary: 39 38% 84%;
-    --secondary-foreground: 30 26% 12%;
-    --muted: 38 34% 82%;
-    --muted-foreground: 32 18% 37%;
-    --accent: 37 67% 50%;
-    --accent-foreground: 30 30% 10%;
-    --destructive: 9 72% 41%;
-    --destructive-foreground: 40 60% 96%;
-    --border: 36 26% 80%;
-    --input: 36 24% 78%;
-    --ring: 12 66% 48%;
-    --radius: 0.25rem;
+    --background: 220 30% 96%; /* Cool tech gray/white */
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 190 100% 50%; /* Electric Cyan */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 270 100% 60%; /* Neon Purple */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 190 100% 50%;
+    --radius: 0.5rem;
 
-    /* brand tokens */
-    --clay: #ce4b2a;
-    --clay-deep: #a8371a;
-    --ochre: #d5912b;
-    --ink: #211a13;
-    --ink-2: #2e2418;
-    --cream: #f4ede0;
-    --cream-paper: #faf5ea;
-    --sand: #e7dbc4;
-    --sand-deep: #dccaa9;
+    /* BRAND TOKENS (Tech Vibrant Palette) */
+    --clay: #00E5FF;       /* Electric Cyan (Reemplaza el terracota) */
+    --clay-deep: #0055FF;  /* Deep Electric Blue */
+    --ochre: #B026FF;      /* Neon Purple (Reemplaza el naranja/ocre) */
+    --ink: #0A0F1C;        /* Deep Space Navy (Reemplaza el café oscuro) */
+    --ink-2: #1A233A;      /* Lighter Navy */
+    --cream: #F0F4F8;      /* Cool Tech White */
+    --cream-paper: #FFFFFF;/* Pure White */
+    --sand: #E2E8F0;       /* Cool slate borders */
+    --sand-deep: #CBD5E1;  /* Slate deep */
   }
 }
 
@@ -54,21 +54,20 @@
   }
 
   ::selection {
-    background: var(--clay);
+    background: var(--clay-deep);
     color: var(--cream-paper);
   }
 
-  /* thin warm scrollbar */
+  /* thin tech scrollbar */
   ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: var(--sand);
+    background: var(--cream);
   }
   ::-webkit-scrollbar-thumb {
-    background: #b9a07a;
-    border: 2px solid var(--sand);
+    background: var(--sand-deep);
     border-radius: 999px;
   }
   ::-webkit-scrollbar-thumb:hover {
@@ -82,30 +81,32 @@
   }
 
   .display {
-    font-family: var(--font-fraunces), Georgia, serif;
-    font-optical-sizing: auto;
+    /* Cambiamos la fuente serif anticuada por la Sans principal para un look de software moderno */
+    font-family: var(--font-sans), system-ui, sans-serif; 
+    font-weight: 700;
+    letter-spacing: -0.03em;
   }
 
   .eyebrow {
-    @apply font-mono text-xs tracking-[0.28em] uppercase;
+    @apply font-mono text-[0.7rem] tracking-[0.2em] uppercase font-bold text-clay-deep;
   }
 
-  /* Grain / paper texture overlay */
+  /* Cyber/Tech texture overlay */
   .grain {
     position: fixed;
     inset: 0;
     z-index: 40;
     pointer-events: none;
-    opacity: 0.5;
-    mix-blend-mode: multiply;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.32'/%3E%3C/svg%3E");
+    opacity: 0.25;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
   }
 
-  /* Soft warm vignette for dark sections */
+  /* Vibrant tech gradient for dark sections */
   .ink-panel {
     background:
-      radial-gradient(120% 120% at 80% 0%, rgba(206, 75, 42, 0.22), transparent 55%),
-      radial-gradient(120% 120% at 0% 100%, rgba(213, 145, 43, 0.16), transparent 55%),
+      radial-gradient(100% 100% at 100% 0%, rgba(0, 229, 255, 0.15), transparent 50%),
+      radial-gradient(100% 100% at 0% 100%, rgba(176, 38, 255, 0.15), transparent 50%),
       var(--ink) !important;
   }
 
@@ -114,7 +115,7 @@
     background-position: 0 100%;
     background-repeat: no-repeat;
     background-size: 0% 2px;
-    transition: background-size 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: background-size 0.3s ease-out;
   }
   .link-underline:hover {
     background-size: 100% 2px;
@@ -133,66 +134,7 @@
     color: transparent;
   }
   .text-stroke-cream {
-    -webkit-text-stroke: 1.5px rgba(244, 237, 224, 0.5);
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.8);
     color: transparent;
-  }
-  .pause-on-hover:hover * {
-    animation-play-state: paused;
-  }
-}
-
-@keyframes marquee-x {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-@keyframes marquee-x-rev {
-  from {
-    transform: translateX(-50%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-.animate-marquee {
-  animation: marquee-x var(--marquee-duration, 26s) linear infinite;
-}
-.animate-marquee-rev {
-  animation: marquee-x-rev var(--marquee-duration, 26s) linear infinite;
-}
-
-@keyframes spin-slow {
-  to {
-    transform: rotate(360deg);
-  }
-}
-.animate-spin-slow {
-  animation: spin-slow 38s linear infinite;
-}
-
-@keyframes float-soft {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-.animate-float-soft {
-  animation: float-soft 7s ease-in-out infinite;
-}
-
-@keyframes rise {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }

@@ -13,8 +13,8 @@ export default function PrivacidadPage() {
         {
           title: "A. Identidad y domicilio del responsable",
           body: [
-            "SAINTBASSILS SYSTEMS, S.A.P.I. DE C.V. (en lo sucesivo, “la Empresa”), con domicilio en Boulevard Adolfo López Mateos 2165, Interior 607A, Oficina 607A-B, Piso 6, Colonia Los Alpes, Alcaldía Álvaro Obregón, C.P. 01010, Ciudad de México, es responsable del tratamiento de los datos personales que nos proporcione con motivo del uso del sitio web GROWTHIVE.COM.MX y de la contratación de nuestros servicios digitales.",
-            "Para cualquier asunto relacionado con este Aviso de Privacidad, usted puede comunicarse al correo electrónico hola@growthive.com.mx y al teléfono [+52] 55 9826 1186.",
+            "SAINTBASSILS SYSTEMS, S.A.P.I. DE C.V. (en lo sucesivo, “la Empresa”), con domicilio en Boulevard Adolfo López Mateos 2165, Interior 607A, Oficina 607A-B, Piso 6, Colonia Los Alpes, Alcaldía Álvaro Obregón, C.P. 01010, Ciudad de México, es responsable del tratamiento de los datos personales que nos proporcione con motivo del uso del sitio web Devion.COM.MX y de la contratación de nuestros servicios digitales.",
+            "Para cualquier asunto relacionado con este Aviso de Privacidad, usted puede comunicarse al correo electrónico hola@Devion.com.mx y al teléfono [+52] 55 9826 1186.",
             "Este Aviso se emite en cumplimiento de la Ley Federal de Protección de Datos Personales en Posesión de los Particulares, su Reglamento y los Lineamientos del Aviso de Privacidad."
           ]
         },
@@ -46,13 +46,13 @@ export default function PrivacidadPage() {
             "• Enviarle comunicaciones comerciales relacionadas con nuevos planes, promociones, contenidos, eventos o actualizaciones sobre nuestros servicios digitales.",
             "• Realizar encuestas de satisfacción y estudios internos sobre calidad del servicio y mejora de procesos.",
             "• Elaborar estadísticas y reportes internos sobre hábitos de contratación y uso del sitio.",
-            "Si usted no desea que sus datos sean tratados para estas finalidades secundarias, podrá manifestarlo en cualquier momento enviando un correo a hola@growthive.com.mx con el asunto “Limitación de finalidades secundarias”. Su negativa no será motivo para que le neguemos los servicios contratados."
+            "Si usted no desea que sus datos sean tratados para estas finalidades secundarias, podrá manifestarlo en cualquier momento enviando un correo a hola@Devion.com.mx con el asunto “Limitación de finalidades secundarias”. Su negativa no será motivo para que le neguemos los servicios contratados."
           ]
         },
         {
           title: "D. Uso de cookies y tecnologías similares",
           body: [
-            "El sitio growthive.com.mx utiliza cookies y tecnologías similares que permiten:",
+            "El sitio Devion.com.mx utiliza cookies y tecnologías similares que permiten:",
             "• Facilitar la navegación y recordar ciertas preferencias del usuario.",
             "• Analizar el tráfico y desempeño del sitio.",
             "• Identificar secciones de mayor interés para mejorar contenidos y experiencia de usuario.",
@@ -75,7 +75,7 @@ export default function PrivacidadPage() {
           body: [
             "Como titular de los datos personales, usted puede ejercer en cualquier momento sus derechos de Acceso, Rectificación, Cancelación y Oposición (ARCO), así como revocar el consentimiento otorgado, en los términos previstos por la Ley.",
             "Para ejercer dichos derechos, deberá enviar una solicitud a:",
-            "Correo electrónico: hola@growthive.com.mx",
+            "Correo electrónico: hola@Devion.com.mx",
             "Domicilio: Boulevard Adolfo López Mateos 2165, Interior 607A, Oficina 607A-B, Piso 6, Colonia Los Alpes, Alcaldía Álvaro Obregón, C.P. 01010, Ciudad de México",
             "Su solicitud deberá contener, al menos:",
             "• Nombre completo y un medio para comunicarle la respuesta (domicilio, correo electrónico o número telefónico).",
@@ -89,7 +89,7 @@ export default function PrivacidadPage() {
         {
           title: "G. Opciones para limitar el uso o divulgación de sus datos",
           body: [
-            "Además del ejercicio de derechos ARCO, usted puede limitar el uso o divulgación de sus datos personales con fines promocionales mediante una comunicación dirigida a hola@growthive.com.mx indicando su nombre completo y el alcance de la limitación solicitada (por ejemplo, “no deseo recibir correos promocionales”).",
+            "Además del ejercicio de derechos ARCO, usted puede limitar el uso o divulgación de sus datos personales con fines promocionales mediante una comunicación dirigida a hola@Devion.com.mx indicando su nombre completo y el alcance de la limitación solicitada (por ejemplo, “no deseo recibir correos promocionales”).",
             "La Empresa incorporará su registro a las listas internas de exclusión correspondientes para evitar el envío de comunicaciones con esas características."
           ]
         },
@@ -122,8 +122,8 @@ export default function PrivacidadPage() {
         {
           title: "A. Identity and address of the responsible party",
           body: [
-            "SAINTBASSILS SYSTEMS, S.A.P.I. DE C.V. (hereinafter, \"the Company\"), located at Boulevard Adolfo López Mateos 2165, Interior 607A, Oficina 607A-B, Piso 6, Colonia Los Alpes, Alcaldía Álvaro Obregón, C.P. 01010, Mexico City, is responsible for the processing of the personal data you provide to us through the use of the GROWTHIVE.COM.MX website and the contracting of our digital services.",
-            "For any matter related to this Privacy Policy, you can contact us at the email hola@growthive.com.mx and at the phone number [+52] 55 9826 1186.",
+            "SAINTBASSILS SYSTEMS, S.A.P.I. DE C.V. (hereinafter, \"the Company\"), located at Boulevard Adolfo López Mateos 2165, Interior 607A, Oficina 607A-B, Piso 6, Colonia Los Alpes, Alcaldía Álvaro Obregón, C.P. 01010, Mexico City, is responsible for the processing of the personal data you provide to us through the use of the Devion.COM.MX website and the contracting of our digital services.",
+            "For any matter related to this Privacy Policy, you can contact us at the email hola@Devion.com.mx and at the phone number [+52] 55 9826 1186.",
             "This Policy is issued in compliance with the Federal Law on Protection of Personal Data Held by Private Parties, its Regulations, and the Privacy Policy Guidelines."
           ]
         },
@@ -155,13 +155,13 @@ export default function PrivacidadPage() {
             "• Send you commercial communications related to new plans, promotions, content, events, or updates about our digital services.",
             "• Conduct satisfaction surveys and internal studies on service quality and process improvement.",
             "• Prepare statistics and internal reports on contracting habits and site usage.",
-            "If you do not want your data to be processed for these secondary purposes, you can state so at any time by sending an email to hola@growthive.com.mx with the subject \"Limitation of secondary purposes\". Your refusal will not be a reason for us to deny you the contracted services."
+            "If you do not want your data to be processed for these secondary purposes, you can state so at any time by sending an email to hola@Devion.com.mx with the subject \"Limitation of secondary purposes\". Your refusal will not be a reason for us to deny you the contracted services."
           ]
         },
         {
           title: "D. Use of cookies and similar technologies",
           body: [
-            "The growthive.com.mx site uses cookies and similar technologies that allow:",
+            "The Devion.com.mx site uses cookies and similar technologies that allow:",
             "• Facilitating navigation and remembering certain user preferences.",
             "• Analyzing traffic and site performance.",
             "• Identifying sections of greatest interest to improve content and user experience.",
@@ -184,7 +184,7 @@ export default function PrivacidadPage() {
           body: [
             "As the owner of personal data, you can exercise your rights of Access, Rectification, Cancellation, and Opposition (ARCO) at any time, as well as revoke the consent granted, under the terms provided by the Law.",
             "To exercise these rights, you must send a request to:",
-            "Email: hola@growthive.com.mx",
+            "Email: hola@Devion.com.mx",
             "Address: Boulevard Adolfo López Mateos 2165, Interior 607A, Oficina 607A-B, Piso 6, Colonia Los Alpes, Alcaldía Álvaro Obregón, C.P. 01010, Mexico City",
             "Your request must contain at least:",
             "• Full name and a means to communicate the response (address, email, or phone number).",
@@ -198,7 +198,7 @@ export default function PrivacidadPage() {
         {
           title: "G. Options to limit the use or disclosure of your data",
           body: [
-            "In addition to exercising ARCO rights, you can limit the use or disclosure of your personal data for promotional purposes by communicating to hola@growthive.com.mx indicating your full name and the scope of the requested limitation (for example, \"I do not wish to receive promotional emails\").",
+            "In addition to exercising ARCO rights, you can limit the use or disclosure of your personal data for promotional purposes by communicating to hola@Devion.com.mx indicating your full name and the scope of the requested limitation (for example, \"I do not wish to receive promotional emails\").",
             "The Company will add your record to the corresponding internal exclusion lists to prevent the sending of communications with those characteristics."
           ]
         },

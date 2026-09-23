@@ -24,7 +24,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Growthive.com.mx — Estudio digital · Diseño y desarrollo web a la medida",
+  title: "Devion.com.mx — Estudio digital · Diseño y desarrollo web a la medida",
   description:
     "Creamos páginas web, tiendas en línea y plataformas a la medida para emprendedores y empresas. Diseño profesional, entrega 100% en línea desde CDMX.",
 };

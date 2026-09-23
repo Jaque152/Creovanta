@@ -10,65 +10,62 @@ export function About() {
   const { t } = useLanguage();
 
   return (
-    <section id="nosotros" className="relative py-20 sm:py-28">
-      <div className="mx-auto grid max-w-[1400px] gap-14 container-px lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-20">
-        <div>
+    <section id="nosotros" className="relative py-24 sm:py-32 bg-cream-paper">
+      <div className="mx-auto grid max-w-[1400px] gap-14 container-px lg:grid-cols-2 lg:items-center lg:gap-20">
+        
+        {/* Terminal Visual - Moved to the left */}
+        <div className="order-2 lg:order-1 relative">
           <Reveal>
-            <span className="eyebrow inline-flex items-center gap-2.5 text-ink/60">
-              <span className="h-2 w-2 rounded-full bg-clay" />
+            <div className="rounded-xl overflow-hidden border border-ink/20 shadow-[0_20px_50px_rgba(0,0,0,0.1)] bg-ink">
+              <div className="bg-ink-2 px-4 py-3 border-b border-ink/40 flex items-center gap-2">
+                <span className="h-3 w-3 rounded-full bg-destructive/80"></span>
+                <span className="h-3 w-3 rounded-full bg-ochre/80"></span>
+                <span className="h-3 w-3 rounded-full bg-clay/80"></span>
+              </div>
+              <div className="p-8 text-cream-paper">
+                <p className="font-mono text-sm text-clay mb-6">~ % {t.about.servicesIncludedEyebrow}</p>
+                <ul className="space-y-4 font-mono text-sm">
+                  {t.about.servicesList.map((s) => (
+                    <li key={s} className="flex items-start gap-4">
+                      <span className="text-ochre mt-0.5">{"=>"}</span>
+                      <span className="text-cream-paper/80 leading-relaxed">{s}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+
+        {/* Text Content - Moved to the right */}
+        <div className="order-1 lg:order-2">
+          <Reveal>
+            <span className="eyebrow inline-flex items-center gap-2.5 text-clay-deep">
+              <span className="h-2 w-2 rounded-sm bg-clay" />
               {t.about.eyebrow}
             </span>
           </Reveal>
           <Reveal delay={0.05}>
-            <h2 className="display mt-6 text-balance text-4xl font-semibold leading-[1.05] text-ink sm:text-5xl lg:text-6xl">
+            <h2 className="display mt-6 text-balance text-4xl font-bold leading-[1.1] text-ink sm:text-5xl lg:text-6xl">
               {t.about.titlePart1}{" "}
-              <span className="italic text-clay">{t.about.titlePart2}</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-clay-deep to-ochre">{t.about.titlePart2}</span>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <div className="mt-7 max-w-xl space-y-5 text-pretty text-[1.02rem] leading-relaxed text-muted-foreground">
+            <div className="mt-7 max-w-xl space-y-5 text-pretty text-[1.05rem] leading-relaxed text-ink/70">
               <p>{t.about.p1}</p>
               <p>{t.about.p2}</p>
             </div>
           </Reveal>
           <Reveal delay={0.15}>
-            <Button asChild className="mt-9">
+            <Button asChild className="mt-9 bg-clay-deep text-white hover:bg-ink rounded-md">
               <Link href="/servicios">
                 {t.about.ctaBtn}
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-4 w-4 ml-2" />
               </Link>
             </Button>
           </Reveal>
         </div>
-
-        <Reveal delay={0.1} className="relative">
-          <div className="ink-panel relative rounded-[1.6rem] p-8 text-cream-paper sm:p-10">
-            <p className="eyebrow text-clay">{t.about.servicesIncludedEyebrow}</p>
-            <ul className="mt-7 divide-y divide-cream-paper/10">
-              {t.about.servicesList.map((s, i) => (
-                <li
-                  key={s}
-                  className="flex items-center gap-5 py-4 first:pt-0 last:pb-0"
-                >
-                  <span className="font-mono text-xs text-cream-paper/40">
-                    0{i + 1}
-                  </span>
-                  <span className="display text-lg font-medium text-cream-paper">
-                    {s}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="animate-float-soft absolute -right-4 -top-6 grid h-24 w-24 place-items-center rounded-full bg-ochre text-center text-ink shadow-lg">
-            <span className="font-mono text-[0.62rem] font-bold uppercase leading-tight tracking-[0.1em]">
-              {t.about.onlineBadgeLine1}
-              <br />
-              {t.about.onlineBadgeLine2}
-            </span>
-          </div>
-        </Reveal>
       </div>
     </section>
   );

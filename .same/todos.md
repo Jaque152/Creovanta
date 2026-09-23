@@ -1,6 +1,6 @@
-# Growthive — Warm Editorial Reimagining
+# Devion — Warm Editorial Reimagining
 
-Clone of Growthive.com with a **different visual design** (warm editorial luxury: cream + terracotta/clay + espresso, Fraunces + Hanken Grotesk + JetBrains Mono) and added e-commerce functionality.
+Clone of Devion.com with a **different visual design** (warm editorial luxury: cream + terracotta/clay + espresso, Fraunces + Hanken Grotesk + JetBrains Mono) and added e-commerce functionality.
 
 ## Foundation
 - [ ] Install shadcn components + framer-motion
@@ -12,7 +12,6 @@ Clone of Growthive.com with a **different visual design** (warm editorial luxury
 
 ## Components
 - [ ] Logo
-- [ ] Grain overlay + reveal + marquee
 - [ ] Header (nav, CTA, cart button + count, mobile menu)
 - [ ] Footer (dark espresso, contact, address, payment badges)
 - [ ] Cart drawer (Sheet)
@@ -23,8 +22,6 @@ Clone of Growthive.com with a **different visual design** (warm editorial luxury
 - [ ] About (Sobre nosotros)
 - [ ] Services 01–05 (interactive list)
 - [ ] Process (orbital diagram)
-- [ ] CTA (HABLEMOS marquee)
-
 ## Pages
 - [ ] Home /
 - [ ] Servicios /servicios (store + category filter)

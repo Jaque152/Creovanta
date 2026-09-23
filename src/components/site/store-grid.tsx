@@ -9,8 +9,8 @@ export function StoreGrid() {
 
   return (
     <div>
-      <div className="flex items-center justify-between border-y border-ink/10 py-5">
-        <p className="font-mono text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground">
+      <div className="flex items-center justify-between border-y border-clay/20 py-5">
+        <p className="font-mono text-[0.7rem] font-bold uppercase tracking-[0.14em] text-clay-deep">
           {String(webPlans.length).padStart(2, "0")} {t.store.plansCountLabel}
         </p>
       </div>

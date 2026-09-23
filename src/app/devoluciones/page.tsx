@@ -10,7 +10,7 @@ export default function DevolucionesPage() {
       title: "Política de Reembolsos y Cancelaciones",
       subtitle: "SAINTBASSILS SYSTEMS, S.A.P.I. DE C.V.",
       date: "Fecha de última actualización: Septiembre de 2026",
-      intro: "Esta política aplica a todos los planes y proyectos digitales contratados a través de growthive.com.mx con la Empresa (“la Empresa”), incluyendo, pero no limitado a: planes de sitios web, tiendas en línea, plataformas especializadas, planes de branding + web y proyectos digitales a la medida.",
+      intro: "Esta política aplica a todos los planes y proyectos digitales contratados a través de Devion.com.mx con la Empresa (“la Empresa”), incluyendo, pero no limitado a: planes de sitios web, tiendas en línea, plataformas especializadas, planes de branding + web y proyectos digitales a la medida.",
       sections: [
         {
           title: "A. Naturaleza de los servicios y consideraciones generales",
@@ -89,7 +89,7 @@ export default function DevolucionesPage() {
         {
           title: "J. Procedimiento para solicitar cancelación o reembolso",
           body: [
-            "Para solicitar una cancelación o plantear un posible reembolso, el Cliente deberá escribir a hola@growthive.com.mx indicando:",
+            "Para solicitar una cancelación o plantear un posible reembolso, el Cliente deberá escribir a hola@Devion.com.mx indicando:",
             "• Nombre o razón social.",
             "• Número de proyecto o referencia del plan contratado.",
             "• Fecha de contratación y forma de pago.",
@@ -110,7 +110,7 @@ export default function DevolucionesPage() {
       title: "Refunds and Cancellations Policy",
       subtitle: "SAINTBASSILS SYSTEMS, S.A.P.I. DE C.V.",
       date: "Last updated: September 2026",
-      intro: "This policy applies to all digital plans and projects contracted through growthive.com.mx with the Company (“the Company”), including, but not limited to: website plans, online stores, specialized platforms, branding + web plans, and custom digital projects.",
+      intro: "This policy applies to all digital plans and projects contracted through Devion.com.mx with the Company (“the Company”), including, but not limited to: website plans, online stores, specialized platforms, branding + web plans, and custom digital projects.",
       sections: [
         {
           title: "A. Nature of services and general considerations",
@@ -189,7 +189,7 @@ export default function DevolucionesPage() {
         {
           title: "J. Procedure to request cancellation or refund",
           body: [
-            "To request a cancellation or raise a possible refund, the Client must write to hola@growthive.com.mx indicating:",
+            "To request a cancellation or raise a possible refund, the Client must write to hola@Devion.com.mx indicating:",
             "• Name or business name.",
             "• Project number or reference of the contracted plan.",
             "• Date of contracting and payment method.",

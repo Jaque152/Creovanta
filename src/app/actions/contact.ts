@@ -22,12 +22,12 @@ export interface ContactPayload {
 export async function processContact(payload: ContactPayload) {
   try {
     const { form, lang } = payload;
-    const adminEmail = process.env.ADMIN_EMAIL || "hola@growthive.com.mx";
-    const senderEmail = "Growthive <hola@growthive.com.mx>";
+    const adminEmail = process.env.ADMIN_EMAIL || "hola@Devion.com.mx";
+    const senderEmail = "Devion <hola@Devion.com.mx>";
 
     const texts = {
       es: {
-        subjectClient: "Hemos recibido tu mensaje - Growthive",
+        subjectClient: "Hemos recibido tu mensaje - Devion",
         subjectAdmin: `Nuevo mensaje de contacto: ${form.nombre}`,
         title: "¡Gracias por contactarnos!",
         hello: "Hola",
@@ -38,10 +38,10 @@ export async function processContact(payload: ContactPayload) {
         phone: "Teléfono:",
         subject: "Asunto:",
         message: "Mensaje:",
-        footer: "Growthive — Estudio Digital CDMX."
+        footer: "Devion — Estudio Digital CDMX."
       },
       en: {
-        subjectClient: "We have received your message - Growthive",
+        subjectClient: "We have received your message - Devion",
         subjectAdmin: `New contact message: ${form.nombre}`,
         title: "Thank you for reaching out!",
         hello: "Hello",
@@ -52,7 +52,7 @@ export async function processContact(payload: ContactPayload) {
         phone: "Phone:",
         subject: "Subject:",
         message: "Message:",
-        footer: "Growthive — Digital Studio CDMX."
+        footer: "Devion — Digital Studio CDMX."
       }
     };
 

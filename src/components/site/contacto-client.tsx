@@ -11,7 +11,7 @@ export function ContactoClient() {
 
   const DETAILS = [
     { icon: Phone, label: t.contactPage.detailsLabelPhone, value: "+52 55 9826 1186", href: "tel:+525598261186" },
-    { icon: Mail, label: t.contactPage.detailsLabelEmail, value: "hola@growthive.com.mx", href: "mailto:hola@growthive.com.mx" },
+    { icon: Mail, label: t.contactPage.detailsLabelEmail, value: "hola@Devion.com.mx", href: "mailto:hola@Devion.com.mx" },
     {
       icon: MapPin,
       label: t.contactPage.detailsLabelAddress,

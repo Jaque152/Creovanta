@@ -35,13 +35,13 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
-    const saved = localStorage.getItem("growthive_cart");
+    const saved = localStorage.getItem("Devion_cart");
     if (saved) setItems(JSON.parse(saved));
     setHydrated(true);
   }, []);
 
   useEffect(() => {
-    if (hydrated) localStorage.setItem("growthive_cart", JSON.stringify(items));
+    if (hydrated) localStorage.setItem("Devion_cart", JSON.stringify(items));
   }, [items, hydrated]);
 
   const open = () => setIsOpen(true);

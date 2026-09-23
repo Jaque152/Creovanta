@@ -18,7 +18,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     // Solo accedemos a localStorage cuando el cliente ya se montó
-    const saved = localStorage.getItem("growthive_lang") as Language;
+    const saved = localStorage.getItem("Devion_lang") as Language;
     if (saved === "es" || saved === "en") {
       setLangState(saved);
     }
@@ -27,7 +27,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const setLang = (newLang: Language) => {
     setLangState(newLang);
     if (typeof window !== "undefined") {
-      localStorage.setItem("growthive_lang", newLang);
+      localStorage.setItem("Devion_lang", newLang);
     }
   };
 

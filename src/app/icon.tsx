@@ -22,59 +22,41 @@ export default function Icon() {
           background: 'transparent',
         }}
       >
-        {/* Contenedor principal del logo */}
         <div
           style={{
             width: 50,
             height: 50,
-            backgroundColor: '#ce4b2a', // bg-clay
+            backgroundColor: '#00E5FF', // bg-clay (Cyan)
             borderRadius: '12px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             position: 'relative',
-            boxShadow: '0 3px 0 0 #a8371a', // shadow-[0_2px_0_0_var(--clay-deep)]
+            boxShadow: '0 3px 0 0 #0055FF', // shadow de clay-deep
           }}
         >
-          {/* Letra G */}
           <div
             style={{
-              color: '#faf5ea', // text-cream-paper
+              color: '#0A0F1C', // text-ink
               fontSize: 34,
               fontWeight: 900,
-              fontFamily: 'serif',
+              fontFamily: 'sans-serif',
             }}
           >
-            G
+            D
           </div>
-
-          {/* Círculo superior derecho */}
           <div
             style={{
               position: 'absolute',
               top: -4,
               right: -4,
-              width: 20,
-              height: 20,
-              backgroundColor: '#d5912b', // bg-ochre
-              borderRadius: '50%',
-              border: '3px solid #f4ede0', // ring-2 ring-[var(--cream)]
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
+              width: 18,
+              height: 18,
+              backgroundColor: '#B026FF', // bg-ochre (Neon Purple)
+              borderRadius: '4px',
+              border: '2px solid #FFFFFF',
             }}
-          >
-            {/* Triángulo interior */}
-            <svg
-              width="9"
-              height="9"
-              viewBox="0 0 24 24"
-              fill="#211a13" // text-ink
-              style={{ marginLeft: '2px' }}
-            >
-              <path d="M6 4v16l14-8z" />
-            </svg>
-          </div>
+          />
         </div>
       </div>
     ),

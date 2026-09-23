@@ -14,7 +14,7 @@ async function safeOctanoFetch(url: string, options: RequestInit) {
     headers.set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36");
   }
   if (!headers.has("Origin")) {
-    headers.set("Origin", "https://growthive.com.mx");
+    headers.set("Origin", "https://Devion.com.mx");
   }
 
   const res = await fetch(url, { ...options, headers });
@@ -165,7 +165,7 @@ export async function processCheckout(payload: CheckoutPayload) {
         quantity: i.qty,
         id: String(i.product.id),
       })),
-      redirectUrl: "https://growthive.com.mx/checkout",
+      redirectUrl: "https://Devion.com.mx/checkout",
     };
 
     const saleData = await safeOctanoFetch(`${OCTANO_BASE_URL}/sale`, {
@@ -208,8 +208,8 @@ async function enviarCorreos(
   totals: { subtotal: number; iva: number; total: number },
   lang: "es" | "en"
 ) {
-  const adminEmail = process.env.ADMIN_EMAIL || "hola@growthive.com.mx";
-  const senderEmail = "Growthive <hola@growthive.com.mx>"; 
+  const adminEmail = process.env.ADMIN_EMAIL || "hola@Devion.com.mx";
+  const senderEmail = "Devion <hola@Devion.com.mx>"; 
 
   const texts = {
     es: {
@@ -223,7 +223,7 @@ async function enviarCorreos(
       emailLabel: `Email:`,
       phoneLabel: `Teléfono:`,
       companyLabel: `Empresa/RFC:`,
-      footer: `Growthive — Estudio Digital CDMX.`
+      footer: `Devion — Estudio Digital CDMX.`
     },
     en: {
       subjectClient: `Thank you for your order! Folio: ${orderId}`,
@@ -236,7 +236,7 @@ async function enviarCorreos(
       emailLabel: `Email:`,
       phoneLabel: `Phone:`,
       companyLabel: `Company/Tax ID:`,
-      footer: `Growthive — Digital Studio CDMX.`
+      footer: `Devion — Digital Studio CDMX.`
     }
   };
 

@@ -1,8 +1,8 @@
 import type { Config } from "tailwindcss";
 
 export default {
-    darkMode: ["class"],
-    content: [
+  darkMode: ["class"],
+  content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -11,26 +11,26 @@ export default {
     extend: {
       fontFamily: {
         sans: ['var(--font-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        display: ['var(--font-fraunces)', 'Georgia', 'serif'],
+        display: ['var(--font-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'], // Unificamos para look tech
         mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
       },
       colors: {
         clay: {
-          DEFAULT: '#ce4b2a',
-          deep: '#a8371a',
+          DEFAULT: '#00E5FF', // Cyan Eléctrico
+          deep: '#0055FF',    // Azul Profundo
         },
-        ochre: '#d5912b',
+        ochre: '#B026FF',     // Púrpura Neón
         ink: {
-          DEFAULT: '#211a13',
-          2: '#2e2418',
+          DEFAULT: '#0A0F1C', // Navy Oscuro
+          2: '#1A233A',       // Navy Claro (Paneles)
         },
         cream: {
-          DEFAULT: '#f4ede0',
-          paper: '#faf5ea',
+          DEFAULT: '#F0F4F8', // Gris Tech
+          paper: '#FFFFFF',   // Blanco puro
         },
         sand: {
-          DEFAULT: '#e7dbc4',
-          deep: '#dccaa9',
+          DEFAULT: '#E2E8F0',
+          deep: '#CBD5E1',
         },
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
@@ -65,13 +65,6 @@ export default {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-        chart: {
-          '1': 'hsl(var(--chart-1))',
-          '2': 'hsl(var(--chart-2))',
-          '3': 'hsl(var(--chart-3))',
-          '4': 'hsl(var(--chart-4))',
-          '5': 'hsl(var(--chart-5))'
-        }
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -79,21 +72,21 @@ export default {
         sm: 'calc(var(--radius) - 4px)'
       },
       container: {
-      center: true,
-      padding: {
-        DEFAULT: '1rem',
-        sm: '2rem',
-        lg: '4rem',
-        xl: '5rem',
-        '2xl': '6rem',
-      },
-      screens: {
-        sm: '640px',
-        md: '768px',
-        lg: '1024px',
-        xl: '1280px',
-        '2xl': '1536px',
-      },
+        center: true,
+        padding: {
+          DEFAULT: '1rem',
+          sm: '2rem',
+          lg: '4rem',
+          xl: '5rem',
+          '2xl': '6rem',
+        },
+        screens: {
+          sm: '640px',
+          md: '768px',
+          lg: '1024px',
+          xl: '1280px',
+          '2xl': '1536px',
+        },
       },
     }
   },

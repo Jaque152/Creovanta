@@ -18,14 +18,9 @@ export const dictionaries = {
       cta: "Hablemos del proyecto",
       cartAria: "Abrir carrito",
       menuAria: "Abrir menú",
-      contactEmail: "hola@growthive.com.mx",
+      contactEmail: "hola@Devion.com.mx",
     },
     footer: {
-      bigLinks: [
-        { href: "/", label: "Home" },
-        { href: "/servicios", label: "Servicios" },
-        { href: "/contacto", label: "Contacto" },
-      ],
       legal: [
         "Aviso de privacidad",
         "Términos y Condiciones",
@@ -35,7 +30,7 @@ export const dictionaries = {
       addressEyebrow: "Dirección",
       addressText:
         "Boulevard Adolfo López Mateos 2165, Interior 607A Oficina 607A-B Piso 6, Colonia Los Alpes, Alcaldía Álvaro Obregón, C.P. 01010, Ciudad de México",
-      copyright: "© 2026 Growthive.com.mx — Hecho con intención en México.",
+      copyright: "© 2026 Devion.com.mx — Hecho con intención en México.",
       studio: "Estudio digital",
     },
     hero: {
@@ -49,8 +44,8 @@ export const dictionaries = {
         "Identidad digital",
         "Experiencias ecommerce",
       ],
-      titlePart1: "Grow",
-      titlePart2: "thive",
+      titlePart1: "Dev",
+      titlePart2: "ion",
       deliveryText: "Diseño profesional,\nentrega 100% en línea.",
 
     },
@@ -119,10 +114,6 @@ export const dictionaries = {
       ],
       ctaBtn: "Marcando la diferencia",
       orbitCenterText: "Iniciar",
-    },
-    ctaBand: {
-      word: "Hablemos",
-      btnText: "Iniciar proyecto",
     },
     store: {
       allFilter: "Todos",
@@ -268,14 +259,9 @@ export const dictionaries = {
       cta: "Let's talk about your project",
       cartAria: "Open cart",
       menuAria: "Open menu",
-      contactEmail: "hola@growthive.com.mx",
+      contactEmail: "hola@Devion.com.mx",
     },
     footer: {
-      bigLinks: [
-        { href: "/", label: "Home" },
-        { href: "/servicios", label: "Services" },
-        { href: "/contacto", label: "Contact" },
-      ],
       legal: [
         "Privacy Policy",
         "Terms and Conditions",
@@ -285,7 +271,7 @@ export const dictionaries = {
       addressEyebrow: "Address",
       addressText:
         "Boulevard Adolfo López Mateos 2165, Interior 607A Oficina 607A-B Piso 6, Colonia Los Alpes, Alcaldía Álvaro Obregón, C.P. 01010, Ciudad de México",
-      copyright: "© 2026 Growthive.com.mx — Crafted with intention in Mexico.",
+      copyright: "© 2026 Devion.com.mx — Crafted with intention in Mexico.",
       studio: "Digital Studio",
     },
     hero: {
@@ -299,8 +285,8 @@ export const dictionaries = {
         "Digital identities",
         "Ecommerce experiences",
       ],
-      titlePart1: "Grow",
-      titlePart2: "thive",
+      titlePart1: "Dev",
+      titlePart2: "ion",
       deliveryText: "Professional design,\n100% online delivery.",
       ctaBtn: "Start project",
     },
@@ -369,10 +355,6 @@ export const dictionaries = {
       ],
       ctaBtn: "Making the difference",
       orbitCenterText: "Start",
-    },
-    ctaBand: {
-      word: "Let's Talk",
-      btnText: "Start project",
     },
     store: {
       allFilter: "All",
