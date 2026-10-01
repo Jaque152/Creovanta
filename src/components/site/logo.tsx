@@ -1,34 +1,39 @@
 import { cn } from "@/lib/utils";
 
-export function Logo({
-  className,
-  variant = "ink",
-  wordmark = true,
-}: {
+interface LogoProps {
   className?: string;
-  variant?: "ink" | "cream";
-  wordmark?: boolean;
-}) {
+  variant?: "default" | "cream" | "dark";
+}
+
+export function Logo({ className, variant = "default" }: LogoProps) {
+  // Adaptamos el color del texto si alguna vez lo usas en fondos claros
+  const textColor = variant === "dark" ? "text-ink" : "text-cream-paper";
+
   return (
-    <span className={cn("inline-flex items-center gap-2.5", className)}>
-      <span className="relative grid h-9 w-9 shrink-0 place-items-center rounded-[8px] bg-clay shadow-[0_3px_10px_rgba(0,229,255,0.4)]">
-        <span className="display -translate-x-[0.5px] text-[1.2rem] font-black leading-none text-ink">
-          D
-        </span>
-        <span className="absolute -right-[4px] -top-[4px] grid h-[14px] w-[14px] place-items-center rounded-sm bg-ochre ring-2 ring-[var(--cream-paper)]">
-          <span className="h-1.5 w-1.5 bg-cream-paper" />
-        </span>
-      </span>
-      {wordmark && (
-        <span
-          className={cn(
-            "display text-[1.5rem] font-bold leading-none tracking-tight",
-            variant === "cream" ? "text-cream-paper" : "text-ink",
-          )}
+    <div className={cn("group flex items-center gap-3", className)}>
+      {/* Símbolo (Monograma D) */}
+      <div className="relative flex h-9 w-9 items-center justify-center rounded-lg border border-clay/40 bg-ink-2 shadow-[0_0_15px_rgba(0,229,255,0.25)] transition-all duration-300 group-hover:border-clay group-hover:shadow-[0_0_25px_rgba(0,229,255,0.5)]">
+        <div className="absolute inset-0 rounded-lg bg-clay/10" />
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          className="relative z-10 h-4 w-4 text-clay"
+          strokeWidth="3"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
-          Dev<span className="text-clay-deep">ion</span>
+          <path d="M7 4v16" />
+          <path d="M7 4h5a8 8 0 0 1 0 16H7" />
+        </svg>
+      </div>
+
+      {/* Texto de la marca */}
+      <div className="flex flex-col">
+        <span className={cn("font-mono text-xl font-bold tracking-[0.15em] transition-colors group-hover:text-clay", textColor)}>
+          devion
         </span>
-      )}
-    </span>
+      </div>
+    </div>
   );
 }

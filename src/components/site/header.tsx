@@ -37,8 +37,8 @@ export function Header() {
         className={cn(
           "transition-all duration-300",
           scrolled
-            ? "border-b border-ink/10 bg-cream/85 backdrop-blur-md shadow-sm"
-            : "border-b border-transparent bg-cream/40 backdrop-blur-sm"
+            ? "border-b border-clay/20 bg-ink/85 backdrop-blur-md shadow-sm"
+            : "border-b border-transparent bg-ink/40 backdrop-blur-sm"
         )}
       >
         <div className="mx-auto flex h-[68px] max-w-[1400px] items-center justify-between gap-6 container-px">
@@ -55,7 +55,7 @@ export function Header() {
                   href={l.href}
                   className={cn(
                     "link-underline font-mono text-[0.72rem] uppercase tracking-[0.16em] font-semibold transition-colors",
-                    active ? "text-clay-deep" : "text-ink hover:text-clay-deep"
+                    active ? "text-clay" : "text-cream-paper/70 hover:text-clay"
                   )}
                 >
                   {l.label}
@@ -66,15 +66,15 @@ export function Header() {
 
           <div className="flex items-center gap-3">
             {/* Selector de Idioma ES | EN */}
-            <div className="flex items-center rounded-md border border-ink/15 bg-cream-paper p-0.5 font-mono text-[0.68rem] font-bold tracking-wider">
+            <div className="flex items-center rounded-md border border-clay/20 bg-ink-2 p-0.5 font-mono text-[0.68rem] font-bold tracking-wider">
               <button
                 type="button"
                 onClick={() => setLang("es")}
                 className={cn(
                   "rounded-sm px-2.5 py-1 transition-all",
                   lang === "es"
-                    ? "bg-ink text-clay shadow-sm"
-                    : "text-ink/70 hover:text-ink"
+                    ? "bg-clay text-ink shadow-[0_0_10px_rgba(0,229,255,0.3)]"
+                    : "text-clay/60 hover:text-clay"
                 )}
               >
                 ES
@@ -85,15 +85,15 @@ export function Header() {
                 className={cn(
                   "rounded-sm px-2.5 py-1 transition-all",
                   lang === "en"
-                    ? "bg-ink text-clay shadow-sm"
-                    : "text-ink/70 hover:text-ink"
+                    ? "bg-clay text-ink shadow-[0_0_10px_rgba(0,229,255,0.3)]"
+                    : "text-clay/60 hover:text-clay"
                 )}
               >
                 EN
               </button>
             </div>
 
-            <Button asChild size="sm" className="hidden sm:inline-flex bg-clay-deep text-white hover:bg-ink">
+            <Button asChild size="sm" className="hidden sm:inline-flex bg-clay text-ink hover:bg-cream-paper font-bold shadow-[0_0_15px_rgba(0,229,255,0.2)]">
               <Link href="/contacto">{t.header.cta}</Link>
             </Button>
 
@@ -101,11 +101,11 @@ export function Header() {
               type="button"
               onClick={toggle}
               aria-label={t.header.cartAria}
-              className="relative grid h-10 w-10 place-items-center rounded-md border border-ink/15 bg-cream-paper text-ink transition-all hover:border-clay hover:text-clay-deep shadow-sm"
+              className="relative grid h-10 w-10 place-items-center rounded-md border border-clay/20 bg-ink-2 text-clay transition-all hover:border-clay hover:shadow-[0_0_15px_rgba(0,229,255,0.2)]"
             >
               <ShoppingBag className="h-[18px] w-[18px]" />
               {hydrated && count > 0 && (
-                <span className="absolute -right-2 -top-2 grid h-5 min-w-5 place-items-center rounded-full bg-ochre px-1 font-mono text-[0.62rem] font-bold text-white shadow-sm">
+                <span className="absolute -right-2 -top-2 grid h-5 min-w-5 place-items-center rounded-full bg-ochre px-1 font-mono text-[0.62rem] font-bold text-white shadow-[0_0_10px_rgba(176,38,255,0.4)]">
                   {count}
                 </span>
               )}
@@ -117,17 +117,17 @@ export function Header() {
                 <button
                   type="button"
                   aria-label={t.header.menuAria}
-                  className="grid h-10 w-10 place-items-center rounded-md border border-ink/15 bg-cream-paper text-ink transition-colors hover:border-clay hover:text-clay md:hidden"
+                  className="grid h-10 w-10 place-items-center rounded-md border border-clay/20 bg-ink-2 text-clay transition-colors hover:border-clay md:hidden"
                 >
                   <Menu className="h-[18px] w-[18px]" />
                 </button>
               </SheetTrigger>
               <SheetContent
                 side="right"
-                className="ink-panel w-full border-l-0 p-0 text-cream-paper sm:max-w-sm [&>button]:text-cream-paper/70"
+                className="ink-panel w-full border-l border-clay/20 p-0 text-cream-paper sm:max-w-sm [&>button]:text-cream-paper/70"
               >
-                <div className="flex h-full flex-col">
-                  <div className="border-b border-cream-paper/10 px-7 py-6">
+                <div className="flex h-full flex-col bg-ink">
+                  <div className="border-b border-clay/20 px-7 py-6">
                     <Logo variant="cream" />
                   </div>
                   <nav className="flex flex-1 flex-col justify-center gap-1 px-7">
@@ -135,7 +135,7 @@ export function Header() {
                       <SheetClose asChild key={l.href}>
                         <Link
                           href={l.href}
-                          className="group flex items-center gap-4 border-b border-cream-paper/10 py-5"
+                          className="group flex items-center gap-4 border-b border-clay/10 py-5"
                         >
                           <span className="font-mono text-xs font-bold text-clay">
                             0{i + 1}
@@ -147,9 +147,9 @@ export function Header() {
                       </SheetClose>
                     ))}
                   </nav>
-                  <div className="px-7 py-7">
+                  <div className="px-7 py-7 bg-ink-2 border-t border-clay/20">
                     <SheetClose asChild>
-                      <Button asChild size="lg" className="w-full bg-clay text-ink hover:bg-cream-paper">
+                      <Button asChild size="lg" className="w-full bg-clay text-ink font-bold hover:bg-cream-paper">
                         <Link href="/contacto">{t.header.cta}</Link>
                       </Button>
                     </SheetClose>

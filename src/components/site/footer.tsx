@@ -7,7 +7,7 @@ import { useLanguage } from "@/lib/language-context";
 function VisaBadge() {
   return (
     <span className="grid h-8 w-12 place-items-center rounded-md bg-cream-paper shadow-sm">
-      <span className="font-display text-sm font-black italic tracking-tight text-ink">
+      <span className="font-display text-sm font-black italic tracking-tight text-[#1434CB]">
         VISA
       </span>
     </span>
@@ -16,9 +16,9 @@ function VisaBadge() {
 
 function MastercardBadge() {
   return (
-    <span className="flex h-8 w-12 items-center justify-center gap-[-6px] rounded-md bg-cream-paper shadow-sm">
-      <span className="h-5 w-5 rounded-full bg-clay-deep" />
-      <span className="-ml-2 h-5 w-5 rounded-full bg-ochre mix-blend-multiply opacity-90" />
+    <span className="flex h-8 w-12 items-center justify-center rounded-md bg-cream-paper shadow-sm">
+      <span className="h-5 w-5 rounded-full bg-[#EB001B]" />
+      <span className="-ml-2 h-5 w-5 rounded-full bg-[#F79E1B] mix-blend-multiply opacity-90" />
     </span>
   );
 }
