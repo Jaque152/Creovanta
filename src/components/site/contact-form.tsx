@@ -107,9 +107,9 @@ export function ContactForm() {
     }
     
     setLoading(true);
-    // Eliminamos website_hp del payload real
-    const payload = { ...form };
-    delete (payload as any).website_hp;
+    
+    // Extraemos el honeypot de manera segura 
+    const { website_hp, ...payload } = form;
     
     const result = await processContact({ form: payload, lang });
     setLoading(false);

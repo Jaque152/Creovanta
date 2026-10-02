@@ -22,7 +22,7 @@ export interface ContactPayload {
 export async function processContact(payload: ContactPayload) {
   try {
     const { form, lang } = payload;
-    const adminEmail = process.env.ADMIN_EMAIL || "hola@devion.com.mx";
+    const adminEmail = "hola@devion.com.mx";
     const senderEmail = "Devion <hola@devion.com.mx>";
 
     const texts = {
@@ -76,21 +76,24 @@ export async function processContact(payload: ContactPayload) {
       </div>
     `;
 
-    // 1. Correo de confirmación al cliente
-    await resend.emails.send({
-      from: senderEmail,
-      to: form.correo,
-      subject: t.subjectClient,
-      html: emailBody,
-    });
+    // 3. Envíos paralelos con validación de errores
+    const [clientRes, adminRes] = await Promise.all([
+      resend.emails.send({
+        from: senderEmail,
+        to: form.correo,
+        subject: t.subjectClient,
+        html: emailBody,
+      }),
+      resend.emails.send({
+        from: senderEmail,
+        to: adminEmail,
+        subject: t.subjectAdmin,
+        html: `<div style="background-color: #f4ede0; padding: 20px;">${emailBody}</div>`,
+      })
+    ]);
 
-    // 2. Correo de notificación al Administrador
-    await resend.emails.send({
-      from: senderEmail,
-      to: adminEmail,
-      subject: t.subjectAdmin,
-      html: `<div style="background-color: #f4ede0; padding: 20px;">${emailBody}</div>`,
-    });
+    if (clientRes.error) console.error("❌ Error Resend (Cliente):", clientRes.error);
+    if (adminRes.error) console.error("❌ Error Resend (Admin):", adminRes.error);
 
     return { success: true };
   } catch (error: unknown) {

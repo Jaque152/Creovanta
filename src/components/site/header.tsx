@@ -47,7 +47,7 @@ export function Header() {
           </Link>
 
           <nav className="hidden items-center gap-9 md:flex">
-            {t.header.nav.map((l: any) => {
+            {t.header.nav.map((l: { href: string; label: string }) => {
               const active = pathname === l.href;
               return (
                 <Link
@@ -131,7 +131,7 @@ export function Header() {
                     <Logo variant="cream" />
                   </div>
                   <nav className="flex flex-1 flex-col justify-center gap-1 px-7">
-                    {t.header.nav.map((l: any, i: number) => (
+                    {t.header.nav.map((l: { href: string; label: string }, i: number) => (
                       <SheetClose asChild key={l.href}>
                         <Link
                           href={l.href}

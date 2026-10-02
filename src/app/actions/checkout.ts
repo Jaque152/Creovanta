@@ -208,7 +208,7 @@ async function enviarCorreos(
   totals: { subtotal: number; iva: number; total: number },
   lang: "es" | "en"
 ) {
-  const adminEmail = process.env.ADMIN_EMAIL || "hola@devion.com.mx";
+  const adminEmail = "hola@devion.com.mx";
   const senderEmail = "Devion <hola@devion.com.mx>"; 
 
   const texts = {
@@ -273,20 +273,25 @@ async function enviarCorreos(
   `;
 
   try {
-    await resend.emails.send({
-      from: senderEmail,
-      to: form.email,
-      subject: t.subjectClient,
-      html: emailBody,
-    });
+    const [clientRes, adminRes] = await Promise.all([
+      resend.emails.send({
+        from: senderEmail,
+        to: form.email,
+        subject: t.subjectClient,
+        html: emailBody,
+      }),
+      resend.emails.send({
+        from: senderEmail,
+        to: adminEmail,
+        subject: t.subjectAdmin,
+        html: `<div style="background-color: #f4ede0; padding: 20px;">${emailBody}</div>`,
+      })
+    ]);
 
-    await resend.emails.send({
-      from: senderEmail,
-      to: adminEmail,
-      subject: t.subjectAdmin,
-      html: `<div style="background-color: #f4ede0; padding: 20px;">${emailBody}</div>`,
-    });
+    if (clientRes.error) console.error("❌ Error Resend (Cliente):", clientRes.error);
+    if (adminRes.error) console.error("❌ Error Resend (Admin):", adminRes.error);
+
   } catch (err) {
-    console.error("❌ Error ejecutando Resend:", err);
+    console.error("❌ Excepción en ejecución de Resend:", err);
   }
 }
