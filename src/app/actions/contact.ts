@@ -22,8 +22,8 @@ export interface ContactPayload {
 export async function processContact(payload: ContactPayload) {
   try {
     const { form, lang } = payload;
-    const adminEmail = process.env.ADMIN_EMAIL || "hola@Devion.com.mx";
-    const senderEmail = "Devion <hola@Devion.com.mx>";
+    const adminEmail = process.env.ADMIN_EMAIL || "hola@devion.com.mx";
+    const senderEmail = "Devion <hola@devion.com.mx>";
 
     const texts = {
       es: {

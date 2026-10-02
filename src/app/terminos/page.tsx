@@ -17,7 +17,7 @@ export default function TerminosPage() {
           body: [
             "La prestación de los servicios descritos en este sitio web corre a cargo de SAINTBASSILS SYSTEMS, S.A.P.I. DE C.V. (en adelante, “la Empresa”), con domicilio en Boulevard Adolfo López Mateos 2165, Interior 607A, Oficina 607A-B, Piso 6, Colonia Los Alpes, Alcaldía Álvaro Obregón, C.P. 01010, Ciudad de México.",
             "El uso del sitio Devion.com.mx y la contratación de cualquiera de los planes o proyectos digitales implica que el usuario (el “Cliente”) ha leído, comprende y acepta íntegramente estos Términos y Condiciones.",
-            "Para consultas, aclaraciones o soporte, el Cliente puede contactar a la Empresa en el correo hola@Devion.com.mx y en el teléfono [+52] 55 9826 1186"
+            "Para consultas, aclaraciones o soporte, el Cliente puede contactar a la Empresa en el correo hola@devion.com.mx y en el teléfono [+52] 55 9826 1186"
           ]
         },
         {
@@ -161,7 +161,7 @@ export default function TerminosPage() {
           body: [
             "The provision of services described on this website is carried out by SAINTBASSILS SYSTEMS, S.A.P.I. DE C.V. (hereinafter, “the Company”), located at Boulevard Adolfo López Mateos 2165, Interior 607A, Oficina 607A-B, Piso 6, Colonia Los Alpes, Alcaldía Álvaro Obregón, C.P. 01010, Mexico City.",
             "The use of the website Devion.com.mx and the contracting of any of the digital plans or projects implies that the user (the “Client”) has read, understands, and fully accepts these Terms and Conditions.",
-            "For inquiries, clarifications, or support, the Client may contact the Company at hola@Devion.com.mx and by phone at [+52] 55 9826 1186"
+            "For inquiries, clarifications, or support, the Client may contact the Company at hola@devion.com.mx and by phone at [+52] 55 9826 1186"
           ]
         },
         {

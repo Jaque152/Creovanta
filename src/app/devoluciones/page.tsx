@@ -89,7 +89,7 @@ export default function DevolucionesPage() {
         {
           title: "J. Procedimiento para solicitar cancelación o reembolso",
           body: [
-            "Para solicitar una cancelación o plantear un posible reembolso, el Cliente deberá escribir a hola@Devion.com.mx indicando:",
+            "Para solicitar una cancelación o plantear un posible reembolso, el Cliente deberá escribir a hola@devion.com.mx indicando:",
             "• Nombre o razón social.",
             "• Número de proyecto o referencia del plan contratado.",
             "• Fecha de contratación y forma de pago.",
@@ -189,7 +189,7 @@ export default function DevolucionesPage() {
         {
           title: "J. Procedure to request cancellation or refund",
           body: [
-            "To request a cancellation or raise a possible refund, the Client must write to hola@Devion.com.mx indicating:",
+            "To request a cancellation or raise a possible refund, the Client must write to hola@devion.com.mx indicating:",
             "• Name or business name.",
             "• Project number or reference of the contracted plan.",
             "• Date of contracting and payment method.",

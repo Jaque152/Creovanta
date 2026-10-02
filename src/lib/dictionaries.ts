@@ -18,7 +18,7 @@ export const dictionaries = {
       cta: "Hablemos del proyecto",
       cartAria: "Abrir carrito",
       menuAria: "Abrir menú",
-      contactEmail: "hola@Devion.com.mx",
+      contactEmail: "hola@devion.com.mx",
     },
     footer: {
       legal: [
@@ -259,7 +259,7 @@ export const dictionaries = {
       cta: "Let's talk about your project",
       cartAria: "Open cart",
       menuAria: "Open menu",
-      contactEmail: "hola@Devion.com.mx",
+      contactEmail: "hola@devion.com.mx",
     },
     footer: {
       legal: [
