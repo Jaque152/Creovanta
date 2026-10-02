@@ -4,11 +4,13 @@ export interface ProductPlan {
   taxIncluded: boolean;
   currency: string;
   imageUrl: string;
+
   es: {
     name: string;
     description: string;
     features: string[];
   };
+
   en: {
     name: string;
     description: string;
@@ -22,621 +24,799 @@ export const webPlans: ProductPlan[] = [
     priceMXN: 19390.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://loremflickr.com/800/600/restaurant,digital-menu',
     es: {
       name: 'Plan Web para Restaurantes',
-      description: 'Menú digital, sistema de reservaciones, integración WhatsApp para pedidos, Google Maps, galería de imágenes.',
+      description:
+        'Carta digital, gestión de reservas, conexión con WhatsApp para recibir pedidos, ubicación mediante Google Maps y galería fotográfica.',
       features: [
-        'Menú digital',
-        'Sistema de reservaciones',
-        'Integración WhatsApp para pedidos',
-        'Integración con Google Maps',
-        'Galería de imágenes'
+        'Carta digital interactiva',
+        'Gestión de reservas en línea',
+        'Conexión con WhatsApp para recibir pedidos',
+        'Ubicación integrada con Google Maps',
+        'Galería visual de fotografías'
       ]
     },
     en: {
       name: 'Website Plan for Restaurants',
-      description: 'Digital menu, reservation system, WhatsApp integration for orders, Google Maps, image gallery.',
+      description:
+        'Digital menu, online booking management, WhatsApp ordering connection, Google Maps location integration, and a visual gallery.',
       features: [
-        'Digital menu',
-        'Reservation system',
-        'WhatsApp order integration',
-        'Google Maps integration',
-        'Image gallery'
+        'Interactive digital menu',
+        'Online reservation management',
+        'WhatsApp connection for receiving orders',
+        'Google Maps location integration',
+        'Visual image gallery'
       ]
     }
   },
+
   {
     id: 'plan-marca-sitio-web-profesional',
     priceMXN: 24530.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://loremflickr.com/800/600/branding,graphic-design',
     es: {
       name: 'Plan Marca + Sitio Web Profesional',
-      description: 'Diseño de logotipo profesional, 3 propuestas de diseño, paleta de colores corporativos, tipografía recomendada, sitio web hasta 3 secciones, diseño responsive, formulario de contacto, integración redes sociales.',
+      description:
+        'Creación de logotipo profesional con 3 propuestas, definición de colores corporativos y tipografía sugerida, sitio web de hasta 3 secciones, adaptación responsive, formulario de contacto y conexión con redes sociales.',
       features: [
-        'Diseño de logotipo profesional (3 propuestas)',
-        'Paleta de colores corporativos y tipografía recomendada',
-        'Sitio web hasta 3 secciones',
-        'Diseño responsive (adaptable a móviles)',
-        'Formulario de contacto e integración de redes sociales'
+        'Creación de logotipo profesional con 3 propuestas',
+        'Definición de paleta corporativa y tipografía sugerida',
+        'Sitio web con hasta 3 secciones',
+        'Diseño adaptable y optimizado para dispositivos móviles',
+        'Formulario de contacto y conexión con redes sociales'
       ]
     },
     en: {
       name: 'Branding + Professional Website Plan',
-      description: 'Professional logo design, 3 design proposals, corporate color palette, recommended typography, website up to 3 sections, responsive design, contact form, social media integration.',
+      description:
+        'Professional logo creation with 3 concepts, corporate color definition and suggested typography, a website with up to 3 sections, responsive design, contact form, and social media connection.',
       features: [
-        'Professional logo design (3 proposals)',
-        'Corporate color palette and recommended typography',
-        'Website up to 3 sections',
-        'Responsive design (mobile-friendly)',
-        'Contact form and social media integration'
+        'Professional logo creation with 3 proposals',
+        'Corporate color palette and suggested typography',
+        'Website with up to 3 sections',
+        'Responsive and mobile-friendly design',
+        'Contact form and social media connection'
       ]
     }
   },
+
   {
     id: 'plan-web-marketing-digital',
     priceMXN: 21940.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://loremflickr.com/800/600/digital-marketing,analytics',
     es: {
       name: 'Plan Web + Marketing Digital',
-      description: 'Sitio web profesional, configuración Google Ads, configuración Facebook Ads, instalación píxel de seguimiento, configuración Google Analytics.',
+      description:
+        'Desarrollo de sitio web profesional, puesta a punto de Google Ads y Facebook Ads, implementación del píxel de seguimiento y configuración de Google Analytics.',
       features: [
-        'Sitio web profesional',
-        'Configuración de campañas en Google Ads',
-        'Configuración de campañas en Facebook Ads',
-        'Instalación de píxel de seguimiento',
-        'Configuración de Google Analytics'
+        'Sitio web con acabado profesional',
+        'Puesta a punto de campañas en Google Ads',
+        'Configuración inicial de campañas en Facebook Ads',
+        'Implementación del píxel para seguimiento',
+        'Configuración y vinculación de Google Analytics'
       ]
     },
     en: {
       name: 'Website + Digital Marketing Plan',
-      description: 'Professional website, Google Ads setup, Facebook Ads setup, tracking pixel installation, Google Analytics configuration.',
+      description:
+        'Professional website development with Google Ads and Facebook Ads setup, tracking pixel implementation, and Google Analytics configuration.',
       features: [
-        'Professional website',
+        'Professional website development',
         'Google Ads campaign setup',
         'Facebook Ads campaign setup',
-        'Tracking pixel installation',
+        'Tracking pixel implementation',
         'Google Analytics configuration'
       ]
     }
   },
+
   {
     id: 'plan-landing-page-emprendedor',
     priceMXN: 4250.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://loremflickr.com/800/600/startup,entrepreneur,website',
     es: {
       name: 'Plan Landing Page Emprendedor',
-      description: 'Diseño de landing page (1 página), formulario de contacto, integración redes sociales (2 máximo), entrega digital. Servicio 100% en línea.',
+      description:
+        'Creación de landing page de una sola página, formulario de contacto, conexión con hasta 2 redes sociales y entrega digital. Servicio realizado completamente en línea.',
       features: [
-        'Diseño de landing page (1 página)',
-        'Formulario de contacto',
-        'Integración con redes sociales (máximo 2)',
-        'Entrega digital',
-        'Servicio 100% en línea'
+        'Creación de landing page de 1 página',
+        'Formulario para recepción de contactos',
+        'Conexión con un máximo de 2 redes sociales',
+        'Entrega del proyecto en formato digital',
+        'Servicio realizado completamente en línea'
       ]
     },
     en: {
       name: 'Entrepreneur Landing Page Plan',
-      description: 'Landing page design (1 page), contact form, social media integration (maximum 2), digital delivery. 100% online service.',
+      description:
+        'Single-page landing page creation, contact form, connection with up to 2 social networks, and digital delivery. Service provided entirely online.',
       features: [
-        'Landing page design (1 page)',
+        'Single-page landing page creation',
         'Contact form',
-        'Social media integration (2 max)',
-        'Digital delivery',
-        '100% online service'
+        'Connection with up to 2 social networks',
+        'Digital project delivery',
+        'Service provided entirely online'
       ]
     }
   },
+
   {
     id: 'plan-web-empresarial',
     priceMXN: 17320.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://loremflickr.com/800/600/corporate,office,website',
     es: {
       name: 'Plan Web Empresarial',
-      description: 'Hasta 5 páginas, diseño UX/UI profesional, formularios avanzados, optimización SEO inicial, optimización de velocidad.',
+      description:
+        'Sitio de hasta 5 páginas con diseño UX/UI profesional, formularios avanzados, configuración SEO inicial y mejoras de rendimiento y velocidad.',
       features: [
-        'Hasta 5 páginas internas',
-        'Diseño UX/UI profesional y personalizado',
-        'Formularios de contacto avanzados',
-        'Optimización SEO inicial',
-        'Optimización de velocidad de carga'
+        'Hasta 5 páginas dentro del sitio',
+        'Experiencia UX/UI profesional y personalizada',
+        'Formularios avanzados para captación de contactos',
+        'Ajustes iniciales de posicionamiento SEO',
+        'Mejoras enfocadas en la velocidad de carga'
       ]
     },
     en: {
       name: 'Corporate Website Plan',
-      description: 'Up to 5 pages, professional UX/UI design, advanced forms, initial SEO optimization, speed optimization.',
+      description:
+        'Website with up to 5 pages, professional UX/UI design, advanced forms, initial SEO setup, and performance and speed improvements.',
       features: [
-        'Up to 5 internal pages',
-        'Professional custom UX/UI design',
-        'Advanced contact forms',
-        'Initial SEO optimization',
-        'Page speed loading optimization'
+        'Up to 5 internal website pages',
+        'Professional custom UX/UI experience',
+        'Advanced lead capture forms',
+        'Initial SEO adjustments',
+        'Page loading performance improvements'
       ]
     }
   },
+
   {
     id: 'plan-web-seo-inicial',
     priceMXN: 16520.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://loremflickr.com/800/600/seo,analytics,search',
     es: {
       name: 'Plan Web + SEO Inicial',
-      description: 'Sitio web hasta 2 páginas, investigación de palabras clave, configuración Google Search Console, SEO técnico inicial, optimización de contenido.',
+      description:
+        'Sitio web de hasta 2 páginas, análisis de palabras clave, vinculación con Google Search Console, ajustes técnicos SEO iniciales y mejora del contenido.',
       features: [
-        'Sitio web hasta 2 páginas',
-        'Investigación de palabras clave (Keyword Research)',
-        'Configuración de Google Search Console',
-        'SEO técnico inicial',
-        'Optimización de contenido'
+        'Sitio web con hasta 2 páginas',
+        'Análisis de palabras clave relevantes',
+        'Vinculación y configuración de Google Search Console',
+        'Ajustes técnicos SEO de arranque',
+        'Mejora y optimización del contenido'
       ]
     },
     en: {
       name: 'Website + Initial SEO Plan',
-      description: 'Website up to 2 pages, keyword research, Google Search Console setup, initial technical SEO, content optimization.',
+      description:
+        'Website with up to 2 pages, keyword analysis, Google Search Console configuration, initial technical SEO adjustments, and content optimization.',
       features: [
-        'Website up to 2 pages',
-        'Keyword research',
-        'Google Search Console setup',
-        'Initial technical SEO',
-        'Content optimization'
+        'Website with up to 2 pages',
+        'Relevant keyword analysis',
+        'Google Search Console configuration',
+        'Initial technical SEO adjustments',
+        'Content enhancement and optimization'
       ]
     }
   },
+
   {
     id: 'plan-sitio-web-profesional',
     priceMXN: 11370.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://loremflickr.com/800/600/web-development,laptop',
     es: {
       name: 'Plan Sitio Web Profesional',
-      description: 'Hasta 3 páginas, diseño web personalizado, optimización SEO básica, publicación del sitio en servidor del cliente.',
+      description:
+        'Sitio de hasta 3 páginas con diseño personalizado, ajustes SEO básicos y publicación final en el servidor proporcionado por el cliente.',
       features: [
-        'Hasta 3 páginas',
-        'Diseño web personalizado',
-        'Optimización SEO básica',
-        'Publicación e instalación en servidor del cliente'
+        'Sitio web con un máximo de 3 páginas',
+        'Diseño desarrollado de manera personalizada',
+        'Ajustes básicos de posicionamiento SEO',
+        'Despliegue e instalación en el servidor del cliente'
       ]
     },
     en: {
       name: 'Professional Website Plan',
-      description: 'Up to 3 pages, custom web design, basic SEO optimization, site publishing on client server.',
+      description:
+        'Website with up to 3 pages, tailored web design, basic SEO adjustments, and deployment to the server provided by the client.',
       features: [
-        'Up to 3 pages',
-        'Custom web design',
-        'Basic SEO optimization',
-        'Site deployment on client server'
+        'Website with up to 3 pages',
+        'Custom-developed web design',
+        'Basic SEO adjustments',
+        'Deployment and installation on the client server'
       ]
     }
   },
+
   {
     id: 'plan-tienda-en-linea-basica',
     priceMXN: 25600.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://loremflickr.com/800/600/ecommerce,online-shopping',
     es: {
       name: 'Plan Tienda en Línea Básica',
-      description: 'Tienda en línea, hasta 20 productos, carrito de compras, integración con pasarelas de pago, panel administrador.',
+      description:
+        'Comercio electrónico con catálogo de hasta 20 productos, carrito de compra, conexión con pasarelas de pago y panel de administración.',
       features: [
-        'Tienda en línea e-commerce',
-        'Carga y configuración de hasta 20 productos',
-        'Carrito de compras funcional',
-        'Integración con pasarelas de pago',
-        'Panel autoadministrable'
+        'Sitio de comercio electrónico',
+        'Alta y configuración de hasta 20 productos',
+        'Carrito de compra completamente funcional',
+        'Conexión con pasarelas para procesar pagos',
+        'Panel de gestión autoadministrable'
       ]
     },
     en: {
       name: 'Basic Online Store Plan',
-      description: 'Online store, up to 20 products, shopping cart, payment gateway integration, admin dashboard.',
+      description:
+        'E-commerce site with a catalog of up to 20 products, shopping cart, payment gateway connection, and administration dashboard.',
       features: [
-        'E-commerce online store',
-        'Catalog setup for up to 20 products',
-        'Functional shopping cart',
-        'Payment gateway integration',
-        'Admin dashboard'
+        'E-commerce website',
+        'Setup and configuration of up to 20 products',
+        'Fully functional shopping cart',
+        'Payment gateway connection',
+        'Self-managed administration dashboard'
       ]
     }
   },
+
   {
     id: 'plan-presencia-digital-basica',
     priceMXN: 7420.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://loremflickr.com/800/600/mobile,website,business',
     es: {
       name: 'Plan Presencia Digital Básica',
-      description: 'Sitio web hasta 1 sección, diseño adaptable a dispositivos móviles, formulario de contacto, publicación del sitio en servidor del cliente.',
+      description:
+        'Sitio web de una sección con adaptación a dispositivos móviles, formulario para contactos y publicación en el servidor indicado por el cliente.',
       features: [
-        'Sitio web de 1 sección (One Page)',
-        'Diseño adaptable a dispositivos móviles',
-        'Formulario de contacto funcional',
-        'Publicación en el servidor del cliente'
+        'Sitio web de una sola sección tipo One Page',
+        'Diseño optimizado para distintos dispositivos móviles',
+        'Formulario funcional para recepción de contactos',
+        'Despliegue en el servidor proporcionado por el cliente'
       ]
     },
     en: {
       name: 'Basic Digital Presence Plan',
-      description: 'Website up to 1 section, mobile-responsive design, contact form, site publishing on client server.',
+      description:
+        'One-section website with mobile-responsive layout, contact form, and deployment to the server indicated by the client.',
       features: [
-        '1-section website (One Page)',
-        'Mobile-responsive layout',
+        'Single-section One Page website',
+        'Layout optimized for mobile devices',
         'Functional contact form',
-        'Site deployment on client server'
+        'Deployment on the client server'
       ]
     }
   },
+
   {
     id: 'plan-web-para-profesionistas',
     priceMXN: 12770.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://loremflickr.com/800/600/professional,consulting,office',
     es: {
       name: 'Plan Web para Profesionistas',
-      description: 'Sitio web de 3 secciones, blog profesional, sistema de agenda de citas, formularios de contacto.',
+      description:
+        'Sitio web compuesto por 3 secciones, blog profesional integrado, agenda digital para citas y formularios para recibir contactos.',
       features: [
-        'Sitio web de 3 secciones',
-        'Blog profesional integrado',
-        'Sistema de agenda de citas',
-        'Formularios de contacto'
+        'Sitio web estructurado en 3 secciones',
+        'Blog profesional incorporado al sitio',
+        'Agenda digital para programación de citas',
+        'Formularios para recepción de contactos'
       ]
     },
     en: {
       name: 'Website Plan for Professionals',
-      description: '3-section website, professional blog, appointment scheduling system, contact forms.',
+      description:
+        'Three-section website with an integrated professional blog, digital appointment scheduling, and contact forms.',
       features: [
-        '3-section website',
+        'Website structured into 3 sections',
         'Integrated professional blog',
-        'Appointment booking & scheduling system',
+        'Digital appointment scheduling system',
         'Contact forms'
       ]
     }
   },
+
   {
     id: 'plan-portal-inmobiliario',
     priceMXN: 48820.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://loremflickr.com/800/600/real-estate,property',
     es: {
       name: 'Plan Portal Inmobiliario',
-      description: 'Publicación de propiedades, buscador avanzado, integración de mapas, panel de agentes, galerías multimedia.',
-      features: ['Publicación de propiedades', 'Buscador avanzado', 'Integración de mapas', 'Panel de agentes', 'Galerías multimedia']
+      description:
+        'Portal para publicar inmuebles, búsqueda avanzada, mapas integrados, panel para agentes y galerías con contenido multimedia.',
+      features: [
+        'Gestión y publicación de propiedades',
+        'Herramienta de búsqueda avanzada',
+        'Mapas integrados al portal',
+        'Panel de gestión para agentes',
+        'Galerías para contenido multimedia'
+      ]
     },
     en: {
       name: 'Real Estate Portal Plan',
-      description: 'Property listings, advanced search, map integration, agent dashboard, multimedia galleries.',
-      features: ['Property listings', 'Advanced search', 'Map integration', 'Agent dashboard', 'Multimedia galleries']
+      description:
+        'Real estate portal with property publishing, advanced search, integrated maps, an agent dashboard, and multimedia galleries.',
+      features: [
+        'Property management and publishing',
+        'Advanced search tool',
+        'Integrated maps',
+        'Agent management dashboard',
+        'Multimedia galleries'
+      ]
     }
   },
+
   {
     id: 'plan-ecommerce-avanzado',
     priceMXN: 64680.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://loremflickr.com/800/600/ecommerce,warehouse',
     es: {
       name: 'Plan Ecommerce Avanzado',
-      description: 'Tienda online hasta 100 productos, panel multiadministrador, integración logística de envíos, SEO para ecommerce, estadísticas de ventas.',
-      features: ['Tienda online hasta 100 productos', 'Panel multiadministrador', 'Integración logística de envíos', 'SEO para ecommerce', 'Estadísticas de ventas']
+      description:
+        'Comercio electrónico para hasta 100 productos, gestión con varios administradores, conexión logística para envíos, SEO orientado a ecommerce y métricas de ventas.',
+      features: [
+        'Tienda digital con hasta 100 productos',
+        'Panel con acceso para múltiples administradores',
+        'Conexión con procesos logísticos de envío',
+        'Optimización SEO enfocada en ecommerce',
+        'Panel de métricas y estadísticas comerciales'
+      ]
     },
     en: {
       name: 'Advanced Ecommerce Plan',
-      description: 'Online store up to 100 products, multi-admin dashboard, shipping logistics integration, ecommerce SEO, sales statistics.',
-      features: ['Online store up to 100 products', 'Multi-admin dashboard', 'Shipping logistics integration', 'Ecommerce SEO', 'Sales statistics']
+      description:
+        'E-commerce platform for up to 100 products, multi-admin management, shipping logistics connection, ecommerce-focused SEO, and sales metrics.',
+      features: [
+        'Online store with up to 100 products',
+        'Multi-administrator dashboard',
+        'Shipping logistics connection',
+        'Ecommerce-focused SEO',
+        'Sales metrics and statistics'
+      ]
     }
   },
+
   {
     id: 'plan-portal-de-empleo',
     priceMXN: 51890.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://loremflickr.com/800/600/recruitment,job-interview',
     es: {
       name: 'Plan Portal de Empleo',
-      description: 'Registro de empresas, publicación de vacantes, registro de candidatos, subida de CV, panel administrador.',
-      features: ['Registro de empresas', 'Publicación de vacantes', 'Registro de candidatos', 'Subida de CV', 'Panel administrador']
+      description:
+        'Portal con alta de empresas, publicación de oportunidades laborales, registro de candidatos, carga de CV y panel administrativo.',
+      features: [
+        'Alta y gestión de empresas',
+        'Creación y publicación de vacantes',
+        'Alta y registro de candidatos',
+        'Carga digital de currículum',
+        'Panel para administración del portal'
+      ]
     },
     en: {
       name: 'Job Portal Plan',
-      description: 'Company registration, job postings, candidate registration, CV upload, admin dashboard.',
-      features: ['Company registration', 'Job postings', 'Candidate registration', 'CV upload', 'Admin dashboard']
+      description:
+        'Portal featuring company onboarding, job publishing, candidate registration, CV uploads, and an administration dashboard.',
+      features: [
+        'Company registration and management',
+        'Job vacancy creation and publishing',
+        'Candidate registration',
+        'Digital CV upload',
+        'Portal administration dashboard'
+      ]
     }
   },
+
   {
     id: 'plan-ecommerce-profesional',
     priceMXN: 41780.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://loremflickr.com/800/600/online-shopping,ecommerce',
     es: {
       name: 'Plan Ecommerce Profesional',
-      description: 'Tienda online hasta 60 productos, diseño personalizado, gestión de inventario, cupones de descuento, pasarelas de pago integradas.',
-      features: ['Tienda online hasta 60 productos', 'Diseño personalizado', 'Gestión de inventario', 'Cupones de descuento', 'Pasarelas de pago integradas']
+      description:
+        'Tienda digital para hasta 60 productos, diseño a medida, control de inventario, gestión de cupones y conexión con pasarelas de pago.',
+      features: [
+        'Tienda digital con hasta 60 productos',
+        'Diseño visual desarrollado a medida',
+        'Administración y control de inventario',
+        'Creación y gestión de cupones promocionales',
+        'Pasarelas de pago conectadas al sitio'
+      ]
     },
     en: {
       name: 'Professional Ecommerce Plan',
-      description: 'Online store up to 60 products, custom design, inventory management, discount coupons, integrated payment gateways.',
-      features: ['Online store up to 60 products', 'Custom design', 'Inventory management', 'Discount coupons', 'Integrated payment gateways']
+      description:
+        'Online shop for up to 60 products with tailored design, inventory control, discount coupon management, and connected payment gateways.',
+      features: [
+        'Online store with up to 60 products',
+        'Custom visual design',
+        'Inventory management and control',
+        'Discount coupon creation and management',
+        'Integrated payment gateways'
+      ]
     }
   },
+
   {
     id: 'plan-identidad-digital-emprendedor',
     priceMXN: 29840.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://loremflickr.com/800/600/branding,startup,design',
     es: {
       name: 'Plan Identidad Digital Emprendedor',
-      description: 'Diseño de logotipo profesional, hasta 2 propuestas de diseño, 1 ronda de ajustes, entrega en PNG/JPG/vectorial, landing page profesional, diseño responsive, formulario de contacto, botón WhatsApp, entrega digital.',
-      features: ['Diseño de logotipo profesional', 'Hasta 2 propuestas de diseño', '1 ronda de ajustes', 'Entrega en PNG/JPG/vectorial', 'Landing page profesional', 'Diseño responsive', 'Formulario de contacto', 'Botón WhatsApp', 'Entrega digital']
+      description:
+        'Desarrollo de logotipo profesional con hasta 2 propuestas y 1 ronda de cambios, archivos PNG/JPG/vectoriales, landing page profesional responsive, formulario de contacto, acceso a WhatsApp y entrega digital.',
+      features: [
+        'Desarrollo de logotipo profesional',
+        'Hasta 2 alternativas de diseño',
+        '1 ronda incluida para modificaciones',
+        'Archivos finales en PNG/JPG y formato vectorial',
+        'Landing page con presentación profesional',
+        'Diseño adaptable y responsive',
+        'Formulario para recepción de contactos',
+        'Acceso directo mediante botón de WhatsApp',
+        'Entrega de archivos y servicio en formato digital'
+      ]
     },
     en: {
       name: 'Entrepreneur Digital Identity Plan',
-      description: 'Professional logo design, up to 2 design proposals, 1 revision round, delivery in PNG/JPG/vector, professional landing page, responsive design, contact form, WhatsApp button, digital delivery.',
-      features: ['Professional logo design', 'Up to 2 design proposals', '1 revision round', 'Delivery in PNG/JPG/vector', 'Professional landing page', 'Responsive design', 'Contact form', 'WhatsApp button', 'Digital delivery']
+      description:
+        'Professional logo creation with up to 2 concepts and 1 revision round, PNG/JPG/vector files, a responsive professional landing page, contact form, WhatsApp access, and digital delivery.',
+      features: [
+        'Professional logo development',
+        'Up to 2 design alternatives',
+        '1 included revision round',
+        'Final files in PNG/JPG and vector formats',
+        'Professional landing page',
+        'Responsive design',
+        'Contact form',
+        'Direct WhatsApp button',
+        'Digital delivery'
+      ]
     }
   },
+
   {
     id: 'plan-branding-web-empresarial',
     priceMXN: 33760.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://loremflickr.com/800/600/business,branding,meeting',
     es: {
       name: 'Plan Branding + Web Empresarial',
-      description: 'Diseño de logotipo premium, hasta 5 propuestas creativas, paleta de colores corporativos, tipografías corporativas, favicon, kit de logotipo para redes sociales, sitio web empresarial hasta 3 páginas, SEO inicial, formularios avanzados.',
-      features: ['Diseño de logotipo premium', 'Hasta 5 propuestas creativas', 'Paleta de colores corporativos y tipografías', 'Favicon y kit de logotipo para redes sociales', 'Sitio web empresarial hasta 3 páginas', 'SEO inicial y formularios avanzados']
+      description:
+        'Desarrollo de logotipo premium con hasta 5 propuestas, sistema de color y tipografías corporativas, favicon, recursos de marca para redes sociales, web empresarial de hasta 3 páginas, SEO inicial y formularios avanzados.',
+      features: [
+        'Desarrollo de logotipo premium',
+        'Hasta 5 conceptos creativos',
+        'Sistema de colores y tipografías corporativas',
+        'Favicon y paquete de logotipo adaptado a redes sociales',
+        'Web empresarial con hasta 3 páginas',
+        'Configuración SEO inicial y formularios avanzados'
+      ]
     },
     en: {
       name: 'Branding + Corporate Website Plan',
-      description: 'Premium logo design, up to 5 creative proposals, corporate color palette, corporate typography, favicon, social media logo kit, corporate website up to 3 pages, initial SEO, advanced forms.',
-      features: ['Premium logo design', 'Up to 5 creative proposals', 'Corporate color palette and typography', 'Favicon and social media logo kit', 'Corporate website up to 3 pages', 'Initial SEO and advanced forms']
+      description:
+        'Premium logo development with up to 5 creative concepts, corporate colors and typography, favicon, social media brand assets, a corporate website with up to 3 pages, initial SEO, and advanced forms.',
+      features: [
+        'Premium logo development',
+        'Up to 5 creative concepts',
+        'Corporate color and typography system',
+        'Favicon and social media logo kit',
+        'Corporate website with up to 3 pages',
+        'Initial SEO configuration and advanced forms'
+      ]
     }
   },
+
   {
     id: 'plan-plataforma-cursos-online',
     priceMXN: 47800.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://loremflickr.com/800/600/online-learning,education',
     es: {
       name: 'Plan Plataforma de Cursos Online',
-      description: 'Plataforma LMS, registro de alumnos, videos y materiales, evaluaciones en línea.',
-      features: ['Plataforma LMS', 'Registro de alumnos', 'Videos y materiales', 'Evaluaciones en línea']
+      description:
+        'Entorno LMS con registro de estudiantes, gestión de videos y recursos didácticos, además de evaluaciones en línea.',
+      features: [
+        'Entorno de aprendizaje LMS',
+        'Alta y gestión de estudiantes',
+        'Administración de videos y recursos educativos',
+        'Evaluaciones digitales en línea'
+      ]
     },
     en: {
       name: 'Online Course Platform Plan',
-      description: 'LMS platform, student registration, videos and materials, online assessments.',
-      features: ['LMS platform', 'Student registration', 'Videos and materials', 'Online assessments']
+      description:
+        'LMS learning environment with student management, videos and educational resources, plus online assessments.',
+      features: [
+        'LMS learning environment',
+        'Student registration and management',
+        'Video and educational resource management',
+        'Online digital assessments'
+      ]
     }
   },
+
   {
     id: 'plan-web-corporativo-premium',
     priceMXN: 28580.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://loremflickr.com/800/600/corporate,office,technology',
     es: {
       name: 'Plan Web Corporativo Premium',
-      description: 'Hasta 8 páginas, diseño corporativo personalizado, optimización SEO técnica inicial, integración con CRM, seguridad web avanzada.',
-      features: ['Hasta 8 páginas', 'Diseño corporativo personalizado', 'Optimización SEO técnica inicial', 'Integración con CRM', 'Seguridad web avanzada']
+      description:
+        'Sitio corporativo de hasta 8 páginas, diseño personalizado, ajustes técnicos SEO iniciales, conexión con CRM y medidas avanzadas de seguridad web.',
+      features: [
+        'Sitio web de hasta 8 páginas',
+        'Diseño corporativo desarrollado a medida',
+        'Ajustes técnicos SEO iniciales',
+        'Conexión e integración con CRM',
+        'Implementación de seguridad web avanzada'
+      ]
     },
     en: {
       name: 'Premium Corporate Website Plan',
-      description: 'Up to 8 pages, custom corporate design, initial technical SEO optimization, CRM integration, advanced web security.',
-      features: ['Up to 8 pages', 'Custom corporate design', 'Initial technical SEO optimization', 'CRM integration', 'Advanced web security']
+      description:
+        'Corporate website with up to 8 pages, tailored design, initial technical SEO adjustments, CRM connection, and advanced web security.',
+      features: [
+        'Corporate website with up to 8 pages',
+        'Custom corporate design',
+        'Initial technical SEO adjustments',
+        'CRM connection and integration',
+        'Advanced web security implementation'
+      ]
     }
   },
+
   {
     id: 'bolsa-soporte-digital',
     priceMXN: 2600.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&w=800&q=80', 
+    imageUrl: 'https://loremflickr.com/800/600/technical-support,customer-service',
     es: {
       name: 'Bolsa de Soporte Digital Prioritario',
-      description: 'Paquete de asistencia técnica para resolver múltiples solicitudes menores durante un periodo determinado. Ideal para empresas o emprendedores que requieren apoyo frecuente sin contratar un plan mensual.',
+      description:
+        'Bolsa de asistencia técnica destinada a atender varias solicitudes menores dentro de un periodo definido. Pensada para empresas y emprendedores que necesitan soporte recurrente sin adquirir una mensualidad.',
       features: [
-        'Incluye hasta 5 solicitudes de soporte',
-        'Resolución de incidencias básicas',
-        'Asesoría personalizada',
-        'Atención prioritaria en horario laboral',
-        'Seguimiento hasta la conclusión de cada solicitud',
-        'Entregable: bitácora digital con las solicitudes atendidas'
+        'Cobertura para un máximo de 5 solicitudes de soporte',
+        'Atención y solución de incidencias básicas',
+        'Orientación técnica personalizada',
+        'Prioridad de atención dentro del horario laboral',
+        'Seguimiento de cada solicitud hasta su cierre',
+        'Entregable: registro digital de las solicitudes gestionadas'
       ]
     },
     en: {
       name: 'Priority Digital Support Package',
-      description: 'Technical assistance package to resolve multiple minor requests over a specific period. Ideal for companies or entrepreneurs requiring frequent support without a monthly plan.',
+      description:
+        'Technical assistance package for handling several minor requests within a defined period, designed for companies and entrepreneurs needing recurring help without a monthly subscription.',
       features: [
-        'Includes up to 5 support requests',
-        'Basic issue resolution',
-        'Personalized advisory',
+        'Coverage for up to 5 support requests',
+        'Basic issue troubleshooting and resolution',
+        'Personalized technical guidance',
         'Priority attention during business hours',
-        'Follow-up until request completion',
-        'Deliverable: digital log of attended requests'
+        'Follow-up on each request until completion',
+        'Deliverable: digital log of managed requests'
       ]
     }
   },
+
   {
     id: 'soporte-tecnico-remoto',
     priceMXN: 1890.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://loremflickr.com/800/600/remote-support,computer',
     es: {
       name: 'Soporte Técnico Remoto Básico',
-      description: 'Atención remota para solucionar incidencias sencillas relacionadas con páginas web, equipos, programas, configuraciones, errores comunes o funcionamiento de servicios digitales.',
+      description:
+        'Soporte a distancia para atender incidencias básicas en sitios web, equipos, software, configuraciones, errores habituales o servicios digitales.',
       features: [
-        'Incluye hasta 2 horas de soporte',
-        'Solución de errores comunes y configuraciones',
-        'Entregable: reporte de actividades realizadas',
-        'Confirmación del funcionamiento del servicio atendido'
+        'Incluye un máximo de 2 horas de atención',
+        'Corrección de errores habituales y ajustes de configuración',
+        'Entregable: informe de las actividades efectuadas',
+        'Validación final del funcionamiento del servicio intervenido'
       ]
     },
     en: {
       name: 'Basic Remote Technical Support',
-      description: 'Remote assistance to solve simple issues related to websites, equipment, programs, configurations, common errors, or the operation of digital services.',
+      description:
+        'Remote support for basic issues involving websites, devices, software, configurations, common errors, or digital service operation.',
       features: [
         'Includes up to 2 hours of support',
-        'Resolution of common errors and configurations',
-        'Deliverable: report of activities performed',
-        'Confirmation of service operation'
+        'Common error resolution and configuration adjustments',
+        'Deliverable: report of completed activities',
+        'Final confirmation of the serviced system operation'
       ]
     }
   },
+
   {
     id: 'configuracion-inicial',
     priceMXN: 1350.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://loremflickr.com/800/600/digital-tools,setup,computer',
     es: {
       name: 'Configuración Inicial de Herramientas',
-      description: 'Configuración básica de una plataforma o servicio digital, como cuentas de correo empresarial, formularios, perfiles administrativos, accesos o herramientas de productividad.',
+      description:
+        'Puesta en marcha básica de una plataforma o servicio digital, incluyendo opciones como correo empresarial, formularios, perfiles administrativos, accesos y herramientas de productividad.',
       features: [
-        'Configuración básica de plataforma digital',
-        'Creación de cuentas, formularios o perfiles',
-        'Pruebas de funcionamiento',
-        'Entregable: configuración terminada',
-        'Evidencia digital del servicio realizado'
+        'Puesta en marcha básica de una plataforma digital',
+        'Alta de cuentas, formularios o perfiles de usuario',
+        'Validaciones y pruebas de operación',
+        'Entregable: configuración finalizada y operativa',
+        'Evidencia digital de los trabajos efectuados'
       ]
     },
     en: {
       name: 'Initial Tools Setup',
-      description: 'Basic setup of a digital platform or service, such as business email accounts, forms, administrative profiles, access, or productivity tools.',
+      description:
+        'Initial setup of a digital platform or service, including business email, forms, administrative profiles, access permissions, or productivity tools.',
       features: [
-        'Basic setup of a digital platform',
-        'Account, form, or profile creation',
-        'Functionality testing',
-        'Deliverable: completed setup',
-        'Digital evidence of the service performed'
+        'Initial setup of a digital platform',
+        'Account, form, or user profile creation',
+        'Operational validation and testing',
+        'Deliverable: completed and operational configuration',
+        'Digital evidence of the work performed'
       ]
     }
   },
+
   {
     id: 'servicio-express-dudas',
     priceMXN: 510.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://loremflickr.com/800/600/online-consulting,video-call',
     es: {
       name: 'Servicio Express de Resolución de Dudas',
-      description: 'Sesión personalizada para resolver dudas relacionadas con sitios web, herramientas digitales, administración básica, procesos en línea o plataformas. Incluye orientación práctica.',
+      description:
+        'Sesión individual para aclarar dudas sobre sitios web, herramientas digitales, administración básica, procesos en línea o plataformas, acompañada de recomendaciones prácticas.',
       features: [
-        'Atención por videollamada o medios digitales',
-        'Duración de hasta 30 minutos',
-        'Orientación práctica y recomendaciones aplicables',
-        'Entregable: resumen digital con respuestas y recomendaciones',
-        'Enlaces útiles cuando aplique'
+        'Atención mediante videollamada u otros canales digitales',
+        'Sesión con duración máxima de 30 minutos',
+        'Guía práctica con recomendaciones que pueden aplicarse',
+        'Entregable: resumen digital de respuestas y recomendaciones',
+        'Recursos y enlaces útiles cuando correspondan'
       ]
     },
     en: {
       name: 'Express Doubt Resolution Service',
-      description: 'Personalized session to resolve doubts related to websites, digital tools, basic administration, online processes, or platforms. Includes practical guidance.',
+      description:
+        'One-on-one session to clarify questions about websites, digital tools, basic administration, online processes, or platforms, with practical guidance.',
       features: [
-        'Attention via video call or digital media',
-        'Duration up to 30 minutes',
-        'Practical guidance and applicable recommendations',
-        'Deliverable: digital summary with answers and recommendations',
-        'Useful links when applicable'
+        'Support through video call or other digital channels',
+        'Session lasting up to 30 minutes',
+        'Practical guidance with applicable recommendations',
+        'Deliverable: digital summary of answers and recommendations',
+        'Useful resources and links when applicable'
       ]
     }
   },
+
   {
     id: 'diagnostico-problemas',
     priceMXN: 890.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://loremflickr.com/800/600/diagnostics,analytics,computer',
     es: {
       name: 'Diagnóstico de Problemas Digitales',
-      description: 'Revisión de inconvenientes básicos en sitios web, correo electrónico, dominios, formularios, configuraciones sencillas o herramientas digitales. Se identifica la causa del problema.',
+      description:
+        'Análisis de fallas básicas en sitios web, correo, dominios, formularios, configuraciones simples o herramientas digitales para determinar el origen del inconveniente.',
       features: [
-        'Revisión de inconvenientes digitales básicos',
-        'Identificación de la causa del problema',
-        'Corrección durante la sesión (cuando es posible)',
-        'Entregable: reporte de diagnóstico',
-        'Acciones realizadas o recomendaciones para su solución'
+        'Análisis de incidencias digitales básicas',
+        'Determinación del origen del problema',
+        'Corrección durante la sesión cuando sea técnicamente posible',
+        'Entregable: informe con el diagnóstico obtenido',
+        'Detalle de acciones ejecutadas o recomendaciones de solución'
       ]
     },
     en: {
       name: 'Digital Problem Diagnostics',
-      description: 'Review of basic issues in websites, emails, domains, forms, simple configurations, or digital tools. The cause of the problem is identified.',
+      description:
+        'Assessment of basic issues affecting websites, email, domains, forms, simple configurations, or digital tools to identify the source of the problem.',
       features: [
-        'Review of basic digital issues',
-        'Identification of the problem cause',
-        'Correction during the session (when possible)',
+        'Assessment of basic digital issues',
+        'Identification of the source of the problem',
+        'Correction during the session whenever technically possible',
         'Deliverable: diagnostic report',
-        'Actions taken or recommendations for solution'
+        'Details of completed actions or solution recommendations'
       ]
     }
   },
+
   {
     id: 'asesoria-digital-basica',
     priceMXN: 310.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://loremflickr.com/800/600/digital-consulting,meeting',
     es: {
       name: 'Asesoría Digital Básica',
-      description: 'Orientación personalizada para resolver dudas o inconvenientes sencillos relacionados con plataformas digitales, administración básica de sitios web, herramientas en línea o procesos tecnológicos.',
+      description:
+        'Asesoría individual para aclarar dudas o resolver situaciones sencillas vinculadas con plataformas digitales, gestión básica de sitios web, herramientas online o procesos tecnológicos.',
       features: [
-        'Atención mediante videollamada o medios digitales',
-        'Hasta 15 minutos de asesoría',
-        'Resolución de hasta 2 dudas relacionadas',
-        'Recomendaciones prácticas para su aplicación',
-        'Entregable: resumen digital con los puntos tratados'
+        'Atención por videollamada u otros medios digitales',
+        'Asesoría con duración de hasta 15 minutos',
+        'Atención de un máximo de 2 dudas vinculadas',
+        'Recomendaciones prácticas orientadas a su aplicación',
+        'Entregable: síntesis digital de los temas revisados'
       ]
     },
     en: {
       name: 'Basic Digital Consulting',
-      description: 'Personalized guidance to solve simple doubts or issues related to digital platforms, basic website administration, online tools, or technological processes.',
+      description:
+        'Individual guidance for simple questions or issues involving digital platforms, basic website management, online tools, or technology processes.',
       features: [
-        'Attention via video call or digital media',
-        'Up to 15 minutes of consulting',
-        'Resolution of up to 2 related doubts',
-        'Practical recommendations for application',
-        'Deliverable: digital summary with discussed points'
+        'Support through video call or other digital channels',
+        'Consulting session lasting up to 15 minutes',
+        'Resolution of up to 2 related questions',
+        'Practical recommendations for implementation',
+        'Deliverable: digital summary of the topics reviewed'
       ]
     }
   },
+
   {
     id: 'consulta-digital-rapida',
     priceMXN: 180.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1512314889357-e157c22f938d?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://loremflickr.com/800/600/online-chat,email,computer',
     es: {
       name: 'Consulta Digital Rápida',
-      description: 'Resolución de una duda puntual relacionada con herramientas digitales, plataformas en línea, sitios web o procesos básicos. Atención mediante chat o correo electrónico.',
+      description:
+        'Atención de una consulta específica sobre herramientas digitales, plataformas online, sitios web o procesos básicos, mediante chat o correo electrónico.',
       features: [
-        'Atención mediante chat o correo electrónico',
-        'Resolución de 1 consulta específica',
-        'Recomendación práctica para solucionar el problema',
-        'Envío de respuesta digital en un plazo acordado',
-        'Servicio 100% en línea'
+        'Atención disponible por chat o correo electrónico',
+        'Respuesta a 1 consulta concreta',
+        'Recomendación práctica orientada a resolver la situación',
+        'Entrega de la respuesta digital dentro del plazo convenido',
+        'Servicio realizado completamente en línea'
       ]
     },
     en: {
       name: 'Quick Digital Query',
-      description: 'Resolution of a specific doubt related to digital tools, online platforms, websites, or basic processes. Attention via chat or email.',
+      description:
+        'Support for one specific question involving digital tools, online platforms, websites, or basic processes, provided through chat or email.',
       features: [
-        'Attention via chat or email',
-        'Resolution of 1 specific query',
-        'Practical recommendation to solve the issue',
-        'Digital response sent within agreed timeframe',
-        '100% online service'
+        'Support available through chat or email',
+        'Resolution of 1 specific inquiry',
+        'Practical recommendation aimed at resolving the issue',
+        'Digital response delivered within the agreed timeframe',
+        'Service provided entirely online'
       ]
     }
   }
