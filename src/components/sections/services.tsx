@@ -4,7 +4,12 @@ import { Reveal } from "@/components/site/reveal";
 import { useLanguage } from "@/lib/language-context";
 import { motion } from "framer-motion";
 
-// Gráficos 3D mejorados con CSS y Framer Motion
+interface ServiceItem {
+  n: string | number;
+  title: string;
+  desc: string;
+}
+
 const LayeredGraphic1 = () => (
   <div className="relative h-28 w-28 [transform:rotateX(55deg)_rotateZ(-45deg)] [transform-style:preserve-3d]">
     <motion.div 
@@ -64,7 +69,7 @@ export function Services() {
         </Reveal>
 
         <div className="mt-20 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {t.services.items.map((item: any, i: number) => {
+          {t.services.items.map((item: ServiceItem, i: number) => {
             const Graphic = graphics[i % graphics.length];
             return (
               <Reveal key={item.n} delay={i * 0.1}>

@@ -90,10 +90,8 @@ export async function processCheckout(payload: CheckoutPayload) {
       throw new Error("Credenciales de la pasarela Etomin no configuradas en el servidor.");
     }
 
-    // 1. Autenticación Etomin
     const token = await getEtominAuthToken();
 
-    // 2. Tokenización de tarjeta
     const expParts = form.exp.split("/");
     const month = expParts[0].trim();
     const year = `20${expParts[1].trim()}`;
@@ -101,8 +99,7 @@ export async function processCheckout(payload: CheckoutPayload) {
     const cardToken = await tokenizeEtominCard(token, form.card, form.cardName, month, year);
     if (!cardToken) throw new Error("Error al tokenizar la tarjeta de crédito.");
 
-    // 3. Ejecución de Venta
-    const currencyCode = "484"; // MXN
+    const currencyCode = "484";
     const salePayload = {
       amount: Math.round(totals.total * 100) / 100,
       currency: currencyCode,
@@ -144,15 +141,21 @@ export async function processCheckout(payload: CheckoutPayload) {
       return { success: false, error: "La transacción fue rechazada o no pudo ser aprobada por el banco." };
     }
 
-    // Envío de correos corporativos tras aprobación
-    console.log(`[Checkout] Pago aprobado en Etomin. Iniciando envío de correos para orden ${orderId}`);
     await enviarCorreos(orderId, form, items, totals, currentLang);
-    console.log(`[Checkout] Correos enviados exitosamente para orden ${orderId}`);
 
     return { success: true, orderId };
-  } catch (error: any) {
-    console.error("Etomin Checkout Error:", error.response?.data || error.message);
-    const errorMessage = error.response?.data?.message || (error instanceof Error ? error.message : "Ocurrió un error al procesar el pago.");
+  } catch (error: unknown) {
+    let errorMessage = "Ocurrió un error al procesar el pago.";
+    if (axios.isAxiosError(error)) {
+      const responseData = error.response?.data as { message?: string } | undefined;
+      console.error("Etomin Payment Error:", responseData || error.message);
+      errorMessage = responseData?.message || error.message;
+    } else if (error instanceof Error) {
+      console.error("Etomin Payment Error:", error.message);
+      errorMessage = error.message;
+    } else {
+      console.error("Etomin Payment Error:", error);
+    }
     return { success: false, error: errorMessage };
   }
 }
@@ -171,7 +174,7 @@ async function enviarCorreos(
     es: {
       subjectClient: `¡Gracias por tu pedido! Folio: ${orderId} - Creovanta`,
       subjectAdmin: `💰 NUEVA VENTA APROBADA: ${orderId} - ${form.nombre}`,
-      title: `Confirmación de Pedio`,
+      title: `Confirmación de Pedido`,
       subtitle: `Folio de referencia: ${orderId}`,
       hello: `Hola`,
       intro: `Tu pago ha sido procesado exitosamente a través de nuestra pasarela segura. Hemos recibido tu solicitud y comenzaremos con la configuración de tus servicios.`,
@@ -213,12 +216,11 @@ async function enviarCorreos(
     </tr>
   `).join("");
 
-  // Diseño Creovanta Clean Corporate Light Theme
   const emailBody = `
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 620px; margin: 0 auto; background-color: #F8FAFC; color: #0F172A; border: 1px solid #E2E8F0; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
       <div style="background: linear-gradient(135deg, #1E3A8A 0%, #3730A3 50%, #4F46E5 100%); height: 6px; width: 100%;"></div>
       <div style="padding: 40px 35px; background-color: #FFFFFF;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+        <div style="margin-bottom: 24px;">
           <span style="font-family: monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: #1E3A8A; font-weight: 700; background-color: #EFF6FF; padding: 6px 12px; border-radius: 8px; border: 1px solid #BFDBFE;">${t.subtitle}</span>
         </div>
         

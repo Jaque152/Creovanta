@@ -3,12 +3,14 @@
 import { Reveal } from "@/components/site/reveal";
 import { useLanguage } from "@/lib/language-context";
 
-// Nuevo diseño de ícono: Glassmorphism con núcleo brillante
+interface ProcessStep {
+  n: string | number;
+  title: string;
+}
+
 const PremiumIcon = () => (
   <div className="relative mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-50 to-blue-50/50 shadow-[inset_0_1px_1px_rgba(255,255,255,1),0_4px_10px_rgba(0,0,0,0.02)] border border-slate-200 transition-transform group-hover:scale-110 group-hover:shadow-[0_10px_20px_rgba(37,99,235,0.1)]">
-    {/* Resplandor interno */}
     <div className="absolute inset-0 rounded-2xl bg-blue-500/10 blur-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-    {/* Núcleo */}
     <div className="relative h-6 w-6 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 shadow-sm" />
   </div>
 );
@@ -20,7 +22,6 @@ export function Process() {
     <section id="desarrollo" className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-[1400px] container-px">
         
-        {/* Header de sección */}
         <div className="mb-20 max-w-3xl">
           <Reveal>
             <h2 className="display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl leading-tight">
@@ -42,7 +43,6 @@ export function Process() {
           </Reveal>
         </div>
 
-        {/* Cuadrícula de Beneficios */}
         <div className="mt-28">
           <Reveal>
             <h3 className="display text-center text-3xl font-bold text-slate-900 mb-16">
@@ -50,14 +50,13 @@ export function Process() {
             </h3>
           </Reveal>
           <div className="grid grid-cols-2 gap-x-6 gap-y-16 sm:grid-cols-4 lg:gap-x-12">
-            {t.process.steps.map((s: any, i: number) => (
+            {t.process.steps.map((s: ProcessStep, i: number) => (
               <Reveal key={s.n} delay={i * 0.05}>
                 <div className="group flex flex-col items-center text-center cursor-default">
                   <PremiumIcon />
                   <h4 className="text-[0.95rem] font-bold text-slate-800 leading-snug max-w-[160px] group-hover:text-blue-600 transition-colors">
                     {s.title}
                   </h4>
-                  {/* Pequeño separador decorativo */}
                   <div className="mt-3 h-1 w-6 rounded-full bg-slate-200 transition-all duration-300 group-hover:w-10 group-hover:bg-blue-500" />
                 </div>
               </Reveal>
