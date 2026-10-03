@@ -2,37 +2,35 @@
 
 import { StoreGrid } from "@/components/site/store-grid";
 import { useLanguage } from "@/lib/language-context";
+import { Cpu } from "lucide-react";
 
 export function ServiciosClient() {
   const { t } = useLanguage();
 
   return (
-    <>
-      <section className="relative isolate overflow-hidden bg-ink border-b border-clay/20">
-        <div aria-hidden className="absolute inset-0 -z-10">
-          <div className="absolute -left-32 top-[-20%] h-[460px] w-[460px] rounded-full bg-clay/10 blur-[120px]" />
-          <div className="absolute right-[-10%] top-10 h-[420px] w-[420px] rounded-full bg-ochre/10 blur-[120px]" />
-          {/* Tech grid */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#00E5FF08_1px,transparent_1px),linear-gradient(to_bottom,#00E5FF08_1px,transparent_1px)] bg-[size:40px_40px]"></div>
-        </div>
-        <div className="mx-auto max-w-[1400px] container-px pb-14 pt-14 sm:pt-24 text-center flex flex-col items-center">
-          <span className="eyebrow inline-flex items-center gap-2.5 text-clay">
-            <span className="h-2 w-2 rounded-sm bg-ochre" />
-            {t.servicesPage.eyebrow}
-          </span>
-          <h1 className="display mt-6 max-w-4xl text-balance text-5xl font-bold uppercase leading-[0.95] tracking-tight text-cream-paper sm:text-7xl">
+    <div className="min-h-screen bg-[#F8FAFC]">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#1E3A8A] via-[#3730A3] to-[#701A75] py-28 text-white">
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+
+        <div className="relative z-10 mx-auto max-w-[1400px] container-px text-center flex flex-col items-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 font-mono text-xs font-bold uppercase tracking-widest text-blue-200 backdrop-blur-md mb-8">
+            <Cpu className="h-3.5 w-3.5 animate-pulse" /> {t.servicesPage.eyebrow}
+          </div>
+          <h1 className="display max-w-4xl text-balance text-5xl font-black uppercase tracking-tight text-white sm:text-7xl leading-[1.05]">
             {t.servicesPage.titlePart1}{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-clay to-ochre">{t.servicesPage.titlePart2}</span>
+            <span className="text-blue-200">
+              {t.servicesPage.titlePart2}
+            </span>
           </h1>
-          <p className="mt-6 max-w-xl text-pretty text-[0.95rem] leading-relaxed text-cream-paper/60 font-mono">
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-200 font-medium">
             {t.servicesPage.desc}
           </p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1400px] container-px pb-20 sm:pb-28 bg-ink relative z-10 pt-10">
+      <section className="mx-auto max-w-[1400px] container-px -mt-12 relative z-20 pb-32">
         <StoreGrid />
       </section>
-    </>
+    </div>
   );
 }

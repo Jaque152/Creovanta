@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/language-context";
 import { processContact } from "@/app/actions/contact";
 
-// --- ANTI-SPAM UTILS ---
 const INVALID_PHONE_PATTERNS = [
   "0000000000", "1111111111", "2222222222", "3333333333", "4444444444",
   "5555555555", "6666666666", "7777777777", "8888888888", "9999999999",
@@ -19,7 +18,7 @@ const INVALID_PHONE_PATTERNS = [
 function isGibberishText(text: string): boolean {
   const clean = text.trim();
   if (clean.length < 2) return true;
-  if (/https?:\/\//i.test(clean)) return true; // Bloquea URLs en nombres
+  if (/https?:\/\//i.test(clean)) return true;
   const words = clean.split(/\s+/);
   return words.some((word) => word.length > 6 && !/[aeiouáéíóúy]/i.test(word));
 }
@@ -30,7 +29,6 @@ function isValidPhone(phone: string): boolean {
   if (INVALID_PHONE_PATTERNS.includes(digits)) return false;
   return true;
 }
-// -----------------------
 
 type Fields = "nombre" | "correo" | "telefono" | "asunto" | "mensaje" | "website_hp";
 type FormState = Record<Fields, string>;
@@ -42,12 +40,12 @@ const EMPTY: FormState = {
 function Field({ label, children, error, className }: { label: string; children: React.ReactNode; error?: string; className?: string; }) {
   return (
     <div className={className}>
-      <label className="mb-2 block font-mono text-[0.66rem] uppercase tracking-[0.16em] text-clay">
+      <label className="mb-2 block font-mono text-xs uppercase tracking-wider text-slate-700 font-bold">
         {label}
       </label>
       {children}
       {error && (
-        <p className="mt-1.5 font-mono text-[0.66rem] uppercase tracking-wide text-destructive">
+        <p className="mt-1.5 font-mono text-[0.66rem] uppercase tracking-wide text-red-500 font-bold">
           {error}
         </p>
       )}
@@ -94,7 +92,6 @@ export function ContactForm() {
     ev.preventDefault();
     if (loading) return;
 
-    // Trampa anti-bots (Honeypot + Tiempo de llenado)
     if (form.website_hp || (Date.now() - mountTimeRef.current) / 1000 < 2.5) {
       setSent(true);
       setTimeout(() => setSent(false), 4000);
@@ -107,10 +104,7 @@ export function ContactForm() {
     }
     
     setLoading(true);
-    
-    // Extraemos el honeypot de manera segura 
     const { website_hp, ...payload } = form;
-    
     const result = await processContact({ form: payload, lang });
     setLoading(false);
 
@@ -125,17 +119,17 @@ export function ContactForm() {
 
   if (sent) {
     return (
-      <div className="flex min-h-[440px] flex-col items-center justify-center rounded-xl border border-clay/20 bg-ink-2 p-10 text-center shadow-[0_0_30px_rgba(0,229,255,0.05)]">
-        <span className="grid h-16 w-16 place-items-center rounded-full bg-clay text-ink shadow-[0_0_20px_rgba(0,229,255,0.4)]">
+      <div className="flex min-h-[440px] flex-col items-center justify-center rounded-2xl border border-slate-200 bg-white p-10 text-center shadow-xl">
+        <span className="grid h-16 w-16 place-items-center rounded-full bg-blue-50 text-blue-600 border border-blue-200">
           <Check className="h-7 w-7" strokeWidth={3} />
         </span>
-        <h3 className="display mt-6 text-3xl font-bold text-cream-paper">
+        <h3 className="display mt-6 text-3xl font-bold text-slate-900">
           {t.contact.successTitle}
         </h3>
-        <p className="mt-3 max-w-sm text-cream-paper/60 font-mono text-sm">
+        <p className="mt-3 max-w-sm text-slate-600 font-mono text-sm">
           {t.contact.successDesc}
         </p>
-        <Button className="mt-8 bg-ink border border-clay/30 text-clay hover:bg-clay hover:text-ink transition-colors" onClick={() => { setForm(EMPTY); setSent(false); mountTimeRef.current = Date.now(); }}>
+        <Button className="mt-8 rounded-full bg-slate-900 text-white font-bold hover:bg-blue-600" onClick={() => { setForm(EMPTY); setSent(false); mountTimeRef.current = Date.now(); }}>
           {t.contact.sendAnother}
         </Button>
       </div>
@@ -143,33 +137,32 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="relative rounded-xl border border-clay/20 bg-ink-2 p-6 sm:p-9 shadow-[0_0_30px_rgba(0,229,255,0.05)]">
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-clay to-ochre rounded-t-xl" />
+    <form onSubmit={handleSubmit} noValidate className="relative rounded-2xl border border-slate-200 bg-white p-8 sm:p-10 shadow-xl">
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-t-2xl" />
       
-      {/* Campo Honeypot Oculto */}
       <div className="absolute -left-[9999px] top-0" aria-hidden="true" tabIndex={-1}>
         <input type="text" name="website_hp" autoComplete="off" value={form.website_hp} onChange={(e) => update("website_hp", e.target.value)} />
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid gap-6 sm:grid-cols-2">
         <Field label={t.contact.fullName} error={errors.nombre}>
-          <Input className="bg-ink border-clay/30 text-cream-paper focus-visible:ring-clay focus-visible:border-clay" value={form.nombre} onChange={(e) => update("nombre", e.target.value)} placeholder={t.contact.namePlaceholder} />
+          <Input className="h-12 rounded-xl bg-slate-50 border-slate-200 text-slate-900 focus-visible:ring-blue-600" value={form.nombre} onChange={(e) => update("nombre", e.target.value)} placeholder={t.contact.namePlaceholder} />
         </Field>
         <Field label={t.contact.email} error={errors.correo}>
-          <Input className="bg-ink border-clay/30 text-cream-paper focus-visible:ring-clay focus-visible:border-clay" type="email" value={form.correo} onChange={(e) => update("correo", e.target.value)} placeholder={t.contact.emailPlaceholder} />
+          <Input className="h-12 rounded-xl bg-slate-50 border-slate-200 text-slate-900 focus-visible:ring-blue-600" type="email" value={form.correo} onChange={(e) => update("correo", e.target.value)} placeholder={t.contact.emailPlaceholder} />
         </Field>
         <Field label={t.contact.phone} error={errors.telefono}>
-          <Input className="bg-ink border-clay/30 text-cream-paper focus-visible:ring-clay focus-visible:border-clay" type="tel" value={form.telefono} onChange={handlePhoneChange} placeholder={t.contact.phonePlaceholder} maxLength={10} />
+          <Input className="h-12 rounded-xl bg-slate-50 border-slate-200 text-slate-900 focus-visible:ring-blue-600" type="tel" value={form.telefono} onChange={handlePhoneChange} placeholder={t.contact.phonePlaceholder} maxLength={10} />
         </Field>
         <Field label={t.contact.subject}>
-          <Input className="bg-ink border-clay/30 text-cream-paper focus-visible:ring-clay focus-visible:border-clay" value={form.asunto} onChange={(e) => update("asunto", e.target.value)} placeholder={t.contact.subjectPlaceholder} />
+          <Input className="h-12 rounded-xl bg-slate-50 border-slate-200 text-slate-900 focus-visible:ring-blue-600" value={form.asunto} onChange={(e) => update("asunto", e.target.value)} placeholder={t.contact.subjectPlaceholder} />
         </Field>
         <Field label={t.contact.message} error={errors.mensaje} className="sm:col-span-2">
-          <Textarea className="bg-ink border-clay/30 text-cream-paper focus-visible:ring-clay focus-visible:border-clay resize-none" value={form.mensaje} onChange={(e) => update("mensaje", e.target.value)} placeholder={t.contact.msgPlaceholder} rows={6} />
+          <Textarea className="rounded-xl bg-slate-50 border-slate-200 text-slate-900 focus-visible:ring-blue-600 resize-none" value={form.mensaje} onChange={(e) => update("mensaje", e.target.value)} placeholder={t.contact.msgPlaceholder} rows={5} />
         </Field>
       </div>
 
-      <Button type="submit" size="lg" className="mt-7 w-full bg-clay text-ink hover:bg-cream-paper font-bold shadow-[0_0_15px_rgba(0,229,255,0.3)] transition-all" disabled={loading}>
+      <Button type="submit" size="lg" className="mt-8 w-full rounded-full bg-blue-600 text-white font-bold hover:bg-blue-700 shadow-lg shadow-blue-500/20" disabled={loading}>
         {loading ? (
           <>{t.contact.sending} <Loader2 className="h-4 w-4 ml-2 animate-spin" /></>
         ) : (

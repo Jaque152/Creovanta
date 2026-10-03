@@ -20,64 +20,70 @@ export interface ContactPayload {
 export async function processContact(payload: ContactPayload) {
   try {
     const { form, lang } = payload;
-    const adminEmail = "hola@devion.com.mx";
-    const senderEmail = "Devion <hola@devion.com.mx>";
+    const adminEmail = "administracion@creovanta.com.mx";
+    const senderEmail = "Creovanta <administracion@creovanta.com.mx>";
 
     const texts = {
       es: {
-        subjectClient: "Hemos recibido tu mensaje - Devion",
+        subjectClient: "Hemos recibido tu mensaje - Creovanta",
         subjectAdmin: `Nuevo mensaje de contacto: ${form.nombre}`,
         title: "¡Gracias por contactarnos!",
+        subtitle: "Soporte y Atención Comercial",
         hello: "Hola",
-        intro: "Hemos recibido tu mensaje. Revisaremos los detalles de tu proyecto y nos pondremos en contacto contigo lo antes posible para enviarte una propuesta personalizada.",
-        details: "Detalles de tu mensaje:",
+        intro: "Hemos recibido tu mensaje correctamente. Nuestro equipo revisará los requerimientos de tu proyecto y se pondrá en contacto contigo a la brevedad.",
+        details: "Detalles de la Solicitud:",
         name: "Nombre:",
-        email: "Email:",
+        email: "Correo:",
         phone: "Teléfono:",
         subject: "Asunto:",
         message: "Mensaje:",
-        footer: "Devion — Estudio Digital CDMX."
+        footer: "Creovanta — Soluciones Tecnológicas y Digitales Avanzadas."
       },
       en: {
-        subjectClient: "We have received your message - Devion",
+        subjectClient: "We have received your message - Creovanta",
         subjectAdmin: `New contact message: ${form.nombre}`,
         title: "Thank you for reaching out!",
+        subtitle: "Support & Commercial Team",
         hello: "Hello",
-        intro: "We have received your message. We will review your project details and get back to you as soon as possible with a custom proposal.",
-        details: "Your message details:",
+        intro: "We have successfully received your message. Our team will review your project requirements and get back to you shortly.",
+        details: "Request Details:",
         name: "Name:",
         email: "Email:",
         phone: "Phone:",
         subject: "Subject:",
         message: "Message:",
-        footer: "Devion — Digital Studio CDMX."
+        footer: "Creovanta — Advanced Technological & Digital Solutions."
       }
     };
 
     const t = texts[lang] || texts["es"];
 
-    // Diseño oscuro Devion
+    // Diseño Creovanta Clean Corporate Light Theme
     const emailBody = `
-      <div style="font-family: 'Courier New', Courier, monospace; max-width: 600px; margin: 0 auto; background-color: #0A0A0A; color: #FAFAFA; border: 1px solid #00E5FF33; border-radius: 12px; overflow: hidden;">
-        <div style="background: linear-gradient(90deg, #00E5FF 0%, #B026FF 100%); height: 4px; width: 100%;"></div>
-        <div style="padding: 35px 30px;">
-          <h2 style="color: #00E5FF; margin-top: 0; font-size: 20px; text-transform: uppercase; letter-spacing: 1px;">${t.title}</h2>
-          <p style="font-size: 15px; line-height: 1.6; color: #EAEAEA;">${t.hello} <strong style="color: #00E5FF;">${form.nombre}</strong>,</p>
-          <p style="font-size: 14px; line-height: 1.6; color: #A1A1AA;">${t.intro}</p>
+      <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 620px; margin: 0 auto; background-color: #F8FAFC; color: #0F172A; border: 1px solid #E2E8F0; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+        <div style="background: linear-gradient(135deg, #1E3A8A 0%, #3730A3 50%, #4F46E5 100%); height: 6px; width: 100%;"></div>
+        <div style="padding: 40px 35px; background-color: #FFFFFF;">
+          <div style="margin-bottom: 24px;">
+            <span style="font-family: monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: #1E3A8A; font-weight: 700; background-color: #EFF6FF; padding: 6px 12px; border-radius: 8px; border: 1px solid #BFDBFE;">${t.subtitle}</span>
+          </div>
           
-          <h3 style="margin-top: 35px; color: #FAFAFA; font-size: 14px; text-transform: uppercase; letter-spacing: 2px;">${t.details}</h3>
-          <div style="font-size: 13px; color: #A1A1AA; line-height: 1.8; background-color: #161616; padding: 20px; border-radius: 8px; border: 1px solid #27272A;">
-            <strong style="color: #71717A;">${t.name}</strong> <span style="color: #FAFAFA;">${form.nombre}</span><br/>
-            <strong style="color: #71717A;">${t.email}</strong> <span style="color: #FAFAFA;">${form.correo}</span><br/>
-            <strong style="color: #71717A;">${t.phone}</strong> <span style="color: #FAFAFA;">${form.telefono || "N/A"}</span><br/>
-            <strong style="color: #71717A;">${t.subject}</strong> <span style="color: #FAFAFA;">${form.asunto || "N/A"}</span><br/>
+          <h2 style="color: #0F172A; margin: 0 0 12px 0; font-size: 24px; font-weight: 800; letter-spacing: -0.02em;">${t.title}</h2>
+          <p style="font-size: 15px; line-height: 1.6; color: #334155; margin: 0 0 8px 0;">${t.hello} <strong style="color: #1E3A8A;">${form.nombre}</strong>,</p>
+          <p style="font-size: 14px; line-height: 1.6; color: #64748B; margin: 0 0 30px 0;">${t.intro}</p>
+          
+          <h3 style="margin: 0 0 12px 0; color: #0F172A; font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700;">${t.details}</h3>
+          <div style="font-size: 13px; color: #475569; line-height: 1.8; background-color: #F8FAFC; padding: 20px; border-radius: 14px; border: 1px solid #E2E8F0;">
+            <strong style="color: #1E3A8A;">${t.name}</strong> <span style="color: #0F172A;">${form.nombre}</span><br/>
+            <strong style="color: #1E3A8A;">${t.email}</strong> <span style="color: #0F172A;">${form.correo}</span><br/>
+            <strong style="color: #1E3A8A;">${t.phone}</strong> <span style="color: #0F172A;">${form.telefono || "N/A"}</span><br/>
+            <strong style="color: #1E3A8A;">${t.subject}</strong> <span style="color: #0F172A;">${form.asunto || "N/A"}</span><br/>
             
-            <strong style="color: #71717A; display: block; margin-top: 15px;">${t.message}</strong>
-            <div style="margin-top: 8px; padding-top: 12px; border-top: 1px dashed #3F3F46; color: #EAEAEA; white-space: pre-wrap; font-family: sans-serif; font-size: 14px; line-height: 1.6;">${form.mensaje}</div>
+            <strong style="color: #1E3A8A; display: block; margin-top: 15px; border-top: 1px dashed #CBD5E1; padding-top: 12px;">${t.message}</strong>
+            <div style="margin-top: 6px; color: #334155; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${form.mensaje}</div>
           </div>
 
-          <div style="margin-top: 45px; padding-top: 25px; border-top: 1px solid #27272A; text-align: center;">
-            <p style="margin: 0; font-size: 10px; color: #71717A; text-transform: uppercase; letter-spacing: 2px;">${t.footer}</p>
+          <div style="margin-top: 40px; padding-top: 25px; border-top: 1px solid #E2E8F0; text-align: center;">
+            <p style="margin: 0; font-size: 11px; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600;">${t.footer}</p>
           </div>
         </div>
       </div>
@@ -88,31 +94,25 @@ export async function processContact(payload: ContactPayload) {
     }
 
     try {
-      console.log(`[Contact] Enviando confirmación al cliente: ${form.correo}`);
-      const clientRes = await resend.emails.send({
+      await resend.emails.send({
         from: senderEmail,
         to: form.correo,
         subject: t.subjectClient,
         html: emailBody,
       });
-      if (clientRes.error) console.error("❌ Error Resend (Cliente):", clientRes.error);
-      else console.log("✅ Correo cliente enviado exitosamente.");
     } catch (e) {
-      console.error("❌ Excepción enviando correo a cliente:", e);
+      console.error("❌ Error enviando correo al cliente:", e);
     }
 
     try {
-      console.log(`[Contact] Enviando alerta al admin: ${adminEmail}`);
-      const adminRes = await resend.emails.send({
+      await resend.emails.send({
         from: senderEmail,
         to: adminEmail,
         subject: t.subjectAdmin,
-        html: `<div style="background-color: #000000; padding: 30px;">${emailBody}</div>`,
+        html: `<div style="background-color: #F1F5F9; padding: 30px;">${emailBody}</div>`,
       });
-      if (adminRes.error) console.error("❌ Error Resend (Admin):", adminRes.error);
-      else console.log("✅ Correo admin enviado exitosamente.");
     } catch (e) {
-      console.error("❌ Excepción enviando correo a admin:", e);
+      console.error("❌ Error enviando notificación al admin:", e);
     }
 
     return { success: true };

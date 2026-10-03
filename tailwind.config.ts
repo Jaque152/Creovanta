@@ -11,22 +11,22 @@ export default {
     extend: {
       fontFamily: {
         sans: ['var(--font-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        display: ['var(--font-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'], // Unificamos para look tech
+        display: ['var(--font-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'], 
         mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
       },
       colors: {
         clay: {
-          DEFAULT: '#00E5FF', // Cyan Eléctrico
-          deep: '#0055FF',    // Azul Profundo
+          DEFAULT: '#F43F5E', // Rose/Coral
+          deep: '#BE123C',    // Deep Rose
         },
-        ochre: '#B026FF',     // Púrpura Neón
+        ochre: '#8B5CF6',     // Púrpura Creativo
         ink: {
-          DEFAULT: '#0A0F1C', // Navy Oscuro
-          2: '#1A233A',       // Navy Claro (Paneles)
+          DEFAULT: '#0F172A', // Slate 900
+          2: '#1E293B',       // Slate 800
         },
         cream: {
-          DEFAULT: '#F0F4F8', // Gris Tech
-          paper: '#FFFFFF',   // Blanco puro
+          DEFAULT: '#F8FAFC', 
+          paper: '#FFFFFF',   
         },
         sand: {
           DEFAULT: '#E2E8F0',

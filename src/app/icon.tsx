@@ -26,24 +26,24 @@ export default function Icon() {
           style={{
             width: 50,
             height: 50,
-            backgroundColor: '#00E5FF', // bg-clay (Cyan)
-            borderRadius: '12px',
+            backgroundColor: '#F43F5E', // bg-clay (Coral Vibrante para Marketing)
+            borderRadius: '16px', // Curvas más suaves
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             position: 'relative',
-            boxShadow: '0 3px 0 0 #0055FF', // shadow de clay-deep
+            boxShadow: '0 4px 15px rgba(244, 63, 94, 0.4)', // Sombra difuminada
           }}
         >
           <div
             style={{
-              color: '#0A0F1C', // text-ink
+              color: '#FFFFFF', // Texto en blanco para alto contraste
               fontSize: 34,
               fontWeight: 900,
               fontFamily: 'sans-serif',
             }}
           >
-            D
+            C
           </div>
           <div
             style={{
@@ -52,9 +52,9 @@ export default function Icon() {
               right: -4,
               width: 18,
               height: 18,
-              backgroundColor: '#B026FF', // bg-ochre (Neon Purple)
-              borderRadius: '4px',
-              border: '2px solid #FFFFFF',
+              backgroundColor: '#8B5CF6', // bg-ochre (Púrpura Creativo)
+              borderRadius: '6px',
+              border: '2px solid #0F172A', // Borde oscuro para resaltar
             }}
           />
         </div>

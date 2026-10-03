@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { toast } from "sonner";
-import { ChevronsRight } from "lucide-react";
+import { ChevronsRight, ShieldCheck } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 import { useCart } from "@/lib/cart-context";
 import { ProductPlan } from "@/lib/products";
@@ -50,7 +50,8 @@ export function PagoPersonalizadoClient() {
       priceMXN: parseFloat(form.monto),
       taxIncluded: false,
       currency: "MXN + IVA",
-      // Imagen actualizada a una temática de software/código
+      sku: "INN-CUSTOM",
+      category: "Personalizado",
       imageUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80", 
       es: {
         name: `${form.referencia}`,
@@ -72,100 +73,102 @@ export function PagoPersonalizadoClient() {
   };
 
   return (
-    <section className="relative isolate min-h-[calc(100vh-68px)] bg-ink py-16 sm:py-24 border-b border-clay/20 overflow-hidden">
-      {/* Malla tecnológica de fondo */}
-      <div aria-hidden className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#00E5FF0A_1px,transparent_1px),linear-gradient(to_bottom,#00E5FF0A_1px,transparent_1px)] bg-[size:40px_40px]"></div>
-      <div className="absolute top-1/4 right-0 h-96 w-96 rounded-full bg-ochre/10 blur-[120px] pointer-events-none" />
+    <section className="relative isolate min-h-[calc(100vh-68px)] bg-[#F8FAFC] py-28 overflow-hidden">
+      <div className="absolute top-0 right-0 h-[500px] w-[500px] rounded-full bg-blue-500/10 blur-[120px] pointer-events-none" />
 
-      <div className="mx-auto grid max-w-[1200px] gap-12 container-px lg:grid-cols-[1fr_1.2fr] lg:items-center lg:gap-20">
+      <div className="mx-auto grid max-w-[1300px] gap-16 container-px lg:grid-cols-[1fr_1.2fr] lg:items-center">
         
-        {/* LADO IZQUIERDO: Títulos */}
-        <div>
-          <h1 className="display text-5xl font-bold uppercase leading-[1.05] tracking-tight text-cream-paper sm:text-[5.5rem]">
+        <div className="space-y-6">
+          <div className="inline-flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-50 px-4 py-1.5 font-mono text-xs font-bold uppercase tracking-widest text-[#1E3A8A] shadow-sm">
+            <ShieldCheck className="h-4 w-4" /> Secure Portal
+          </div>
+          <h1 className="display text-5xl font-black uppercase tracking-tight text-slate-900 sm:text-7xl leading-[1.02]">
             {t.customPayment.title1}
-            <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-clay to-ochre">{t.customPayment.title2}</span>
+            <span className="text-[#1E3A8A] block mt-2">{t.customPayment.title2}</span>
           </h1>
-          <p className="mt-8 max-w-sm text-lg leading-relaxed text-cream-paper/70 font-mono text-sm">
+          <p className="text-lg leading-relaxed text-slate-600 font-medium max-w-md">
             {t.customPayment.desc}
           </p>
         </div>
 
-        {/* LADO DERECHO: Formulario (Tech Mode) */}
-        <div className="rounded-xl border border-clay/20 bg-ink-2 p-7 shadow-[0_0_40px_rgba(0,229,255,0.05)] sm:p-12 relative">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-clay to-ochre rounded-t-xl" />
+        <div className="rounded-[2.5rem] border border-slate-200/80 bg-white p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#1E3A8A] via-[#3730A3] to-[#4F46E5]" />
           
-          <form onSubmit={handleSubmit} noValidate className="space-y-7">
-            <div className="grid gap-7 sm:grid-cols-2">
+          <form onSubmit={handleSubmit} noValidate className="space-y-6">
+            <div className="grid gap-6 sm:grid-cols-2">
               <div>
-                <label className="mb-2.5 block ml-1 font-mono text-[0.66rem] uppercase tracking-[0.16em] text-clay">
+                <label className="mb-2 block font-mono text-xs uppercase tracking-wider text-slate-700 font-bold">
                   {t.customPayment.nameLabel}
                 </label>
                 <input
                   type="text"
                   value={form.nombre}
                   onChange={(e) => update("nombre", e.target.value)}
-                  className="h-12 w-full rounded-md border border-clay/30 bg-ink px-4 text-cream-paper outline-none transition-all focus:border-clay focus:ring-1 focus:ring-clay"
+                  placeholder="Tu nombre o empresa"
+                  className="h-14 w-full rounded-2xl border border-slate-200 bg-slate-50 px-5 text-slate-900 outline-none transition-all focus:border-[#1E3A8A] focus:bg-white focus:ring-4 focus:ring-blue-900/15 font-medium"
                 />
-                {errors.nombre && <p className="mt-2 ml-1 font-mono text-[0.6rem] text-destructive uppercase tracking-wide">{errors.nombre}</p>}
+                {errors.nombre && <p className="mt-1.5 ml-1 font-mono text-[0.65rem] text-red-500 uppercase tracking-wide font-bold">{errors.nombre}</p>}
               </div>
 
               <div>
-                <label className="mb-2.5 block ml-1 font-mono text-[0.66rem] uppercase tracking-[0.16em] text-clay">
+                <label className="mb-2 block font-mono text-xs uppercase tracking-wider text-slate-700 font-bold">
                   {t.customPayment.emailLabel}
                 </label>
                 <input
                   type="email"
                   value={form.correo}
                   onChange={(e) => update("correo", e.target.value)}
-                  className="h-12 w-full rounded-md border border-clay/30 bg-ink px-4 text-cream-paper outline-none transition-all focus:border-clay focus:ring-1 focus:ring-clay"
+                  placeholder="contacto@empresa.com"
+                  className="h-14 w-full rounded-2xl border border-slate-200 bg-slate-50 px-5 text-slate-900 outline-none transition-all focus:border-[#1E3A8A] focus:bg-white focus:ring-4 focus:ring-blue-900/15 font-medium"
                 />
-                {errors.correo && <p className="mt-2 ml-1 font-mono text-[0.6rem] text-destructive uppercase tracking-wide">{errors.correo}</p>}
+                {errors.correo && <p className="mt-1.5 ml-1 font-mono text-[0.65rem] text-red-500 uppercase tracking-wide font-bold">{errors.correo}</p>}
               </div>
             </div>
 
             <div>
-              <label className="mb-2.5 block ml-1 font-mono text-[0.66rem] uppercase tracking-[0.16em] text-clay">
+              <label className="mb-2 block font-mono text-xs uppercase tracking-wider text-slate-700 font-bold">
                 {t.customPayment.refLabel}
               </label>
               <input
                 type="text"
                 value={form.referencia}
                 onChange={(e) => update("referencia", e.target.value)}
-                className="h-12 w-full rounded-md border border-clay/30 bg-ink px-4 text-cream-paper outline-none transition-all focus:border-clay focus:ring-1 focus:ring-clay"
+                placeholder="Ej. Desarrollo de Plataforma Web Q3"
+                className="h-14 w-full rounded-2xl border border-slate-200 bg-slate-50 px-5 text-slate-900 outline-none transition-all focus:border-[#1E3A8A] focus:bg-white focus:ring-4 focus:ring-blue-900/15 font-medium"
               />
-              {errors.referencia && <p className="mt-2 ml-1 font-mono text-[0.6rem] text-destructive uppercase tracking-wide">{errors.referencia}</p>}
+              {errors.referencia && <p className="mt-1.5 ml-1 font-mono text-[0.65rem] text-red-500 uppercase tracking-wide font-bold">{errors.referencia}</p>}
             </div>
 
             <div>
-              <label className="mb-2.5 block ml-1 font-mono text-[0.66rem] uppercase tracking-[0.16em] text-clay">
+              <label className="mb-2 block font-mono text-xs uppercase tracking-wider text-slate-700 font-bold">
                 {t.customPayment.amountLabel}
               </label>
               <div className="relative">
-                <span className="absolute left-4 top-1/2 -translate-y-1/2 font-mono text-clay/50">$</span>
+                <span className="absolute left-5 top-1/2 -translate-y-1/2 font-mono text-xl text-[#1E3A8A] font-bold">$</span>
                 <input
                   type="number"
                   step="0.01"
                   min="1"
                   value={form.monto}
                   onChange={(e) => update("monto", e.target.value)}
-                  className="h-14 w-full rounded-md border border-clay/30 bg-ink pl-8 pr-4 font-mono text-xl text-cream-paper outline-none transition-all focus:border-clay focus:ring-1 focus:ring-clay"
+                  placeholder="0.00"
+                  className="h-16 w-full rounded-2xl border border-slate-200 bg-slate-50 pl-10 pr-5 font-mono text-2xl font-black text-slate-900 outline-none transition-all focus:border-[#1E3A8A] focus:bg-white focus:ring-4 focus:ring-blue-900/15"
                 />
               </div>
-              {errors.monto && <p className="mt-2 ml-1 font-mono text-[0.6rem] text-destructive uppercase tracking-wide">{errors.monto}</p>}
+              {errors.monto && <p className="mt-1.5 ml-1 font-mono text-[0.65rem] text-red-500 uppercase tracking-wide font-bold">{errors.monto}</p>}
             </div>
 
-            <div className="pt-4 flex justify-center">
+            <div className="pt-4">
               <button
                 type="submit"
-                className="group flex h-12 w-full sm:w-auto items-center justify-center gap-2 rounded-md bg-clay px-12 font-sans text-sm font-bold tracking-widest text-ink transition-all hover:bg-cream-paper shadow-[0_0_20px_rgba(0,229,255,0.3)]"
+                className="group flex h-16 w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-[#1E3A8A] to-[#4F46E5] px-8 font-sans text-base font-bold tracking-wider text-white transition-all hover:opacity-95 shadow-xl shadow-blue-900/20 hover:scale-[1.01]"
               >
                 {t.customPayment.button}
                 <ChevronsRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </button>
             </div>
 
-            <div className="mt-8 text-center font-mono text-[0.64rem] uppercase tracking-[0.14em] text-cream-paper/40">
+            <div className="mt-6 text-center font-mono text-[0.65rem] uppercase tracking-widest text-slate-400 space-y-1 font-medium">
               <p>{t.customPayment.note1}</p>
               <p>{t.customPayment.note2}</p>
             </div>

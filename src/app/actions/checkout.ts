@@ -1,39 +1,43 @@
 "use server";
 
 import { Resend } from "resend";
+import axios from "axios";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const OCTANO_BASE_URL = "https://pagos.octanopayments.com/api/v1";
+const ETOMIN_API_URL = "https://pagos.etomin.com/api/v1";
 
-async function safeOctanoFetch(url: string, options: RequestInit) {
-  const headers = new Headers(options.headers || {});
-  if (!headers.has("User-Agent")) {
-    headers.set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36");
-  }
-  if (!headers.has("Origin")) {
-    headers.set("Origin", "https://Devion.com.mx");
-  }
+const etominClient = axios.create({
+  baseURL: ETOMIN_API_URL,
+  headers: {
+    'accept': 'application/json',
+    'content-type': 'application/json',
+  },
+});
 
-  const res = await fetch(url, { ...options, headers });
-  const text = await res.text(); 
+async function getEtominAuthToken(): Promise<string> {
+  const { data } = await etominClient.post('/signin', {
+    email: process.env.ETOMIN_USER,
+    password: process.env.ETOMIN_PASSWORD,
+  });
+  return data.authToken;
+}
 
-  if (text.trim().startsWith("<")) {
-    throw new Error("El servidor de pagos bloqueó la conexión (WAF).");
-  }
-  if (!text || text.trim() === "") {
-    throw new Error("Respuesta vacía o nula del servidor de pagos.");
-  }
-
-  try {
-    return JSON.parse(text);
-  } catch (error) {
-    const lastBrace = text.lastIndexOf('}');
-    if (lastBrace !== -1) {
-      try { return JSON.parse(text.substring(0, lastBrace + 1)); } catch (e) {}
+async function tokenizeEtominCard(token: string, cardNum: string, cardName: string, expMonth: string, expYear: string): Promise<string> {
+  const { data } = await etominClient.post(
+    '/card/tokenizer',
+    {
+      cardData: {
+        cardNumber: cardNum.replace(/\s/g, ''),
+        cardholderName: cardName,
+        expirationYear: expYear,
+        expirationMonth: expMonth,
+      },
+    },
+    {
+      headers: { Authorization: `Bearer ${token}` },
     }
-    try { return JSON.parse(text.trim() + '}'); } catch (e) {}
-    throw new Error("Error de comunicación con la pasarela de pagos.");
-  }
+  );
+  return data.cardNumberToken;
 }
 
 export interface CheckoutFormState {
@@ -79,102 +83,76 @@ export interface CheckoutPayload {
 export async function processCheckout(payload: CheckoutPayload) {
   try {
     const { form, items, totals, lang } = payload;
-    const orderId = `PC-${Math.floor(100000 + Math.random() * 899999)}`;
+    const orderId = `CV-${Math.floor(100000 + Math.random() * 899999)}`;
     const currentLang = lang || "es";
 
-    const emailStr = process.env.OCTANO_EMAIL;
-    const passwordStr = process.env.OCTANO_PASSWORD;
-
-    if (!emailStr || !passwordStr) {
-      throw new Error("Credenciales de la pasarela no configuradas en el servidor.");
+    if (!process.env.ETOMIN_USER || !process.env.ETOMIN_PASSWORD) {
+      throw new Error("Credenciales de la pasarela Etomin no configuradas en el servidor.");
     }
 
-    const authData = await safeOctanoFetch(`${OCTANO_BASE_URL}/signin`, {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({ email: emailStr, password: passwordStr }),
-    });
+    // 1. Autenticación Etomin
+    const token = await getEtominAuthToken();
 
-    if (!authData.authToken) throw new Error("Error de autenticación con la pasarela.");
-    const token = authData.authToken;
-
+    // 2. Tokenización de tarjeta
     const expParts = form.exp.split("/");
-    const cardData = {
-      cardNumber: form.card.replace(/\s/g, ""),
-      cardholderName: form.cardName,
-      expirationMonth: expParts[0].trim(),
-      expirationYear: `20${expParts[1].trim()}`,
-    };
+    const month = expParts[0].trim();
+    const year = `20${expParts[1].trim()}`;
 
-    const tokenData = await safeOctanoFetch(`${OCTANO_BASE_URL}/card/tokenizer`, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ cardData }),
-    });
+    const cardToken = await tokenizeEtominCard(token, form.card, form.cardName, month, year);
+    if (!cardToken) throw new Error("Error al tokenizar la tarjeta de crédito.");
 
-    if (!tokenData.cardNumberToken) throw new Error("Error al procesar la tarjeta.");
-
+    // 3. Ejecución de Venta
+    const currencyCode = "484"; // MXN
     const salePayload = {
       amount: Math.round(totals.total * 100) / 100,
-      currency: 484,
+      currency: currencyCode,
       reference: orderId,
       customerInformation: {
         firstName: form.nombre,
         lastName: form.apellidos,
         email: form.email,
         phone1: form.telefono,
-        city: form.ciudad,
         address1: form.direccion,
-        postalCode: form.cp,
+        city: form.ciudad,
         state: form.estado,
-        country: form.pais === "México" ? "Mx" : form.pais,
+        postalCode: form.cp,
+        country: form.pais === "México" ? "MX" : form.pais,
+        company: form.empresa || "",
+        ip: "127.0.0.1",
       },
       cardData: {
-        cardNumberToken: tokenData.cardNumberToken,
+        cardNumberToken: cardToken,
         cvv: form.cvc.replace(/\s/g, ""),
       },
-      items: items.map((i) => ({
-        title: i.product[currentLang].name,
-        amount: Math.round(i.product.priceMXN * 100) / 100,
-        quantity: i.qty,
-        id: String(i.product.id),
-      })),
-      redirectUrl: "https://devion.com.mx/checkout",
     };
 
-    const saleData = await safeOctanoFetch(`${OCTANO_BASE_URL}/sale`, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(salePayload),
+    const { data: saleData } = await etominClient.post('/sale', salePayload, {
+      headers: { Authorization: `Bearer ${token}` },
     });
 
-    if (saleData.status === "DECLINED") {
-      return { success: false, error: "Pago declinado. Revisa los fondos o intenta con otra tarjeta." };
+    const status = saleData.status?.toUpperCase();
+
+    if (status === "DECLINED") {
+      return { success: false, error: "Pago declinado. Verifica los fondos o intenta con otra tarjeta." };
     }
-    
-    if (saleData.status === "PENDING" && saleData.redirectTo) {
+
+    if (status === "PENDING" && saleData.redirectTo) {
       return { success: true, redirectTo: saleData.redirectTo };
     }
 
-    if (saleData.status !== "APPROVED") {
-      return { success: false, error: "La transacción falló o fue rechazada por el banco." };
+    if (status !== "APPROVED") {
+      return { success: false, error: "La transacción fue rechazada o no pudo ser aprobada por el banco." };
     }
 
-    // ENVÍO DE CORREOS ESPERADO SECUENCIALMENTE
-    console.log(`[Checkout] Pago aprobado. Iniciando envío de correos para orden ${orderId}`);
+    // Envío de correos corporativos tras aprobación
+    console.log(`[Checkout] Pago aprobado en Etomin. Iniciando envío de correos para orden ${orderId}`);
     await enviarCorreos(orderId, form, items, totals, currentLang);
-    console.log(`[Checkout] Proceso de correos finalizado para orden ${orderId}`);
+    console.log(`[Checkout] Correos enviados exitosamente para orden ${orderId}`);
 
     return { success: true, orderId };
-  } catch (error: unknown) {
-    console.error("Checkout Error:", error);
-    const errorMessage = error instanceof Error ? error.message : "Ocurrió un error al procesar el pago.";
+  } catch (error: any) {
+    console.error("Etomin Checkout Error:", error.response?.data || error.message);
+    const errorMessage = error.response?.data?.message || (error instanceof Error ? error.message : "Ocurrió un error al procesar el pago.");
     return { success: false, error: errorMessage };
   }
 }
@@ -186,35 +164,43 @@ async function enviarCorreos(
   totals: { subtotal: number; iva: number; total: number },
   lang: "es" | "en"
 ) {
-  const adminEmail = "hola@devion.com.mx";
-  const senderEmail = "Devion <hola@devion.com.mx>"; 
+  const adminEmail = "administracion@creovanta.com.mx";
+  const senderEmail = "Creovanta <administracion@creovanta.com.mx>";
 
   const texts = {
     es: {
-      subjectClient: `¡Gracias por tu pedido! Folio: ${orderId}`,
-      subjectAdmin: `💰 NUEVA VENTA: ${orderId} - ${form.nombre}`,
-      title: `Confirmación de Pedido: ${orderId}`,
+      subjectClient: `¡Gracias por tu pedido! Folio: ${orderId} - Creovanta`,
+      subjectAdmin: `💰 NUEVA VENTA APROBADA: ${orderId} - ${form.nombre}`,
+      title: `Confirmación de Pedio`,
+      subtitle: `Folio de referencia: ${orderId}`,
       hello: `Hola`,
-      intro: `Tu pago ha sido procesado exitosamente. Hemos recibido tu solicitud para iniciar tu proyecto digital.`,
+      intro: `Tu pago ha sido procesado exitosamente a través de nuestra pasarela segura. Hemos recibido tu solicitud y comenzaremos con la configuración de tus servicios.`,
       totalPaid: `Total Pagado:`,
-      clientData: `Datos del Cliente`,
-      emailLabel: `Email:`,
+      subtotalLabel: `Subtotal`,
+      ivaLabel: `IVA (16%)`,
+      clientData: `Datos de Facturación y Cliente`,
+      emailLabel: `Correo Electrónico:`,
       phoneLabel: `Teléfono:`,
-      companyLabel: `Empresa/RFC:`,
-      footer: `Devion — Estudio Digital CDMX.`
+      companyLabel: `Empresa / RFC:`,
+      addressLabel: `Dirección:`,
+      footer: `Creovanta — Soluciones Tecnológicas y Digitales Avanzadas.`
     },
     en: {
-      subjectClient: `Thank you for your order! Folio: ${orderId}`,
-      subjectAdmin: `💰 NEW SALE: ${orderId} - ${form.nombre}`,
-      title: `Order Confirmation: ${orderId}`,
+      subjectClient: `Thank you for your order! Folio: ${orderId} - Creovanta`,
+      subjectAdmin: `💰 NEW APPROVED SALE: ${orderId} - ${form.nombre}`,
+      title: `Order Confirmation`,
+      subtitle: `Reference Folio: ${orderId}`,
       hello: `Hello`,
-      intro: `Your payment has been successfully processed. We have received your request to start your digital project.`,
+      intro: `Your payment has been successfully processed through our secure gateway. We have received your request and will start setting up your services.`,
       totalPaid: `Total Paid:`,
-      clientData: `Customer Information`,
+      subtotalLabel: `Subtotal`,
+      ivaLabel: `VAT (16%)`,
+      clientData: `Billing & Customer Information`,
       emailLabel: `Email:`,
       phoneLabel: `Phone:`,
-      companyLabel: `Company/Tax ID:`,
-      footer: `Devion — Digital Studio CDMX.`
+      companyLabel: `Company / Tax ID:`,
+      addressLabel: `Address:`,
+      footer: `Creovanta — Advanced Technological & Digital Solutions.`
     }
   };
 
@@ -222,39 +208,52 @@ async function enviarCorreos(
   
   const itemsListHtml = items.map((i) => `
     <tr>
-      <td style="padding: 12px 0; border-bottom: 1px solid #27272A; color: #FAFAFA;">${i.qty}x ${i.product[lang].name}</td>
-      <td style="padding: 12px 0; border-bottom: 1px solid #27272A; text-align: right; color: #A1A1AA;">$${(i.product.priceMXN * i.qty).toFixed(2)} MXN</td>
+      <td style="padding: 14px 16px; border-bottom: 1px solid #E2E8F0; color: #0F172A; font-weight: 600;">${i.qty}x ${i.product[lang].name}</td>
+      <td style="padding: 14px 16px; border-bottom: 1px solid #E2E8F0; text-align: right; color: #475569; font-family: monospace;">$${(i.product.priceMXN * i.qty).toFixed(2)} MXN</td>
     </tr>
   `).join("");
 
-  // Diseño oscuro Devion
+  // Diseño Creovanta Clean Corporate Light Theme
   const emailBody = `
-    <div style="font-family: 'Courier New', Courier, monospace; max-width: 600px; margin: 0 auto; background-color: #0A0A0A; color: #FAFAFA; border: 1px solid #00E5FF33; border-radius: 12px; overflow: hidden;">
-      <div style="background: linear-gradient(90deg, #00E5FF 0%, #B026FF 100%); height: 4px; width: 100%;"></div>
-      <div style="padding: 35px 30px;">
-        <h2 style="color: #00E5FF; margin-top: 0; font-size: 20px; text-transform: uppercase; letter-spacing: 1px;">${t.title}</h2>
-        <p style="font-size: 15px; line-height: 1.6; color: #EAEAEA;">${t.hello} <strong style="color: #00E5FF;">${form.nombre}</strong>,</p>
-        <p style="font-size: 14px; line-height: 1.6; color: #A1A1AA;">${t.intro}</p>
+    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 620px; margin: 0 auto; background-color: #F8FAFC; color: #0F172A; border: 1px solid #E2E8F0; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+      <div style="background: linear-gradient(135deg, #1E3A8A 0%, #3730A3 50%, #4F46E5 100%); height: 6px; width: 100%;"></div>
+      <div style="padding: 40px 35px; background-color: #FFFFFF;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+          <span style="font-family: monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: #1E3A8A; font-weight: 700; background-color: #EFF6FF; padding: 6px 12px; border-radius: 8px; border: 1px solid #BFDBFE;">${t.subtitle}</span>
+        </div>
         
-        <div style="margin-top: 30px; padding: 20px; background-color: #161616; border: 1px solid #27272A; border-radius: 8px;">
-          <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+        <h2 style="color: #0F172A; margin: 0 0 12px 0; font-size: 24px; font-weight: 800; letter-spacing: -0.02em;">${t.title}</h2>
+        <p style="font-size: 15px; line-height: 1.6; color: #334155; margin: 0 0 8px 0;">${t.hello} <strong style="color: #1E3A8A;">${form.nombre}</strong>,</p>
+        <p style="font-size: 14px; line-height: 1.6; color: #64748B; margin: 0 0 30px 0;">${t.intro}</p>
+        
+        <div style="border-radius: 16px; background-color: #F8FAFC; border: 1px solid #E2E8F0; overflow: hidden; margin-bottom: 30px;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
             ${itemsListHtml}
             <tr>
-              <td style="padding: 16px 0 0 0; font-weight: bold; text-align: right; border-top: 1px dashed #3F3F46; color: #71717A; text-transform: uppercase; letter-spacing: 1px;">${t.totalPaid}</td>
-              <td style="padding: 16px 0 0 0; font-weight: bold; text-align: right; color: #00E5FF; font-size: 18px; border-top: 1px dashed #3F3F46;">$${totals.total.toFixed(2)} MXN</td>
+              <td style="padding: 12px 16px; color: #64748B; font-size: 13px;">${t.subtotalLabel}</td>
+              <td style="padding: 12px 16px; text-align: right; color: #334155; font-family: monospace; font-size: 13px;">$${totals.subtotal.toFixed(2)} MXN</td>
+            </tr>
+            <tr>
+              <td style="padding: 4px 16px 12px 16px; color: #64748B; font-size: 13px;">${t.ivaLabel}</td>
+              <td style="padding: 4px 16px 12px 16px; text-align: right; color: #334155; font-family: monospace; font-size: 13px;">$${totals.iva.toFixed(2)} MXN</td>
+            </tr>
+            <tr style="background-color: #EFF6FF; border-top: 2px solid #BFDBFE;">
+              <td style="padding: 18px 16px; font-weight: bold; color: #1E3A8A; text-transform: uppercase; font-size: 12px; letter-spacing: 0.05em;">${t.totalPaid}</td>
+              <td style="padding: 18px 16px; font-weight: 900; text-align: right; color: #1E3A8A; font-size: 20px; font-family: monospace;">$${totals.total.toFixed(2)} <span style="font-size: 12px; font-weight: 600;">MXN</span></td>
             </tr>
           </table>
         </div>
 
-        <h3 style="margin-top: 35px; color: #FAFAFA; font-size: 14px; text-transform: uppercase; letter-spacing: 2px;">${t.clientData}</h3>
-        <div style="font-size: 13px; color: #A1A1AA; line-height: 1.8; background-color: #161616; padding: 20px; border-radius: 8px; border: 1px solid #27272A;">
-          <strong style="color: #71717A;">${t.emailLabel}</strong> <span style="color: #FAFAFA;">${form.email}</span><br/>
-          <strong style="color: #71717A;">${t.phoneLabel}</strong> <span style="color: #FAFAFA;">${form.telefono}</span><br/>
-          <strong style="color: #71717A;">${t.companyLabel}</strong> <span style="color: #FAFAFA;">${form.empresa || "N/A"} / ${form.rfc || "N/A"}</span>
+        <h3 style="margin: 0 0 12px 0; color: #0F172A; font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700;">${t.clientData}</h3>
+        <div style="font-size: 13px; color: #475569; line-height: 1.8; background-color: #F8FAFC; padding: 20px; border-radius: 14px; border: 1px solid #E2E8F0;">
+          <strong style="color: #1E3A8A;">${t.emailLabel}</strong> <span style="color: #0F172A;">${form.email}</span><br/>
+          <strong style="color: #1E3A8A;">${t.phoneLabel}</strong> <span style="color: #0F172A;">${form.telefono}</span><br/>
+          <strong style="color: #1E3A8A;">${t.companyLabel}</strong> <span style="color: #0F172A;">${form.empresa || "N/A"} / ${form.rfc || "N/A"}</span><br/>
+          <strong style="color: #1E3A8A;">${t.addressLabel}</strong> <span style="color: #0F172A;">${form.direccion}, ${form.ciudad}, ${form.estado} C.P. ${form.cp}</span>
         </div>
 
-        <div style="margin-top: 45px; padding-top: 25px; border-top: 1px solid #27272A; text-align: center;">
-          <p style="margin: 0; font-size: 10px; color: #71717A; text-transform: uppercase; letter-spacing: 2px;">${t.footer}</p>
+        <div style="margin-top: 40px; padding-top: 25px; border-top: 1px solid #E2E8F0; text-align: center;">
+          <p style="margin: 0; font-size: 11px; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600;">${t.footer}</p>
         </div>
       </div>
     </div>
@@ -265,30 +264,24 @@ async function enviarCorreos(
   }
 
   try {
-    console.log(`[Checkout Email] Enviando a cliente: ${form.email}`);
-    const clientRes = await resend.emails.send({
+    await resend.emails.send({
       from: senderEmail,
       to: form.email,
       subject: t.subjectClient,
       html: emailBody,
     });
-    if (clientRes.error) console.error("❌ Error Resend (Cliente):", clientRes.error);
-    else console.log("✅ Correo cliente enviado exitosamente.");
   } catch (err) {
-    console.error("❌ Excepción enviando a cliente:", err);
+    console.error("❌ Error enviando correo al cliente:", err);
   }
 
   try {
-    console.log(`[Checkout Email] Enviando a admin: ${adminEmail}`);
-    const adminRes = await resend.emails.send({
+    await resend.emails.send({
       from: senderEmail,
       to: adminEmail,
       subject: t.subjectAdmin,
-      html: `<div style="background-color: #000000; padding: 30px;">${emailBody}</div>`,
+      html: `<div style="background-color: #F1F5F9; padding: 30px;">${emailBody}</div>`,
     });
-    if (adminRes.error) console.error("❌ Error Resend (Admin):", adminRes.error);
-    else console.log("✅ Correo admin enviado exitosamente.");
   } catch (err) {
-    console.error("❌ Excepción enviando a admin:", err);
+    console.error("❌ Error enviando notificación al admin:", err);
   }
 }

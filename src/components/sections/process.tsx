@@ -1,71 +1,68 @@
 "use client";
 
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/site/reveal";
 import { useLanguage } from "@/lib/language-context";
+
+// Nuevo diseño de ícono: Glassmorphism con núcleo brillante
+const PremiumIcon = () => (
+  <div className="relative mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-50 to-blue-50/50 shadow-[inset_0_1px_1px_rgba(255,255,255,1),0_4px_10px_rgba(0,0,0,0.02)] border border-slate-200 transition-transform group-hover:scale-110 group-hover:shadow-[0_10px_20px_rgba(37,99,235,0.1)]">
+    {/* Resplandor interno */}
+    <div className="absolute inset-0 rounded-2xl bg-blue-500/10 blur-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+    {/* Núcleo */}
+    <div className="relative h-6 w-6 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 shadow-sm" />
+  </div>
+);
 
 export function Process() {
   const { t } = useLanguage();
 
   return (
-    <section id="proceso" className="relative overflow-hidden bg-cream py-24 sm:py-32">
+    <section id="desarrollo" className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-[1400px] container-px">
         
-        <div className="text-center max-w-2xl mx-auto">
-          <span className="eyebrow inline-flex items-center gap-2.5 text-clay-deep">
-            <span className="h-2 w-2 rounded-sm bg-clay" />
-            {t.process.eyebrow}
-          </span>
+        {/* Header de sección */}
+        <div className="mb-20 max-w-3xl">
           <Reveal>
-            <h2 className="display mt-6 text-4xl font-bold leading-[1.1] text-ink sm:text-5xl">
-              {t.process.titlePart1}{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-clay-deep to-ochre">{t.process.titlePart2}</span>
+            <h2 className="display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl leading-tight">
+              {t.process.titlePart1}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                {t.process.titlePart2}
+              </span>
             </h2>
           </Reveal>
-          <Reveal delay={0.05}>
-            <p className="mt-6 text-pretty leading-relaxed text-ink/70">
+          <Reveal delay={0.1}>
+            <p className="mt-6 text-lg leading-relaxed text-slate-600">
               {t.process.desc}
             </p>
           </Reveal>
+          <Reveal delay={0.2}>
+             <a href="#contacto" className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-slate-900 px-8 text-sm font-bold text-white transition-all hover:bg-blue-600 hover:shadow-[0_10px_20px_rgba(37,99,235,0.2)]">
+              {t.process.ctaBtn}
+            </a>
+          </Reveal>
         </div>
 
-        {/* Tech Timeline */}
-        <div className="mt-20 relative max-w-4xl mx-auto">
-          {/* Central Line */}
-          <div className="absolute left-[28px] top-0 bottom-0 w-[2px] bg-gradient-to-b from-clay via-ochre to-transparent md:left-1/2 md:-translate-x-px" />
-          
-          <div className="space-y-12 md:space-y-0">
-            {t.process.steps.map((s, i) => (
-              <div key={s.n} className="relative pl-20 md:pl-0 md:w-1/2 md:even:ml-auto md:even:pl-16 md:odd:pr-16 md:odd:text-right md:py-8">
-                
-                {/* Timeline Node */}
-                <div className="absolute left-0 md:left-auto md:right-[-28px] md:even:left-[-28px] top-0 md:top-1/2 md:-translate-y-1/2 grid h-14 w-14 place-items-center rounded-lg border-2 border-clay bg-ink text-clay shadow-[0_0_20px_rgba(0,229,255,0.3)] z-10">
-                  <span className="font-mono text-sm font-bold">{s.n}</span>
-                </div>
-                
-                {/* Content Card */}
-                <div className="rounded-xl border border-ink/10 bg-cream-paper p-6 shadow-sm hover:border-clay/40 transition-colors">
-                  <p className="display text-xl font-bold text-ink">
+        {/* Cuadrícula de Beneficios */}
+        <div className="mt-28">
+          <Reveal>
+            <h3 className="display text-center text-3xl font-bold text-slate-900 mb-16">
+              {t.process.gridTitle}
+            </h3>
+          </Reveal>
+          <div className="grid grid-cols-2 gap-x-6 gap-y-16 sm:grid-cols-4 lg:gap-x-12">
+            {t.process.steps.map((s: any, i: number) => (
+              <Reveal key={s.n} delay={i * 0.05}>
+                <div className="group flex flex-col items-center text-center cursor-default">
+                  <PremiumIcon />
+                  <h4 className="text-[0.95rem] font-bold text-slate-800 leading-snug max-w-[160px] group-hover:text-blue-600 transition-colors">
                     {s.title}
-                  </p>
-                  <p className="mt-3 text-sm leading-relaxed text-ink/70">
-                    {s.desc}
-                  </p>
+                  </h4>
+                  {/* Pequeño separador decorativo */}
+                  <div className="mt-3 h-1 w-6 rounded-full bg-slate-200 transition-all duration-300 group-hover:w-10 group-hover:bg-blue-500" />
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
-        </div>
-
-        <div className="mt-20 flex justify-center">
-          <Button asChild className="bg-clay-deep text-white hover:bg-ink rounded-md">
-            <Link href="/servicios">
-              {t.process.ctaBtn}
-              <ArrowRight className="h-4 w-4 ml-2" />
-            </Link>
-          </Button>
         </div>
 
       </div>

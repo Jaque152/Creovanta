@@ -1,9 +1,15 @@
+// ============================================================================
+// INOVATREND MARKETING - CATALOGO DE PRODUCTOS Y PLANES (/paquetes/)
+// ============================================================================
+
 export interface ProductPlan {
   id: string;
   priceMXN: number;
   taxIncluded: boolean;
   currency: string;
   imageUrl: string;
+  sku: string;
+  category: string;
   es: {
     name: string;
     description: string;
@@ -18,631 +24,403 @@ export interface ProductPlan {
 
 export const webPlans: ProductPlan[] = [
   {
-    id: 'plan-web-restaurantes',
-    priceMXN: 19390.00,
+    id: 'conexion-inicial',
+    priceMXN: 190.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85',
+    sku: 'INN-OTFP66',
+    category: 'Fila 1',
     es: {
-      name: 'Plan Web para Restaurantes',
-      description: 'Menú digital, sistema de reservaciones, integración WhatsApp para pedidos, Google Maps, galería de imágenes.',
+      name: 'Conexión Inicial',
+      description: 'Asesoría para la selección de red social más adecuada para tu negocio y optimización inicial.',
       features: [
-        'Menú digital',
-        'Sistema de reservaciones',
-        'Integración WhatsApp para pedidos',
-        'Integración con Google Maps',
-        'Galería de imágenes'
+        'Asesoría para la selección de red social más adecuada para tu negocio (20 minutos).',
+        'Recomendación de mejores prácticas para primeros pasos.',
+        'Checklist básico para optimizar perfil inicial.'
       ]
     },
     en: {
-      name: 'Website Plan for Restaurants',
-      description: 'Digital menu, reservation system, WhatsApp integration for orders, Google Maps, image gallery.',
+      name: 'Initial Connection',
+      description: 'Consulting for selecting the most suitable social network for your business.',
       features: [
-        'Digital menu',
-        'Reservation system',
-        'WhatsApp order integration',
-        'Google Maps integration',
-        'Image gallery'
+        'Consulting for selecting the most suitable social network (20 mins).',
+        'Best practices recommendation for first steps.',
+        'Basic checklist to optimize initial profile.'
       ]
     }
   },
   {
-    id: 'plan-marca-sitio-web-profesional',
-    priceMXN: 24530.00,
+    id: 'microplantilla',
+    priceMXN: 460.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=85',
+    sku: 'INN-W24DTK',
+    category: 'Fila 1',
     es: {
-      name: 'Plan Marca + Sitio Web Profesional',
-      description: 'Diseño de logotipo profesional, 3 propuestas de diseño, paleta de colores corporativos, tipografía recomendada, sitio web hasta 3 secciones, diseño responsive, formulario de contacto, integración redes sociales.',
+      name: 'Microplantilla',
+      description: 'Entrega de 1 diseño de estructura básica para correo electrónico.',
       features: [
-        'Diseño de logotipo profesional (3 propuestas)',
-        'Paleta de colores corporativos y tipografía recomendada',
-        'Sitio web hasta 3 secciones',
-        'Diseño responsive (adaptable a móviles)',
-        'Formulario de contacto e integración de redes sociales'
+        'Entrega de 1 diseño de estructura básica para correo electrónico (sin personalización avanzada).',
+        'En formato editable para reutilización.',
+        'Incluye revisión rápida (una ronda de ajustes).'
       ]
     },
     en: {
-      name: 'Branding + Professional Website Plan',
-      description: 'Professional logo design, 3 design proposals, corporate color palette, recommended typography, website up to 3 sections, responsive design, contact form, social media integration.',
+      name: 'Microtemplate',
+      description: 'Delivery of 1 basic email structure design.',
       features: [
-        'Professional logo design (3 proposals)',
-        'Corporate color palette and recommended typography',
-        'Website up to 3 sections',
-        'Responsive design (mobile-friendly)',
-        'Contact form and social media integration'
+        'Delivery of 1 basic email structure design (without advanced customization).',
+        'In editable format for reuse.',
+        'Includes quick review (one round of adjustments).'
       ]
     }
   },
   {
-    id: 'plan-web-marketing-digital',
-    priceMXN: 21940.00,
+    id: 'paquete-0',
+    priceMXN: 800.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1200&q=85',
+    sku: 'INN-XCT4Z3',
+    category: 'Fila 2',
     es: {
-      name: 'Plan Web + Marketing Digital',
-      description: 'Sitio web profesional, configuración Google Ads, configuración Facebook Ads, instalación píxel de seguimiento, configuración Google Analytics.',
+      name: 'Paquete 0 - Red social',
+      description: 'Integración de 1 red social para potenciar tu presencia.',
       features: [
-        'Sitio web profesional',
-        'Configuración de campañas en Google Ads',
-        'Configuración de campañas en Facebook Ads',
-        'Instalación de píxel de seguimiento',
-        'Configuración de Google Analytics'
+        'Integración de 1 red social.'
       ]
     },
     en: {
-      name: 'Website + Digital Marketing Plan',
-      description: 'Professional website, Google Ads setup, Facebook Ads setup, tracking pixel installation, Google Analytics configuration.',
+      name: 'Package 0 - Social Network',
+      description: 'Integration of 1 social network.',
       features: [
-        'Professional website',
-        'Google Ads campaign setup',
-        'Facebook Ads campaign setup',
-        'Tracking pixel installation',
-        'Google Analytics configuration'
+        'Integration of 1 social network.'
       ]
     }
   },
   {
-    id: 'plan-landing-page-emprendedor',
-    priceMXN: 4250.00,
+    id: 'paquete-0-5',
+    priceMXN: 1300.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1596526131083-e8c633c948d2?auto=format&fit=crop&w=1200&q=85',
+    sku: 'INN-U3UUA6',
+    category: 'Fila 2',
     es: {
-      name: 'Plan Landing Page Emprendedor',
-      description: 'Diseño de landing page (1 página), formulario de contacto, integración redes sociales (2 máximo), entrega digital. Servicio 100% en línea.',
+      name: 'Paquete 0.5 - Mini Email Marketing',
+      description: 'Plantilla de correo personalizada y envío mensual.',
       features: [
-        'Diseño de landing page (1 página)',
-        'Formulario de contacto',
-        'Integración con redes sociales (máximo 2)',
-        'Entrega digital',
-        'Servicio 100% en línea'
+        '1 plantilla de correo electrónico personalizada (base reutilizable).',
+        'Envío de hasta 200 correos electrónicos en el mes.'
       ]
     },
     en: {
-      name: 'Entrepreneur Landing Page Plan',
-      description: 'Landing page design (1 page), contact form, social media integration (maximum 2), digital delivery. 100% online service.',
+      name: 'Package 0.5 - Mini Email Marketing',
+      description: 'Custom email template and monthly sending.',
       features: [
-        'Landing page design (1 page)',
-        'Contact form',
-        'Social media integration (2 max)',
-        'Digital delivery',
-        '100% online service'
+        '1 customized email template (reusable base).',
+        'Sending up to 200 emails in the month.'
       ]
     }
   },
   {
-    id: 'plan-web-empresarial',
-    priceMXN: 17320.00,
+    id: 'paquete-1',
+    priceMXN: 4621.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1557200134-90327ee9fafa?auto=format&fit=crop&w=1200&q=85',
+    sku: 'INN-TIQ2HJ',
+    category: 'Fila 2',
     es: {
-      name: 'Plan Web Empresarial',
-      description: 'Hasta 5 páginas, diseño UX/UI profesional, formularios avanzados, optimización SEO inicial, optimización de velocidad.',
+      name: 'Paquete 1 - Básico de Marketing por Correo Electrónico',
+      description: 'Creación de 2 plantillas de correos electrónicos personalizadas y análisis.',
       features: [
-        'Hasta 5 páginas internas',
-        'Diseño UX/UI profesional y personalizado',
-        'Formularios de contacto avanzados',
-        'Optimización SEO inicial',
-        'Optimización de velocidad de carga'
+        'Creación de 2 plantillas de correos electrónicos personalizadas.',
+        'Envío de hasta 500 correos electrónicos por mes.',
+        'Análisis básico de rendimiento (tasa de apertura, clics).'
       ]
     },
     en: {
-      name: 'Corporate Website Plan',
-      description: 'Up to 5 pages, professional UX/UI design, advanced forms, initial SEO optimization, speed optimization.',
+      name: 'Package 1 - Basic Email Marketing',
+      description: 'Creation of 2 custom email templates and analytics.',
       features: [
-        'Up to 5 internal pages',
-        'Professional custom UX/UI design',
-        'Advanced contact forms',
-        'Initial SEO optimization',
-        'Page speed loading optimization'
+        'Creation of 2 customized email templates.',
+        'Sending up to 500 emails per month.',
+        'Basic performance analysis (open rate, clicks).'
       ]
     }
   },
   {
-    id: 'plan-web-seo-inicial',
-    priceMXN: 16520.00,
+    id: 'paquete-2',
+    priceMXN: 7150.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=85',
+    sku: 'INN-RDKRCI',
+    category: 'Fila 2',
     es: {
-      name: 'Plan Web + SEO Inicial',
-      description: 'Sitio web hasta 2 páginas, investigación de palabras clave, configuración Google Search Console, SEO técnico inicial, optimización de contenido.',
+      name: 'Paquete 2 - Diseño de Sitio Web Inicial',
+      description: 'Diseño y desarrollo de un sitio web de hasta 3 páginas con SEO básico.',
       features: [
-        'Sitio web hasta 2 páginas',
-        'Investigación de palabras clave (Keyword Research)',
-        'Configuración de Google Search Console',
-        'SEO técnico inicial',
-        'Optimización de contenido'
+        'Diseño y desarrollo de un sitio web de hasta 3 páginas.',
+        'Optimización básica para motores de búsqueda (SEO).',
+        'Integración con redes sociales.'
       ]
     },
     en: {
-      name: 'Website + Initial SEO Plan',
-      description: 'Website up to 2 pages, keyword research, Google Search Console setup, initial technical SEO, content optimization.',
+      name: 'Package 2 - Initial Website Design',
+      description: 'Design and development of a website up to 3 pages with basic SEO.',
       features: [
-        'Website up to 2 pages',
-        'Keyword research',
-        'Google Search Console setup',
-        'Initial technical SEO',
-        'Content optimization'
+        'Design and development of up to 3 pages website.',
+        'Basic search engine optimization (SEO).',
+        'Social media integration.'
       ]
     }
   },
   {
-    id: 'plan-sitio-web-profesional',
-    priceMXN: 11370.00,
+    id: 'paquete-3',
+    priceMXN: 12345.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=85',
+    sku: 'INN-YG1XJD',
+    category: 'Fila 3',
     es: {
-      name: 'Plan Sitio Web Profesional',
-      description: 'Hasta 3 páginas, diseño web personalizado, optimización SEO básica, publicación del sitio en servidor del cliente.',
+      name: 'Paquete 3 - Gestión Básica de Redes Sociales',
+      description: 'Gestión en 2 perfiles con 8 publicaciones mensuales.',
       features: [
-        'Hasta 3 páginas',
-        'Diseño web personalizado',
-        'Optimización SEO básica',
-        'Publicación e instalación en servidor del cliente'
+        'Gestión y publicación en 2 perfiles de redes sociales.',
+        'Creación de 8 publicaciones mensuales.',
+        'Informes mensuales de rendimiento.'
       ]
     },
     en: {
-      name: 'Professional Website Plan',
-      description: 'Up to 3 pages, custom web design, basic SEO optimization, site publishing on client server.',
+      name: 'Package 3 - Basic Social Media Management',
+      description: 'Management across 2 profiles with 8 monthly posts.',
       features: [
-        'Up to 3 pages',
-        'Custom web design',
-        'Basic SEO optimization',
-        'Site deployment on client server'
+        'Management and posting on 2 social media profiles.',
+        'Creation of 8 monthly posts.',
+        'Monthly performance reports.'
       ]
     }
   },
   {
-    id: 'plan-tienda-en-linea-basica',
-    priceMXN: 25600.00,
+    id: 'paquete-4',
+    priceMXN: 16789.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=85',
+    sku: 'INN-0E8BNX',
+    category: 'Fila 3',
     es: {
-      name: 'Plan Tienda en Línea Básica',
-      description: 'Tienda en línea, hasta 20 productos, carrito de compras, integración con pasarelas de pago, panel administrador.',
+      name: 'Paquete 4 - Plantillas Personalizadas para Redes Sociales',
+      description: 'Diseño de 10 plantillas editables para redes sociales.',
       features: [
-        'Tienda en línea e-commerce',
-        'Carga y configuración de hasta 20 productos',
-        'Carrito de compras funcional',
-        'Integración con pasarelas de pago',
-        'Panel autoadministrable'
+        'Diseño de 10 plantillas personalizadas para publicaciones en redes sociales.',
+        'Archivos editables y exportables.'
       ]
     },
     en: {
-      name: 'Basic Online Store Plan',
-      description: 'Online store, up to 20 products, shopping cart, payment gateway integration, admin dashboard.',
+      name: 'Package 4 - Custom Social Media Templates',
+      description: 'Design of 10 editable social media templates.',
       features: [
-        'E-commerce online store',
-        'Catalog setup for up to 20 products',
-        'Functional shopping cart',
-        'Payment gateway integration',
-        'Admin dashboard'
+        'Design of 10 customized templates for social media posts.',
+        'Editable and exportable files.'
       ]
     }
   },
   {
-    id: 'plan-presencia-digital-basica',
-    priceMXN: 7420.00,
+    id: 'paquete-5',
+    priceMXN: 18223.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=85',
+    sku: 'INN-Z98GBU',
+    category: 'Fila 3',
     es: {
-      name: 'Plan Presencia Digital Básica',
-      description: 'Sitio web hasta 1 sección, diseño adaptable a dispositivos móviles, formulario de contacto, publicación del sitio en servidor del cliente.',
+      name: 'Paquete 5 - Automatización de Marketing Básica',
+      description: 'Configuración de 3 flujos de automatización y segmentación.',
       features: [
-        'Sitio web de 1 sección (One Page)',
-        'Diseño adaptable a dispositivos móviles',
-        'Formulario de contacto funcional',
-        'Publicación en el servidor del cliente'
+        'Configuración de 3 flujos de automatización de correos electrónicos.',
+        'Segmentación básica de la lista de contactos.',
+        'Análisis de rendimiento de campañas automatizadas.'
       ]
     },
     en: {
-      name: 'Basic Digital Presence Plan',
-      description: 'Website up to 1 section, mobile-responsive design, contact form, site publishing on client server.',
+      name: 'Package 5 - Basic Marketing Automation',
+      description: 'Setup of 3 automation flows and segmentation.',
       features: [
-        '1-section website (One Page)',
-        'Mobile-responsive layout',
-        'Functional contact form',
-        'Site deployment on client server'
-      ]
-    }
-  },
-  {
-    id: 'plan-web-para-profesionistas',
-    priceMXN: 12770.00,
-    taxIncluded: false,
-    currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
-    es: {
-      name: 'Plan Web para Profesionistas',
-      description: 'Sitio web de 3 secciones, blog profesional, sistema de agenda de citas, formularios de contacto.',
-      features: [
-        'Sitio web de 3 secciones',
-        'Blog profesional integrado',
-        'Sistema de agenda de citas',
-        'Formularios de contacto'
-      ]
-    },
-    en: {
-      name: 'Website Plan for Professionals',
-      description: '3-section website, professional blog, appointment scheduling system, contact forms.',
-      features: [
-        '3-section website',
-        'Integrated professional blog',
-        'Appointment booking & scheduling system',
-        'Contact forms'
+        'Configuration of 3 email automation flows.',
+        'Basic contact list segmentation.',
+        'Automated campaigns performance analysis.'
       ]
     }
   },
   {
-    id: 'plan-portal-inmobiliario',
-    priceMXN: 48820.00,
+    id: 'paquete-6',
+    priceMXN: 20567.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=85',
+    sku: 'INN-8YO0TG',
+    category: 'Fila 3',
     es: {
-      name: 'Plan Portal Inmobiliario',
-      description: 'Publicación de propiedades, buscador avanzado, integración de mapas, panel de agentes, galerías multimedia.',
-      features: ['Publicación de propiedades', 'Buscador avanzado', 'Integración de mapas', 'Panel de agentes', 'Galerías multimedia']
-    },
-    en: {
-      name: 'Real Estate Portal Plan',
-      description: 'Property listings, advanced search, map integration, agent dashboard, multimedia galleries.',
-      features: ['Property listings', 'Advanced search', 'Map integration', 'Agent dashboard', 'Multimedia galleries']
-    }
-  },
-  {
-    id: 'plan-ecommerce-avanzado',
-    priceMXN: 64680.00,
-    taxIncluded: false,
-    currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=800&q=80',
-    es: {
-      name: 'Plan Ecommerce Avanzado',
-      description: 'Tienda online hasta 100 productos, panel multiadministrador, integración logística de envíos, SEO para ecommerce, estadísticas de ventas.',
-      features: ['Tienda online hasta 100 productos', 'Panel multiadministrador', 'Integración logística de envíos', 'SEO para ecommerce', 'Estadísticas de ventas']
-    },
-    en: {
-      name: 'Advanced Ecommerce Plan',
-      description: 'Online store up to 100 products, multi-admin dashboard, shipping logistics integration, ecommerce SEO, sales statistics.',
-      features: ['Online store up to 100 products', 'Multi-admin dashboard', 'Shipping logistics integration', 'Ecommerce SEO', 'Sales statistics']
-    }
-  },
-  {
-    id: 'plan-portal-de-empleo',
-    priceMXN: 51890.00,
-    taxIncluded: false,
-    currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=800&q=80',
-    es: {
-      name: 'Plan Portal de Empleo',
-      description: 'Registro de empresas, publicación de vacantes, registro de candidatos, subida de CV, panel administrador.',
-      features: ['Registro de empresas', 'Publicación de vacantes', 'Registro de candidatos', 'Subida de CV', 'Panel administrador']
-    },
-    en: {
-      name: 'Job Portal Plan',
-      description: 'Company registration, job postings, candidate registration, CV upload, admin dashboard.',
-      features: ['Company registration', 'Job postings', 'Candidate registration', 'CV upload', 'Admin dashboard']
-    }
-  },
-  {
-    id: 'plan-ecommerce-profesional',
-    priceMXN: 41780.00,
-    taxIncluded: false,
-    currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=800&q=80',
-    es: {
-      name: 'Plan Ecommerce Profesional',
-      description: 'Tienda online hasta 60 productos, diseño personalizado, gestión de inventario, cupones de descuento, pasarelas de pago integradas.',
-      features: ['Tienda online hasta 60 productos', 'Diseño personalizado', 'Gestión de inventario', 'Cupones de descuento', 'Pasarelas de pago integradas']
-    },
-    en: {
-      name: 'Professional Ecommerce Plan',
-      description: 'Online store up to 60 products, custom design, inventory management, discount coupons, integrated payment gateways.',
-      features: ['Online store up to 60 products', 'Custom design', 'Inventory management', 'Discount coupons', 'Integrated payment gateways']
-    }
-  },
-  {
-    id: 'plan-identidad-digital-emprendedor',
-    priceMXN: 29840.00,
-    taxIncluded: false,
-    currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80',
-    es: {
-      name: 'Plan Identidad Digital Emprendedor',
-      description: 'Diseño de logotipo profesional, hasta 2 propuestas de diseño, 1 ronda de ajustes, entrega en PNG/JPG/vectorial, landing page profesional, diseño responsive, formulario de contacto, botón WhatsApp, entrega digital.',
-      features: ['Diseño de logotipo profesional', 'Hasta 2 propuestas de diseño', '1 ronda de ajustes', 'Entrega en PNG/JPG/vectorial', 'Landing page profesional', 'Diseño responsive', 'Formulario de contacto', 'Botón WhatsApp', 'Entrega digital']
-    },
-    en: {
-      name: 'Entrepreneur Digital Identity Plan',
-      description: 'Professional logo design, up to 2 design proposals, 1 revision round, delivery in PNG/JPG/vector, professional landing page, responsive design, contact form, WhatsApp button, digital delivery.',
-      features: ['Professional logo design', 'Up to 2 design proposals', '1 revision round', 'Delivery in PNG/JPG/vector', 'Professional landing page', 'Responsive design', 'Contact form', 'WhatsApp button', 'Digital delivery']
-    }
-  },
-  {
-    id: 'plan-branding-web-empresarial',
-    priceMXN: 33760.00,
-    taxIncluded: false,
-    currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80',
-    es: {
-      name: 'Plan Branding + Web Empresarial',
-      description: 'Diseño de logotipo premium, hasta 5 propuestas creativas, paleta de colores corporativos, tipografías corporativas, favicon, kit de logotipo para redes sociales, sitio web empresarial hasta 3 páginas, SEO inicial, formularios avanzados.',
-      features: ['Diseño de logotipo premium', 'Hasta 5 propuestas creativas', 'Paleta de colores corporativos y tipografías', 'Favicon y kit de logotipo para redes sociales', 'Sitio web empresarial hasta 3 páginas', 'SEO inicial y formularios avanzados']
-    },
-    en: {
-      name: 'Branding + Corporate Website Plan',
-      description: 'Premium logo design, up to 5 creative proposals, corporate color palette, corporate typography, favicon, social media logo kit, corporate website up to 3 pages, initial SEO, advanced forms.',
-      features: ['Premium logo design', 'Up to 5 creative proposals', 'Corporate color palette and typography', 'Favicon and social media logo kit', 'Corporate website up to 3 pages', 'Initial SEO and advanced forms']
-    }
-  },
-  {
-    id: 'plan-plataforma-cursos-online',
-    priceMXN: 47800.00,
-    taxIncluded: false,
-    currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=800&q=80',
-    es: {
-      name: 'Plan Plataforma de Cursos Online',
-      description: 'Plataforma LMS, registro de alumnos, videos y materiales, evaluaciones en línea.',
-      features: ['Plataforma LMS', 'Registro de alumnos', 'Videos y materiales', 'Evaluaciones en línea']
-    },
-    en: {
-      name: 'Online Course Platform Plan',
-      description: 'LMS platform, student registration, videos and materials, online assessments.',
-      features: ['LMS platform', 'Student registration', 'Videos and materials', 'Online assessments']
-    }
-  },
-  {
-    id: 'plan-web-corporativo-premium',
-    priceMXN: 28580.00,
-    taxIncluded: false,
-    currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80',
-    es: {
-      name: 'Plan Web Corporativo Premium',
-      description: 'Hasta 8 páginas, diseño corporativo personalizado, optimización SEO técnica inicial, integración con CRM, seguridad web avanzada.',
-      features: ['Hasta 8 páginas', 'Diseño corporativo personalizado', 'Optimización SEO técnica inicial', 'Integración con CRM', 'Seguridad web avanzada']
-    },
-    en: {
-      name: 'Premium Corporate Website Plan',
-      description: 'Up to 8 pages, custom corporate design, initial technical SEO optimization, CRM integration, advanced web security.',
-      features: ['Up to 8 pages', 'Custom corporate design', 'Initial technical SEO optimization', 'CRM integration', 'Advanced web security']
-    }
-  },
-  {
-    id: 'bolsa-soporte-digital',
-    priceMXN: 2600.00,
-    taxIncluded: false,
-    currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&w=800&q=80', 
-    es: {
-      name: 'Bolsa de Soporte Digital Prioritario',
-      description: 'Paquete de asistencia técnica para resolver múltiples solicitudes menores durante un periodo determinado. Ideal para empresas o emprendedores que requieren apoyo frecuente sin contratar un plan mensual.',
+      name: 'Paquete 6 - Informes y Análisis Detallados',
+      description: 'Creación de informes mensuales de rendimiento y ventas.',
       features: [
-        'Incluye hasta 5 solicitudes de soporte',
-        'Resolución de incidencias básicas',
-        'Asesoría personalizada',
-        'Atención prioritaria en horario laboral',
-        'Seguimiento hasta la conclusión de cada solicitud',
-        'Entregable: bitácora digital con las solicitudes atendidas'
+        'Creación de informes mensuales de rendimiento de campañas.',
+        'Análisis detallado de ventas y conversiones.',
+        'Recomendaciones para optimización.'
       ]
     },
     en: {
-      name: 'Priority Digital Support Package',
-      description: 'Technical assistance package to resolve multiple minor requests over a specific period. Ideal for companies or entrepreneurs requiring frequent support without a monthly plan.',
+      name: 'Package 6 - Detailed Reports and Analysis',
+      description: 'Creation of monthly performance and sales reports.',
       features: [
-        'Includes up to 5 support requests',
-        'Basic issue resolution',
-        'Personalized advisory',
-        'Priority attention during business hours',
-        'Follow-up until request completion',
-        'Deliverable: digital log of attended requests'
+        'Creation of monthly campaign performance reports.',
+        'Detailed sales and conversion analysis.',
+        'Recommendations for optimization.'
       ]
     }
   },
   {
-    id: 'soporte-tecnico-remoto',
-    priceMXN: 1890.00,
+    id: 'paquete-7',
+    priceMXN: 22890.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1533750349077-cdcd106d2032?auto=format&fit=crop&w=1200&q=85',
+    sku: 'INN-QCPEQZ',
+    category: 'Fila 4',
     es: {
-      name: 'Soporte Técnico Remoto Básico',
-      description: 'Atención remota para solucionar incidencias sencillas relacionadas con páginas web, equipos, programas, configuraciones, errores comunes o funcionamiento de servicios digitales.',
+      name: 'Paquete 7 - Gestión de Público y Segmentación',
+      description: 'Creación y gestión de segmentos de audiencia.',
       features: [
-        'Incluye hasta 2 horas de soporte',
-        'Solución de errores comunes y configuraciones',
-        'Entregable: reporte de actividades realizadas',
-        'Confirmación del funcionamiento del servicio atendido'
+        'Creación y gestión de segmentos de audiencia.',
+        'Estrategias de targeting para campañas publicitarias.',
+        'Análisis de comportamiento y recomendaciones.'
       ]
     },
     en: {
-      name: 'Basic Remote Technical Support',
-      description: 'Remote assistance to solve simple issues related to websites, equipment, programs, configurations, common errors, or the operation of digital services.',
+      name: 'Package 7 - Audience Management and Segmentation',
+      description: 'Creation and management of audience segments.',
       features: [
-        'Includes up to 2 hours of support',
-        'Resolution of common errors and configurations',
-        'Deliverable: report of activities performed',
-        'Confirmation of service operation'
+        'Creation and management of audience segments.',
+        'Targeting strategies for advertising campaigns.',
+        'Behavioral analysis and recommendations.'
       ]
     }
   },
   {
-    id: 'configuracion-inicial',
-    priceMXN: 1350.00,
+    id: 'paquete-8',
+    priceMXN: 25456.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=1200&q=85',
+    sku: 'INN-XV1J08',
+    category: 'Fila 4',
     es: {
-      name: 'Configuración Inicial de Herramientas',
-      description: 'Configuración básica de una plataforma o servicio digital, como cuentas de correo empresarial, formularios, perfiles administrativos, accesos o herramientas de productividad.',
+      name: 'Paquete 8 - Herramientas de Marketing de IA Básicas',
+      description: 'Configuración de herramientas de IA y chatbots.',
       features: [
-        'Configuración básica de plataforma digital',
-        'Creación de cuentas, formularios o perfiles',
-        'Pruebas de funcionamiento',
-        'Entregable: configuración terminada',
-        'Evidencia digital del servicio realizado'
+        'Configuración de herramientas básicas de IA para marketing.',
+        'Asesoramiento en el uso de chatbots y asistentes virtuales.',
+        'Integración con plataformas de correo electrónico y redes sociales.'
       ]
     },
     en: {
-      name: 'Initial Tools Setup',
-      description: 'Basic setup of a digital platform or service, such as business email accounts, forms, administrative profiles, access, or productivity tools.',
+      name: 'Package 8 - Basic AI Marketing Tools',
+      description: 'Setup of basic AI marketing tools and chatbots.',
       features: [
-        'Basic setup of a digital platform',
-        'Account, form, or profile creation',
-        'Functionality testing',
-        'Deliverable: completed setup',
-        'Digital evidence of the service performed'
+        'Configuration of basic AI marketing tools.',
+        'Consulting on chatbot and virtual assistant usage.',
+        'Integration with email and social media platforms.'
       ]
     }
   },
   {
-    id: 'servicio-express-dudas',
-    priceMXN: 510.00,
+    id: 'paquete-9',
+    priceMXN: 30123.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1542744094-3a312462c4d0?auto=format&fit=crop&w=1200&q=85',
+    sku: 'INN-2UWFRO',
+    category: 'Fila 4',
     es: {
-      name: 'Servicio Express de Resolución de Dudas',
-      description: 'Sesión personalizada para resolver dudas relacionadas con sitios web, herramientas digitales, administración básica, procesos en línea o plataformas. Incluye orientación práctica.',
+      name: 'Paquete 9 - Creación de Contenido Avanzada',
+      description: 'Desarrollo de 8 piezas de contenido y estrategia.',
       features: [
-        'Atención por videollamada o medios digitales',
-        'Duración de hasta 30 minutos',
-        'Orientación práctica y recomendaciones aplicables',
-        'Entregable: resumen digital con respuestas y recomendaciones',
-        'Enlaces útiles cuando aplique'
+        'Desarrollo de 8 piezas de contenido (artículos, infografías, videos cortos).',
+        'Estrategia de contenido y planificación de calendario.',
+        'Optimización de contenido para SEO.'
       ]
     },
     en: {
-      name: 'Express Doubt Resolution Service',
-      description: 'Personalized session to resolve doubts related to websites, digital tools, basic administration, online processes, or platforms. Includes practical guidance.',
+      name: 'Package 9 - Advanced Content Creation',
+      description: 'Development of 8 content pieces and strategy.',
       features: [
-        'Attention via video call or digital media',
-        'Duration up to 30 minutes',
-        'Practical guidance and applicable recommendations',
-        'Deliverable: digital summary with answers and recommendations',
-        'Useful links when applicable'
+        'Development of 8 content pieces (articles, infographics, short videos).',
+        'Content strategy and calendar planning.',
+        'Content optimization for SEO.'
       ]
     }
   },
   {
-    id: 'diagnostico-problemas',
-    priceMXN: 890.00,
+    id: 'paquete-10',
+    priceMXN: 48765.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=85',
+    sku: 'INN-7XHBYT',
+    category: 'Fila 4',
     es: {
-      name: 'Diagnóstico de Problemas Digitales',
-      description: 'Revisión de inconvenientes básicos en sitios web, correo electrónico, dominios, formularios, configuraciones sencillas o herramientas digitales. Se identifica la causa del problema.',
+      name: 'Paquete 10 - Diseño de Sitio Web Avanzado',
+      description: 'Sitio de hasta 8 páginas con e-commerce o reservas y SEO avanzado.',
       features: [
-        'Revisión de inconvenientes digitales básicos',
-        'Identificación de la causa del problema',
-        'Corrección durante la sesión (cuando es posible)',
-        'Entregable: reporte de diagnóstico',
-        'Acciones realizadas o recomendaciones para su solución'
+        'Diseño y desarrollo de un sitio web de hasta 8 páginas.',
+        'Integración con e-commerce o sistemas de reservas.',
+        'Optimización avanzada para SEO y rendimiento.'
       ]
     },
     en: {
-      name: 'Digital Problem Diagnostics',
-      description: 'Review of basic issues in websites, emails, domains, forms, simple configurations, or digital tools. The cause of the problem is identified.',
+      name: 'Package 10 - Advanced Website Design',
+      description: 'Up to 8 pages website with e-commerce or booking systems and advanced SEO.',
       features: [
-        'Review of basic digital issues',
-        'Identification of the problem cause',
-        'Correction during the session (when possible)',
-        'Deliverable: diagnostic report',
-        'Actions taken or recommendations for solution'
+        'Design and development of up to 8 pages website.',
+        'Integration with e-commerce or booking systems.',
+        'Advanced optimization for SEO and performance.'
       ]
     }
   },
   {
-    id: 'asesoria-digital-basica',
-    priceMXN: 310.00,
+    id: 'plan-personalizado',
+    priceMXN: 0.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=85',
+    sku: 'INN-AASQHF',
+    category: 'Personalizado',
     es: {
-      name: 'Asesoría Digital Básica',
-      description: 'Orientación personalizada para resolver dudas o inconvenientes sencillos relacionados con plataformas digitales, administración básica de sitios web, herramientas en línea o procesos tecnológicos.',
+      name: 'Plan Personalizado',
+      description: 'Servicio a la medida de tus necesidades.',
       features: [
-        'Atención mediante videollamada o medios digitales',
-        'Hasta 15 minutos de asesoría',
-        'Resolución de hasta 2 dudas relacionadas',
-        'Recomendaciones prácticas para su aplicación',
-        'Entregable: resumen digital con los puntos tratados'
+        'Cotización personalizada según requerimientos específicos de TI.',
+        'Configuración a la medida tras validación de pago.'
       ]
     },
     en: {
-      name: 'Basic Digital Consulting',
-      description: 'Personalized guidance to solve simple doubts or issues related to digital platforms, basic website administration, online tools, or technological processes.',
+      name: 'Custom Plan',
+      description: 'Tailored service to your specific needs.',
       features: [
-        'Attention via video call or digital media',
-        'Up to 15 minutes of consulting',
-        'Resolution of up to 2 related doubts',
-        'Practical recommendations for application',
-        'Deliverable: digital summary with discussed points'
-      ]
-    }
-  },
-  {
-    id: 'consulta-digital-rapida',
-    priceMXN: 180.00,
-    taxIncluded: false,
-    currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1512314889357-e157c22f938d?auto=format&fit=crop&w=800&q=80',
-    es: {
-      name: 'Consulta Digital Rápida',
-      description: 'Resolución de una duda puntual relacionada con herramientas digitales, plataformas en línea, sitios web o procesos básicos. Atención mediante chat o correo electrónico.',
-      features: [
-        'Atención mediante chat o correo electrónico',
-        'Resolución de 1 consulta específica',
-        'Recomendación práctica para solucionar el problema',
-        'Envío de respuesta digital en un plazo acordado',
-        'Servicio 100% en línea'
-      ]
-    },
-    en: {
-      name: 'Quick Digital Query',
-      description: 'Resolution of a specific doubt related to digital tools, online platforms, websites, or basic processes. Attention via chat or email.',
-      features: [
-        'Attention via chat or email',
-        'Resolution of 1 specific query',
-        'Practical recommendation to solve the issue',
-        'Digital response sent within agreed timeframe',
-        '100% online service'
+        'Custom quote according to specific IT requirements.',
+        'Custom configuration upon payment validation.'
       ]
     }
   }
 ];
 
-export function formatMXN(amount: number) {
+export function formatMXN(amount: number): string {
   return new Intl.NumberFormat("es-MX", {
     style: "currency",
     currency: "MXN",

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Fraunces, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import ClientBody from "./ClientBody";
-import Script from "next/script";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -24,9 +23,9 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Devion.com.mx — Estudio digital · Diseño y desarrollo web a la medida",
+  title: "Creovanta.com.mx — Agencia Creativa y Marketing Digital",
   description:
-    "Creamos páginas web, tiendas en línea y plataformas a la medida para emprendedores y empresas. Diseño profesional, entrega 100% en línea desde CDMX.",
+    "Transformamos tu presencia digital con diseño UX/UI creativo, estrategias de marketing y desarrollo web a la medida.",
 };
 
 export default function RootLayout({

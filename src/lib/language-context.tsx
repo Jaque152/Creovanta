@@ -17,8 +17,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [lang, setLangState] = useState<Language>("es");
 
   useEffect(() => {
-    // Solo accedemos a localStorage cuando el cliente ya se montó
-    const saved = localStorage.getItem("Devion_lang") as Language;
+    const saved = localStorage.getItem("Creovanta_lang") as Language;
     if (saved === "es" || saved === "en") {
       setLangState(saved);
     }
@@ -27,13 +26,12 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const setLang = (newLang: Language) => {
     setLangState(newLang);
     if (typeof window !== "undefined") {
-      localStorage.setItem("Devion_lang", newLang);
+      localStorage.setItem("Creovanta_lang", newLang);
     }
   };
 
   const t = dictionaries[lang];
 
-  // RETORNAMOS EL PROVEEDOR DIRECTAMENTE SIN BLOCAR EL SSR
   return (
     <LanguageContext.Provider value={{ lang, setLang, t }}>
       {children}

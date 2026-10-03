@@ -1,89 +1,52 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/language-context";
-
-function RotatingWord({ words }: { words: string[] }) {
-  const [i, setI] = useState(0);
-  useEffect(() => {
-    const id = setInterval(() => setI((p) => (p + 1) % words.length), 2300);
-    return () => clearInterval(id);
-  }, [words.length]);
-
-  return (
-    <span className="relative inline-flex h-[1.4em] overflow-hidden align-bottom">
-      <AnimatePresence mode="wait">
-        <motion.span
-          key={i}
-          initial={{ y: "110%" }}
-          animate={{ y: "0%" }}
-          exit={{ y: "-110%" }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-clay to-ochre"
-        >
-          {words[i]}
-        </motion.span>
-      </AnimatePresence>
-    </span>
-  );
-}
 
 export function Hero() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative isolate overflow-hidden bg-ink text-cream-paper min-h-[90vh] flex flex-col justify-center border-b border-clay/20">
-      <div aria-hidden className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#00E5FF0A_1px,transparent_1px),linear-gradient(to_bottom,#00E5FF0A_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+    <section className="relative flex min-h-[90vh] flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-[#1E3A8A] via-[#3730A3] to-[#701A75] text-center">
+      {/* Patrón de fondo geométrico sutil */}
+      <div className="absolute inset-0 z-0 opacity-10" style={{ backgroundImage: 'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
       
-      <div aria-hidden className="absolute inset-0 -z-10 flex items-center justify-center">
-        <div className="absolute h-[600px] w-[600px] rounded-full bg-clay/20 blur-[150px] mix-blend-screen" />
-        <div className="absolute right-[-10%] top-[10%] h-[400px] w-[400px] rounded-full bg-ochre/20 blur-[150px] mix-blend-screen" />
+      {/* Formas isométricas flotantes de fondo */}
+      <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
+        <motion.div 
+          animate={{ y: [-20, 20, -20] }} transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute left-[10%] top-[20%] h-64 w-64 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 [transform:rotateX(60deg)_rotateZ(-45deg)]"
+        />
+        <motion.div 
+          animate={{ y: [20, -20, 20] }} transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute right-[5%] bottom-[10%] h-80 w-80 rounded-3xl bg-[#4F46E5]/20 backdrop-blur-3xl border border-white/5 [transform:rotateX(60deg)_rotateZ(-45deg)]"
+        />
       </div>
 
-      <div className="mx-auto max-w-[1400px] container-px py-20 text-center flex flex-col items-center">
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2.5 rounded-sm border border-clay/30 bg-clay/10 px-4 py-1.5"
+      <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-6">
+        <motion.h1 
+          initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
+          className="display text-5xl font-bold leading-tight text-white sm:text-7xl drop-shadow-lg"
         >
-          <span className="h-2 w-2 animate-pulse rounded-full bg-clay shadow-[0_0_8px_#00E5FF]" />
-          <span className="eyebrow !text-[0.65rem] !tracking-[0.2em] text-clay">{t.hero.eyebrow}</span>
-        </motion.div>
+          {t.hero.titlePart1}
+          <span className="text-white">{t.hero.titlePart2}</span>
+        </motion.h1>
 
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="mt-8 flex flex-wrap items-center justify-center gap-x-3 font-mono text-sm uppercase tracking-[0.16em] text-cream-paper/70"
+        <motion.p 
+          initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.2 }}
+          className="mt-8 max-w-2xl text-lg leading-relaxed text-white/90 sm:text-xl font-medium"
         >
-          {t.hero.weCreate} <RotatingWord words={t.hero.rotatingWords} />
-        </motion.div>
+          {t.hero.deliveryText}
+        </motion.p>
 
-        <h1 className="display mt-6 font-black uppercase leading-[0.9] tracking-tighter text-cream-paper">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="block text-[clamp(2.8rem,10vw,8rem)]"
+        <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.4 }} className="mt-12">
+          <Link 
+            href="/contacto" 
+            className="inline-flex h-14 items-center justify-center rounded-full bg-[#0B1B3D] px-10 text-lg font-bold text-white transition-all hover:bg-[#152b5e] hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:-translate-y-1"
           >
-            {t.hero.titlePart1}<span className="text-transparent bg-clip-text bg-gradient-to-r from-clay to-ochre">{t.hero.titlePart2}</span>
-          </motion.span>
-        </h1>
-
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.45 }}
-          className="mt-12 max-w-2xl mx-auto"
-        >
-          <p className="text-center font-mono text-[0.8rem] leading-relaxed tracking-[0.1em] text-cream-paper/60 whitespace-pre-line">
-            {t.hero.deliveryText}
-          </p>
+            {t.hero.ctaBtn}
+          </Link>
         </motion.div>
       </div>
     </section>
