@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  distDir: "out",
+  // distDir: "out",  ← ELIMINADO
   allowedDevOrigins: ["*.preview.same-app.com"],
   images: {
     unoptimized: true,
@@ -11,26 +11,10 @@ const nextConfig = {
       "ugc.same-assets.com",
     ],
     remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "source.unsplash.com",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "ext.same-assets.com",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "ugc.same-assets.com",
-        pathname: "/**",
-      },
+      { protocol: "https", hostname: "source.unsplash.com", pathname: "/**" },
+      { protocol: "https", hostname: "images.unsplash.com", pathname: "/**" },
+      { protocol: "https", hostname: "ext.same-assets.com", pathname: "/**" },
+      { protocol: "https", hostname: "ugc.same-assets.com", pathname: "/**" },
     ],
   },
 };

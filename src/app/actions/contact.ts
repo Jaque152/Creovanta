@@ -18,6 +18,20 @@ export interface ContactPayload {
 }
 
 export async function processContact(payload: ContactPayload) {
+  console.log("🔥 [SERVER] processContact invocado");
+  console.log("🔥 [SERVER] Payload recibido:", {
+    nombre: payload?.form?.nombre,
+    correo: payload?.form?.correo,
+    telefono: payload?.form?.telefono,
+    asunto: payload?.form?.asunto,
+    mensajeLength: payload?.form?.mensaje?.length,
+    lang: payload?.lang,
+  });
+  console.log(
+    "🔥 [SERVER] RESEND_API_KEY presente:",
+    !!process.env.RESEND_API_KEY
+  );
+
   try {
     const { form, lang } = payload;
     const adminEmail = "administracion@creovanta.com.mx";
@@ -30,14 +44,15 @@ export async function processContact(payload: ContactPayload) {
         title: "¡Gracias por contactarnos!",
         subtitle: "Soporte y Atención Comercial",
         hello: "Hola",
-        intro: "Hemos recibido tu mensaje correctamente. Nuestro equipo revisará los requerimientos de tu proyecto y se pondrá en contacto contigo a la brevedad.",
+        intro:
+          "Hemos recibido tu mensaje correctamente. Nuestro equipo revisará los requerimientos de tu proyecto y se pondrá en contacto contigo a la brevedad.",
         details: "Detalles de la Solicitud:",
         name: "Nombre:",
         email: "Correo:",
         phone: "Teléfono:",
         subject: "Asunto:",
         message: "Mensaje:",
-        footer: "Creovanta — Soluciones Tecnológicas y Digitales Avanzadas."
+        footer: "Creovanta — Soluciones Tecnológicas y Digitales Avanzadas.",
       },
       en: {
         subjectClient: "We have received your message - Creovanta",
@@ -45,20 +60,20 @@ export async function processContact(payload: ContactPayload) {
         title: "Thank you for reaching out!",
         subtitle: "Support & Commercial Team",
         hello: "Hello",
-        intro: "We have successfully received your message. Our team will review your project requirements and get back to you shortly.",
+        intro:
+          "We have successfully received your message. Our team will review your project requirements and get back to you shortly.",
         details: "Request Details:",
         name: "Name:",
         email: "Email:",
         phone: "Phone:",
         subject: "Subject:",
         message: "Message:",
-        footer: "Creovanta — Advanced Technological & Digital Solutions."
-      }
+        footer: "Creovanta — Advanced Technological & Digital Solutions.",
+      },
     };
 
     const t = texts[lang] || texts["es"];
 
-    // Diseño Creovanta Clean Corporate Light Theme
     const emailBody = `
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 620px; margin: 0 auto; background-color: #F8FAFC; color: #0F172A; border: 1px solid #E2E8F0; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
         <div style="background: linear-gradient(135deg, #1E3A8A 0%, #3730A3 50%, #4F46E5 100%); height: 6px; width: 100%;"></div>
@@ -66,18 +81,18 @@ export async function processContact(payload: ContactPayload) {
           <div style="margin-bottom: 24px;">
             <span style="font-family: monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: #1E3A8A; font-weight: 700; background-color: #EFF6FF; padding: 6px 12px; border-radius: 8px; border: 1px solid #BFDBFE;">${t.subtitle}</span>
           </div>
-          
+
           <h2 style="color: #0F172A; margin: 0 0 12px 0; font-size: 24px; font-weight: 800; letter-spacing: -0.02em;">${t.title}</h2>
           <p style="font-size: 15px; line-height: 1.6; color: #334155; margin: 0 0 8px 0;">${t.hello} <strong style="color: #1E3A8A;">${form.nombre}</strong>,</p>
           <p style="font-size: 14px; line-height: 1.6; color: #64748B; margin: 0 0 30px 0;">${t.intro}</p>
-          
+
           <h3 style="margin: 0 0 12px 0; color: #0F172A; font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700;">${t.details}</h3>
           <div style="font-size: 13px; color: #475569; line-height: 1.8; background-color: #F8FAFC; padding: 20px; border-radius: 14px; border: 1px solid #E2E8F0;">
             <strong style="color: #1E3A8A;">${t.name}</strong> <span style="color: #0F172A;">${form.nombre}</span><br/>
             <strong style="color: #1E3A8A;">${t.email}</strong> <span style="color: #0F172A;">${form.correo}</span><br/>
             <strong style="color: #1E3A8A;">${t.phone}</strong> <span style="color: #0F172A;">${form.telefono || "N/A"}</span><br/>
             <strong style="color: #1E3A8A;">${t.subject}</strong> <span style="color: #0F172A;">${form.asunto || "N/A"}</span><br/>
-            
+
             <strong style="color: #1E3A8A; display: block; margin-top: 15px; border-top: 1px dashed #CBD5E1; padding-top: 12px;">${t.message}</strong>
             <div style="margin-top: 6px; color: #334155; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${form.mensaje}</div>
           </div>
@@ -90,35 +105,43 @@ export async function processContact(payload: ContactPayload) {
     `;
 
     if (!process.env.RESEND_API_KEY) {
-      console.warn("⚠️ Advertencia: RESEND_API_KEY no está configurada.");
+      console.warn("⚠️ [SERVER] RESEND_API_KEY no está configurada.");
     }
 
+    // Correo al cliente
     try {
-      await resend.emails.send({
+      console.log("📧 [SERVER] Enviando correo al cliente:", form.correo);
+      const clientResult = await resend.emails.send({
         from: senderEmail,
         to: form.correo,
         subject: t.subjectClient,
         html: emailBody,
       });
+      console.log("✅ [SERVER] Resend (cliente) respondió:", clientResult);
     } catch (e) {
-      console.error("❌ Error enviando correo al cliente:", e);
+      console.error("❌ [SERVER] Error enviando correo al cliente:", e);
     }
 
+    // Correo al admin
     try {
-      await resend.emails.send({
+      console.log("📧 [SERVER] Enviando correo al admin:", adminEmail);
+      const adminResult = await resend.emails.send({
         from: senderEmail,
         to: adminEmail,
         subject: t.subjectAdmin,
         html: `<div style="background-color: #F1F5F9; padding: 30px;">${emailBody}</div>`,
       });
+      console.log("✅ [SERVER] Resend (admin) respondió:", adminResult);
     } catch (e) {
-      console.error("❌ Error enviando notificación al admin:", e);
+      console.error("❌ [SERVER] Error enviando notificación al admin:", e);
     }
 
+    console.log("✅ [SERVER] processContact terminado con éxito");
     return { success: true };
   } catch (error: unknown) {
-    console.error("❌ Error general en processContact:", error);
-    const errorMessage = error instanceof Error ? error.message : "Ocurrió un error desconocido";
+    console.error("❌ [SERVER] Error general en processContact:", error);
+    const errorMessage =
+      error instanceof Error ? error.message : "Ocurrió un error desconocido";
     return { success: false, error: errorMessage };
   }
 }
