@@ -7,205 +7,177 @@ export default function DevolucionesPage() {
 
   const content = {
     es: {
-      title: "Política de Reembolsos y Cancelaciones",
-      subtitle: "SAINTBASSILS SYSTEMS, S.A.P.I. DE C.V.",
+      title: "Política de Devoluciones y Reembolso",
+      subtitle: "OPERATION MIDELTON, S.A. DE C.V.",
       date: "Fecha de última actualización: Septiembre de 2026",
-      intro: "Esta política aplica a todos los planes y proyectos digitales contratados a través de Devion.com.mx con la Empresa (“la Empresa”), incluyendo, pero no limitado a: planes de sitios web, tiendas en línea, plataformas especializadas, planes de branding + web y proyectos digitales a la medida.",
+      intro:
+        "Creovanta, nombre comercial de OPERATION MIDELTON, S.A. de C.V., con oficinas en la Ciudad de México, pone a su disposición las presentes políticas de reembolso. Estas políticas establecen las condiciones bajo las cuales los solicitantes podrán hacer acreditable y válida su solicitud de reembolso.",
       sections: [
         {
-          title: "A. Naturaleza de los servicios y consideraciones generales",
+          title: "1. Generalidades",
           body: [
-            "Los servicios que ofrece la Empresa son de carácter digital y personalizado. Cada proyecto implica dedicación de horas de análisis, diseño, desarrollo y comunicación específica con el Cliente. Por esta razón, los pagos que se realizan se destinan de forma directa al trabajo profesional que se va ejecutando."
-          ]
+            "Creovanta ofrece un beneficio de reembolso que le permite a sus solicitantes ejercerlo en un plazo no mayor a 40 días naturales, contados a partir de la fecha de contratación. Los solicitantes pueden solicitar a Creovanta el reembolso del pago de uno o varios servicios, cuando alguno de éstos, a juicio del solicitante, no satisface la necesidad por la cual originó la compra, siempre y cuando cumpla con los requisitos, términos y condiciones que en esta política se señalan.",
+          ],
         },
         {
-          title: "B. Cancelaciones antes de iniciar el proyecto",
+          title: "2. Servicios que se consideran en la Solicitud de Reembolso",
           body: [
-            "Se considera que un proyecto “no ha iniciado” cuando:",
-            "• El Cliente ha realizado el pago, pero aún no ha enviado información mínima (brief, contenidos, referencias) ni se ha agendado reunión de arranque, y",
-            "• La Empresa no ha comenzado a trabajar en propuestas, estructuras o configuraciones técnicas.",
-            "Si el Cliente solicita cancelar en esta etapa inicial, la Empresa podrá evaluar el caso y, de manera excepcional, ofrecer la devolución parcial o total del monto pagado. El porcentaje de reembolso se definirá considerando comisiones financieras, costos administrativos y cualquier trabajo preliminar realizado."
-          ]
+            "La opción de solicitar un servicio a Creovanta es aplicable única y exclusivamente en la contratación inicial de las siguientes categorías de Servicios:",
+            "1. Hosting.",
+            "2. Estrategias predictivas.",
+            "3. Optimización de campañas digitales.",
+            "4. Integración social inteligente.",
+            "5. Generación y conversión de leads.",
+            "6. Servicios publicados en la tienda en línea.",
+          ],
         },
         {
-          title: "C. Cancelaciones una vez iniciado el trabajo",
+          title: "3. Procedimiento para Solicitar un Reembolso",
           body: [
-            "Se entiende que el proyecto “ha iniciado” desde el momento en que la Empresa:",
-            "• Ha enviado primera propuesta de diseño, estructura o wireframe, o",
-            "• Ha configurado un entorno de prueba, CMS, plantilla o plataforma, o",
-            "• Ha dedicado horas de trabajo a la revisión de requisitos, arquitectura del sitio o desarrollo técnico.",
-            "Si el Cliente decide cancelar después de iniciado el trabajo, los pagos realizados se consideran no reembolsables, salvo que la Empresa, de forma discrecional, determine un reembolso parcial tomando en cuenta el porcentaje de avance efectivamente desarrollado.",
-            "En todo caso, el Cliente será informado del estado del proyecto y del valor aproximado del trabajo ya ejecutado."
-          ]
+            "Para solicitar un reembolso, el solicitante deberá seguir los siguientes pasos:",
+            "• Comunicación: Enviar una solicitud escrita al correo electrónico de contacto administracion@creovanta.com.mx, indicando claramente el motivo de la solicitud y proporcionando la información necesaria para identificar la transacción.",
+            "• Evaluación: Creovanta evaluará la solicitud y responderá en un plazo no mayor a cinco (5) días hábiles, informando al solicitante sobre la procedencia o improcedencia de la misma.",
+            "• Documentación Adicional: En caso de ser necesario, Creovanta podrá requerir documentación adicional para procesar la solicitud de reembolso.",
+            "• Aprobación: Si la solicitud es aprobada, el reembolso será procesado en un plazo no mayor a quince (15) días hábiles a partir de la fecha de aprobación.",
+          ],
         },
         {
-          title: "D. Planes estándar vs. proyectos a la medida",
+          title: "4. Opciones de Reembolso",
           body: [
-            "En planes estándar (por ejemplo: Plan Landing Page Emprendedor, Plan Presencia Digital Básica, Plan Sitio Web Profesional, Plan Tienda en Línea Básica, etc.), la Empresa podrá, en algunos casos, ofrecer reembolsos parciales si la cancelación ocurre en fases muy tempranas y el trabajo avanzado es limitado.",
-            "En proyectos a la medida o desarrollos con alto grado de personalización, los importes de anticipo suelen corresponder casi en su totalidad al tiempo de análisis y diseño inicial; por ello, como regla general, dichos anticipos no son reembolsables una vez iniciado el trabajo. Cualquier excepción será valorada caso por caso y comunicada por escrito al Cliente."
-          ]
+            "Devolución de Fondos: Reembolso mediante la devolución de los fondos o crédito en el método de pago utilizado en la tienda en línea de creovanta.com.mx única y exclusivamente por la cantidad y servicio acordado en la aprobación de reembolso.",
+            "Cupón: Reembolso mediante la expedición de un cupón, no acumulable, generado por el monto única y exclusivamente del costo del servicio del cual desea hacer valer la Garantía de Satisfacción Creovanta. Este cupón estará disponible dentro de las siguientes setenta y dos (72) horas posteriores a la confirmación de Creovanta y tendrá una vigencia de un (1) año para hacerlo efectivo en la contratación o renovación de servicios. En caso de que el o los servicios a contratar superen el monto del cupón, el solicitante deberá pagar la diferencia con el método de pago disponible para su elección.",
+          ],
         },
         {
-          title: "E. Cambios de plan o reajustes de alcance",
+          title: "5. Solicitud de Reembolso",
           body: [
-            "Si el Cliente desea cambiar de plan (por ejemplo, de un plan básico a uno superior) antes de que se haya comenzado el trabajo, el importe ya pagado puede aplicarse como saldo a favor para el nuevo plan, ajustando la diferencia de precio.",
-            "Si el cambio de plan se solicita después de iniciado el proyecto, la Empresa revisará el avance y determinará si:",
-            "• El trabajo realizado es compatible con el nuevo plan y solo requiere un ajuste de precio, o",
-            "• Se trata prácticamente de un proyecto distinto, en cuyo caso se cotizará como un nuevo servicio."
-          ]
+            "El Solicitante deberá enviar un correo electrónico a administracion@creovanta.com.mx, desde la cuenta de correo electrónico registrada en su Cuenta de Usuario, indicando el ID del Servicio del cual desea hacer valer la Garantía de Satisfacción Creovanta, así como la Opción de Reembolso elegida y/o aplicable. El Solicitante deberá expresar los motivos por los cuales desea hacer valer su Garantía de Satisfacción Creovanta, en el entendido que esta información solo será utilizada con el único fin de que Creovanta pueda mejorar la calidad de entrega de los servicios.",
+          ],
         },
         {
-          title: "F. Reembolsos por errores imputables a la Empresa",
+          title: "6. Procesamiento de la Solicitud de Reembolso",
           body: [
-            "Si, por una causa directamente atribuible a la Empresa, no fuera posible entregar el servicio contratado en los términos básicos acordados (por ejemplo, imposibilidad técnica no prevista y no imputable al Cliente), la Empresa se compromete a llegar a un acuerdo de reembolso parcial o total, considerando el trabajo aprovechable que se haya generado (diseños, estructuras, contenidos) y que el Cliente pueda utilizar.",
-            "Este tipo de casos se analizarán individualmente, con el objetivo de alcanzar una solución justa para ambas partes."
-          ]
+            "Una vez recibida la Solicitud de Reembolso, con toda la información requerida, Creovanta confirmará de manera automática la recepción de la misma y procederá a revisar en un plazo no mayor a 03 (tres) días hábiles, que la documentación e información enviada cumpla con las presentes Políticas. De confirmar que la información es completa y que reúne los requisitos para solicitar esa Política de Reembolso, Creovanta le enviará un correo de confirmación de Reembolso e inmediatamente procederá a la cancelación del o los Servicios.",
+          ],
         },
         {
-          title: "G. No hay reembolsos por factores fuera del control de la Empresa",
+          title: "7. Del Plazo para Efectuar el Reembolso",
           body: [
-            "No procederán reembolsos cuando la imposibilidad de avanzar o concluir el proyecto se deba a circunstancias ajenas a la Empresa, por ejemplo:",
-            "• Falta de entrega de información, contenidos o respuestas por parte del Cliente.",
-            "• Problemas con proveedores externos contratados directamente por el Cliente (hosting, dominios, correos, pasarelas de pago ajenas).",
-            "• Cambios de estrategia del Cliente, pérdida de interés en el proyecto, cierre de negocio u otros motivos internos del Cliente.",
-            "En estos supuestos, los pagos realizados se consideran honorarios por el tiempo y trabajo efectivamente disponibles, aunque el proyecto no llegue a publicarse."
-          ]
+            "Si la Opción de Reembolso es mediante devolución de fondos, el plazo para lo anterior es de hasta veinticinco (25) días hábiles.",
+            "Si la Opción de Reembolso es mediante Cupón, el plazo para que se le entregue éste, es de hasta cuarenta y ocho (48) horas naturales.",
+          ],
         },
         {
-          title: "H. Reembolsos parciales y forma de pago del reembolso",
+          title: "8. Restricciones",
           body: [
-            "Cuando aplique un reembolso (total o parcial), éste se realizará preferentemente utilizando el mismo medio de pago empleado por el Cliente, es decir, a través de la pasarela o agregador de pagos y la tarjeta asociada, salvo que por razones técnicas sea necesario acordar otro medio.",
-            "El tiempo que tarde en reflejarse el importe dependerá de los procesos internos de la institución bancaria y de la plataforma de cobro.",
-            "La Empresa notificará al Cliente por correo electrónico una vez que haya iniciado el proceso de reembolso."
-          ]
+            "• No es válida para los nombres de dominio.",
+            "• No es válida para las renovaciones de ningún Servicio ofrecido por Creovanta.",
+            "• No es válida en la adquisición de paquetes promocionales de servicios ofertados en conjunto.",
+            "• No es válida si el Solicitante por sí solo ha cancelado previamente el Servicio, aun y cuando se encuentre dentro del plazo de los treinta (30) días.",
+            "• La Garantía Creovanta solo podrá usarse una vez en la contratación inicial de cada categoría de Servicio por lo que, independientemente de si el Servicio tiene varias modalidades o planes, sólo podrá usarse una sola vez en cualquiera de éstos.",
+            "• La Política de Reembolso Creovanta solo aplicará para aquellos servicios contratados a partir de Mayo de 2024.",
+          ],
         },
         {
-          title: "I. Servicios complementarios y renovaciones",
+          title: "9. Validez de los Contratos de Políticas de Reembolso",
           body: [
-            "Servicios como mantenimiento mensual, campañas de anuncios, gestión de contenidos, alojamiento o renovaciones anuales (cuando sean ofrecidos por la Empresa) se cobran normalmente por periodos definidos.",
-            "Los montos pagados por periodos ya iniciados no serán reembolsables, salvo que se indique expresamente lo contrario en la oferta específica del servicio."
-          ]
+            "Las presentes políticas de reembolso se rigen por las leyes aplicables en México. Los contratos celebrados bajo estas políticas son válidos y vinculantes siempre y cuando cumplan con los requisitos establecidos por la legislación mexicana, incluyendo la veracidad de la información proporcionada por el solicitante y el cumplimiento de los términos y condiciones especificados.",
+          ],
         },
         {
-          title: "J. Procedimiento para solicitar cancelación o reembolso",
+          title: "10. Contacto",
           body: [
-            "Para solicitar una cancelación o plantear un posible reembolso, el Cliente deberá escribir a hola@devion.com.mx indicando:",
-            "• Nombre o razón social.",
-            "• Número de proyecto o referencia del plan contratado.",
-            "• Fecha de contratación y forma de pago.",
-            "• Breve explicación del motivo de la cancelación o inconformidad.",
-            "La Empresa analizará la solicitud, revisará el estado del proyecto y comunicará al Cliente, por escrito, la resolución y, en su caso, el monto y forma del reembolso que proceda, si alguno."
-          ]
+            "Para cualquier duda o consulta relacionada con las políticas de reembolso, el solicitante puede ponerse en contacto con Creovanta a través del correo electrónico administracion@creovanta.com.mx",
+          ],
         },
-        {
-          title: "K. Relación con otras políticas y marco legal",
-          body: [
-            "Esta Política de Reembolsos y Cancelaciones complementa los Términos y Condiciones de Servicio Digital y no limita los derechos que correspondan al Cliente conforme a la legislación mexicana aplicable en materia de prestación de servicios y comercio electrónico.",
-            "En caso de discrepancia entre esta Política y alguna condición particular acordada por escrito con el Cliente (por ejemplo, en una propuesta o contrato específico), prevalecerá lo que se haya pactado de manera expresa para ese proyecto."
-          ]
-        }
-      ]
+      ],
     },
     en: {
-      title: "Refunds and Cancellations Policy",
-      subtitle: "SAINTBASSILS SYSTEMS, S.A.P.I. DE C.V.",
+      title: "Refund and Cancellation Policy",
+      subtitle: "OPERATION MIDELTON, S.A. DE C.V.",
       date: "Last updated: September 2026",
-      intro: "This policy applies to all digital plans and projects contracted through Devion.com.mx with the Company (“the Company”), including, but not limited to: website plans, online stores, specialized platforms, branding + web plans, and custom digital projects.",
+      intro:
+        "Creovanta, commercial name of OPERATION MIDELTON, S.A. de C.V., with offices in Mexico City, makes this refund policy available to you. This policy establishes the conditions under which applicants may validate and exercise their refund request.",
       sections: [
         {
-          title: "A. Nature of services and general considerations",
+          title: "1. General Provisions",
           body: [
-            "The services offered by the Company are of a digital and personalized nature. Each project implies dedication of hours of analysis, design, development, and specific communication with the Client. For this reason, the payments made are directly allocated to the professional work that is being executed."
-          ]
+            "Creovanta offers a refund benefit that allows applicants to exercise it within a period no greater than 40 calendar days, counted from the date of contracting. Applicants may request from Creovanta a refund of the payment for one or several services, when any of them, in the applicant's judgment, does not satisfy the need that originated the purchase, provided that they comply with the requirements, terms, and conditions set forth in this policy.",
+          ],
         },
         {
-          title: "B. Cancellations before starting the project",
+          title: "2. Services Eligible for Refund Request",
           body: [
-            "A project is considered “not started” when:",
-            "• The Client has made the payment, but has not yet sent minimum information (brief, content, references) nor scheduled a kickoff meeting, and",
-            "• The Company has not started working on proposals, structures, or technical configurations.",
-            "If the Client requests to cancel in this initial stage, the Company will be able to evaluate the case and, exceptionally, offer a partial or total refund of the amount paid. The refund percentage will be defined considering financial commissions, administrative costs, and any preliminary work carried out."
-          ]
+            "The option to request a refund from Creovanta applies solely and exclusively to the initial contracting of the following categories of Services:",
+            "1. Hosting.",
+            "2. Predictive strategies.",
+            "3. Digital campaign optimization.",
+            "4. Smart social integration.",
+            "5. Lead generation and conversion.",
+            "6. Services published in the online store.",
+          ],
         },
         {
-          title: "C. Cancellations once the work has started",
+          title: "3. Procedure for Requesting a Refund",
           body: [
-            "It is understood that the project “has started” from the moment the Company:",
-            "• Has sent the first design proposal, structure, or wireframe, or",
-            "• Has configured a test environment, CMS, template, or platform, or",
-            "• Has dedicated work hours to reviewing requirements, site architecture, or technical development.",
-            "If the Client decides to cancel after the work has started, the payments made are considered non-refundable, unless the Company, at its discretion, determines a partial refund taking into account the percentage of progress effectively developed.",
-            "In any case, the Client will be informed of the project status and the approximate value of the work already executed."
-          ]
+            "To request a refund, the applicant must follow these steps:",
+            "• Communication: Send a written request to the contact email administracion@creovanta.com.mx, clearly stating the reason for the request and providing the information necessary to identify the transaction.",
+            "• Evaluation: Creovanta will evaluate the request and respond within a period no greater than five (5) business days, informing the applicant whether it is approved or rejected.",
+            "• Additional Documentation: If necessary, Creovanta may request additional documentation to process the refund request.",
+            "• Approval: If the request is approved, the refund will be processed within a period no greater than fifteen (15) business days from the approval date.",
+          ],
         },
         {
-          title: "D. Standard plans vs. custom projects",
+          title: "4. Refund Options",
           body: [
-            "In standard plans (e.g.: Entrepreneur Landing Page Plan, Basic Digital Presence Plan, Professional Website Plan, Basic Online Store Plan, etc.), the Company may, in some cases, offer partial refunds if the cancellation occurs in very early phases and the advanced work is limited.",
-            "In custom projects or highly customized developments, advance payments usually correspond almost entirely to the initial analysis and design time; therefore, as a general rule, such advances are non-refundable once the work has started. Any exception will be evaluated on a case-by-case basis and communicated in writing to the Client."
-          ]
+            "Fund Refund: Refund by returning the funds or crediting the payment method used in the online store creovanta.com.mx, solely and exclusively for the amount and service agreed upon in the refund approval.",
+            "Coupon: Refund by issuing a non-cumulative coupon, generated for the amount solely and exclusively of the cost of the service for which the Creovanta Satisfaction Guarantee is being invoked. This coupon will be available within seventy-two (72) hours after Creovanta's confirmation and will be valid for one (1) year to be used in the contracting or renewal of services. If the service(s) to be contracted exceed the coupon amount, the applicant must pay the difference with the payment method available for their choice.",
+          ],
         },
         {
-          title: "E. Plan changes or scope readjustments",
+          title: "5. Refund Request",
           body: [
-            "If the Client wishes to change the plan (for example, from a basic plan to a higher one) before the work has started, the amount already paid can be applied as a positive balance for the new plan, adjusting the price difference.",
-            "If the plan change is requested after the project has started, the Company will review the progress and determine if:",
-            "• The work done is compatible with the new plan and only requires a price adjustment, or",
-            "• It is practically a different project, in which case it will be quoted as a new service."
-          ]
+            "The Applicant must send an email to administracion@creovanta.com.mx, from the email account registered in their User Account, indicating the Service ID for which they wish to invoke the Creovanta Satisfaction Guarantee, as well as the chosen and/or applicable Refund Option. The Applicant must state the reasons why they wish to invoke their Creovanta Satisfaction Guarantee, with the understanding that this information will be used solely for the purpose of allowing Creovanta to improve the quality of service delivery.",
+          ],
         },
         {
-          title: "F. Refunds due to errors attributable to the Company",
+          title: "6. Processing of the Refund Request",
           body: [
-            "If, due to a cause directly attributable to the Company, it is not possible to deliver the contracted service under the agreed basic terms (for example, unforeseen technical impossibility not attributable to the Client), the Company commits to reaching a partial or total refund agreement, considering the usable work generated (designs, structures, content) that the Client can use.",
-            "These types of cases will be analyzed individually, with the aim of reaching a fair solution for both parties."
-          ]
+            "Once the Refund Request is received with all the required information, Creovanta will automatically confirm its receipt and will proceed to review, within a period no greater than 03 (three) business days, that the documentation and information sent comply with these Policies. If it is confirmed that the information is complete and meets the requirements to request this Refund Policy, Creovanta will send a refund confirmation email and will immediately proceed with the cancellation of the Service(s).",
+          ],
         },
         {
-          title: "G. No refunds for factors beyond the Company's control",
+          title: "7. Refund Processing Time",
           body: [
-            "Refunds will not proceed when the inability to advance or conclude the project is due to circumstances beyond the Company's control, for example:",
-            "• Failure to deliver information, content, or responses by the Client.",
-            "• Problems with external providers hired directly by the Client (hosting, domains, emails, third-party payment gateways).",
-            "• Client's strategy changes, loss of interest in the project, business closure, or other internal reasons of the Client.",
-            "In these cases, the payments made are considered fees for the time and work effectively available, even if the project is never published."
-          ]
+            "If the Refund Option is by fund refund, the period for this is up to twenty-five (25) business days.",
+            "If the Refund Option is by Coupon, the period for its delivery is up to forty-eight (48) natural hours.",
+          ],
         },
         {
-          title: "H. Partial refunds and refund payment method",
+          title: "8. Restrictions",
           body: [
-            "When a refund applies (total or partial), it will preferably be made using the same payment method used by the Client, that is, through the payment gateway or aggregator and the associated card, unless for technical reasons it is necessary to agree on another method.",
-            "The time it takes for the amount to reflect will depend on the internal processes of the banking institution and the collection platform.",
-            "The Company will notify the Client by email once the refund process has started."
-          ]
+            "• Not valid for domain names.",
+            "• Not valid for renewals of any Service offered by Creovanta.",
+            "• Not valid for the acquisition of promotional packages of services offered together.",
+            "• Not valid if the Applicant has previously canceled the Service on their own, even if within the thirty (30) day period.",
+            "• The Creovanta Guarantee may only be used once in the initial contracting of each Service category; therefore, regardless of whether the Service has various modalities or plans, it may only be used once in any of them.",
+            "• The Creovanta Refund Policy will only apply to services contracted as of May 2024.",
+          ],
         },
         {
-          title: "I. Complementary services and renewals",
+          title: "9. Validity of Refund Policy Contracts",
           body: [
-            "Services such as monthly maintenance, ad campaigns, content management, hosting, or annual renewals (when offered by the Company) are normally charged for defined periods.",
-            "Amounts paid for periods already started will not be refundable, unless expressly indicated otherwise in the specific service offer."
-          ]
+            "This refund policy is governed by the applicable laws in Mexico. Contracts entered into under this policy are valid and binding as long as they comply with the requirements established by Mexican legislation, including the truthfulness of the information provided by the applicant and compliance with the specified terms and conditions.",
+          ],
         },
         {
-          title: "J. Procedure to request cancellation or refund",
+          title: "10. Contact",
           body: [
-            "To request a cancellation or raise a possible refund, the Client must write to hola@devion.com.mx indicating:",
-            "• Name or business name.",
-            "• Project number or reference of the contracted plan.",
-            "• Date of contracting and payment method.",
-            "• Brief explanation of the reason for cancellation or non-conformity.",
-            "The Company will analyze the request, review the project status, and communicate to the Client, in writing, the resolution and, where appropriate, the amount and form of the refund that applies, if any."
-          ]
+            "For any questions or inquiries related to the refund policy, the applicant may contact Creovanta through the email address administracion@creovanta.com.mx",
+          ],
         },
-        {
-          title: "K. Relationship with other policies and legal framework",
-          body: [
-            "This Refunds and Cancellations Policy complements the Digital Service Terms and Conditions and does not limit the rights corresponding to the Client under the applicable Mexican legislation regarding the provision of services and electronic commerce.",
-            "In the event of a discrepancy between this Policy and any specific condition agreed in writing with the Client (for example, in a specific proposal or contract), what was expressly agreed for that project will prevail."
-          ]
-        }
-      ]
-    }
+      ],
+    },
   };
 
   const t = content[lang] || content.es;
@@ -216,8 +188,8 @@ export default function DevolucionesPage() {
         <h1 className="display text-4xl font-bold text-ink sm:text-5xl">{t.title}</h1>
         <p className="mt-2 text-lg text-ink/60">{t.subtitle}</p>
         <p className="mt-4 font-mono text-sm uppercase tracking-widest text-clay">{t.date}</p>
-        <p className="mt-8 text-[0.95rem] leading-relaxed text-ink/80 italic">{t.intro}</p>
-        
+        <p className="mt-8 text-[0.95rem] italic leading-relaxed text-ink/80">{t.intro}</p>
+
         <div className="mt-12 space-y-12">
           {t.sections.map((sec, i) => (
             <section key={i}>

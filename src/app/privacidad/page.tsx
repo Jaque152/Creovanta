@@ -7,223 +7,131 @@ export default function PrivacidadPage() {
 
   const content = {
     es: {
-      title: "Aviso de Privacidad",
+      title: "Política de Privacidad",
+      subtitle: "OPERATION MIDELTON, S.A. DE C.V.",
       date: "Fecha de última actualización: Septiembre de 2026",
+      intro:
+        "Creovanta, nombre comercial de OPERATION MIDELTON, S.A. DE C.V., con oficinas en la Ciudad de México, se compromete a cumplir con la normativa vigente de protección de datos personales, salvaguardando la integridad de los datos personales y sensibles que usted, como titular, nos proporcione.",
       sections: [
         {
-          title: "A. Identidad y domicilio del responsable",
+          title: "Finalidad del Tratamiento de Datos Personales",
           body: [
-            "SAINTBASSILS SYSTEMS, S.A.P.I. DE C.V. (en lo sucesivo, “la Empresa”), con domicilio en Boulevard Adolfo López Mateos 2165, Interior 607A, Oficina 607A-B, Piso 6, Colonia Los Alpes, Alcaldía Álvaro Obregón, C.P. 01010, Ciudad de México, es responsable del tratamiento de los datos personales que nos proporcione con motivo del uso del sitio web Devion.COM.MX y de la contratación de nuestros servicios digitales.",
-            "Para cualquier asunto relacionado con este Aviso de Privacidad, usted puede comunicarse al correo electrónico hola@devion.com.mx y al teléfono [+52] 55 9826 1186.",
-            "Este Aviso se emite en cumplimiento de la Ley Federal de Protección de Datos Personales en Posesión de los Particulares, su Reglamento y los Lineamientos del Aviso de Privacidad."
-          ]
+            "Para Creovanta el tratamiento de sus datos es necesario para proveer los servicios solicitados, informarle sobre cambios en los mismos y evaluar la calidad del servicio brindado. Para estas finalidades, requerimos los siguientes datos personales: nombre completo, datos laborales o de negocio, correo electrónico y número telefónico.",
+          ],
         },
         {
-          title: "B. Datos personales que recabamos",
+          title: "Finalidades Primarias y Necesarias",
           body: [
-            "La Empresa recaba, por medios electrónicos y/o remotos, los siguientes tipos de datos personales cuando usted navega en el sitio, solicita información o contrata alguno de nuestros planes o proyectos digitales:",
-            "• Datos de identificación: nombre completo, razón social (en su caso), RFC.",
-            "• Datos de contacto: correo electrónico, número telefónico, ciudad o localidad.",
-            "• Datos de facturación: RFC, razón social, domicilio fiscal, uso de CFDI.",
-            "• Datos de contratación: servicios o planes de interés, historial de cotizaciones, proyectos contratados, montos y fechas de pago.",
-            "• Datos de navegación: dirección IP, tipo de navegador, sistema operativo, páginas visitadas, tiempo de permanencia, cookies y tecnologías similares.",
-            "En principio, la Empresa no solicita datos personales sensibles; en caso de que, de manera excepcional, sea necesario recabar este tipo de datos, se solicitará su consentimiento expreso y por escrito en términos de la legislación aplicable."
-          ]
+            "Se le informa por este medio al Titular, que los datos personales que nos facilite en las comunicaciones serán con objeto de llevar a cabo las finalidades primarias y necesarias para la correcta ejecución de nuestra prestación de servicios, las cuales se mencionan a continuación:",
+            "• Atender, gestionar y dar seguimiento a su historial de servicio.",
+            "• Atender consultas.",
+            "• Aclaraciones de dudas.",
+            "• Gestión de pagos.",
+            "• Realizar las investigaciones necesarias para obtener el estado de su historial de compra y/o crédito.",
+            "• Registrar y actualizar los datos en sistema de administración de Creovanta.",
+            "• Generar una base de datos de los clientes para un mejor control y realización de los procesos subsecuentes de consulta.",
+          ],
         },
         {
-          title: "C. Finalidades del tratamiento",
+          title: "Precisión y Seguridad de los Datos",
           body: [
-            "Los datos personales que recabamos serán utilizados para las siguientes finalidades:",
-            "Finalidades primarias: Aquellas necesarias para la existencia, mantenimiento y cumplimiento de la relación jurídica con usted:",
-            "• Identificarlo como Cliente y registrar su solicitud de información o contratación de servicios digitales.",
-            "• Elaborar cotizaciones, propuestas y contratos de prestación de servicios.",
-            "• Gestionar la contratación, configuración y desarrollo de los planes y proyectos digitales que usted solicite (sitios web, tiendas en línea, plataformas, branding, etc.).",
-            "• Procesar pagos a través de las pasarelas autorizadas y emitir los comprobantes fiscales correspondientes.",
-            "• Dar seguimiento a solicitudes de soporte, aclaraciones, modificaciones de proyecto y entrega de resultados.",
-            "• Cumplir obligaciones de carácter contable, fiscal y administrativo derivadas de la relación con usted.",
-            "La negativa para el uso de sus datos con estas finalidades primarias podría impedir que la Empresa le preste los servicios que ofrece.",
-            "Finalidades secundarias: Adicionalmente, podremos utilizar sus datos personales para:",
-            "• Enviarle comunicaciones comerciales relacionadas con nuevos planes, promociones, contenidos, eventos o actualizaciones sobre nuestros servicios digitales.",
-            "• Realizar encuestas de satisfacción y estudios internos sobre calidad del servicio y mejora de procesos.",
-            "• Elaborar estadísticas y reportes internos sobre hábitos de contratación y uso del sitio.",
-            "Si usted no desea que sus datos sean tratados para estas finalidades secundarias, podrá manifestarlo en cualquier momento enviando un correo a hola@devion.com.mx con el asunto “Limitación de finalidades secundarias”. Su negativa no será motivo para que le neguemos los servicios contratados."
-          ]
+            "Creovanta garantiza la precisión de los datos y la correcta utilización de la información, la cual será manejada únicamente con los fines descritos anteriormente. Implementamos procedimientos y medidas de seguridad físicas, tecnológicas y administrativas apropiadas para proteger la información recabada, almacenándola en bases de datos controladas y con acceso limitado.",
+          ],
         },
         {
-          title: "D. Uso de cookies y tecnologías similares",
+          title: "Transferencia de Datos Personales",
           body: [
-            "El sitio Devion.com.mx utiliza cookies y tecnologías similares que permiten:",
-            "• Facilitar la navegación y recordar ciertas preferencias del usuario.",
-            "• Analizar el tráfico y desempeño del sitio.",
-            "• Identificar secciones de mayor interés para mejorar contenidos y experiencia de usuario.",
-            "Usted puede deshabilitar o eliminar las cookies a través de la configuración de su navegador; sin embargo, ciertas funciones del sitio podrían no operar correctamente si lo hace."
-          ]
+            "Creovanta le informa que para las finalidades necesarias anteriormente descritas transferirá sus datos en caso de ser necesario, siempre verificando que se cumplan con las medidas de seguridad mínimas indispensables, de la misma forma en aquellas finalidades exigidas legalmente o por las autoridades competentes, Creovanta sólo transferirá los datos necesarios en los casos legalmente previstos.",
+          ],
         },
         {
-          title: "E. Transferencias de datos personales",
+          title: "Ejercicio de Derechos ARCO",
           body: [
-            "La Empresa podrá compartir sus datos personales con terceros nacionales o extranjeros en los siguientes supuestos:",
-            "• Proveedores de servicios tecnológicos (alojamiento web, correo electrónico, herramientas de gestión de proyectos, plataformas de analítica, CRM), exclusivamente para apoyar la operación del sitio y la prestación de los servicios.",
-            "• Proveedores de servicios de pago y pasarelas en línea, para procesar transacciones con tarjeta de crédito o débito o medios electrónicos.",
-            "• Asesores externos (contables, fiscales, legales, auditoría) para el cumplimiento de obligaciones legales.",
-            "• Autoridades competentes, cuando una ley, reglamento u orden judicial así lo exijan.",
-            "En todos los casos, la Empresa procurará que los terceros mantengan la confidencialidad de la información y la utilicen únicamente para las finalidades señaladas en este Aviso, adoptando las medidas de seguridad que resulten aplicables. Las transferencias distintas a las anteriores que requieran su consentimiento serán puestas en su conocimiento previamente, a fin de recabarlo según exija la ley."
-          ]
+            "Asimismo, hace de su conocimiento, que para el ejercicio de cualquiera de sus derechos ARCO (acceso, rectificación, cancelación y oposición), usted podrá enviar su solicitud al correo electrónico administracion@creovanta.com.mx, en un horario de 09:00 a 18:00 horas de lunes a viernes, donde nuestro Departamento de Datos Personales le prestará la atención oportuna. La solicitud deberá ser por escrito respecto del derecho a ejercer, dirigida al responsable y acompañada de la siguiente información y documentación:",
+            "• Nombre completo.",
+            "• Correo electrónico.",
+            "• Número telefónico.",
+            "Estos datos deberán ser precisos para que se le comunique la respuesta a la Solicitud ARCO.",
+            "Para cerciorarnos de que se está realizando una solicitud por cuenta del Titular, deberá agregar cualquier documento o información que facilite la localización de sus datos personales, y en caso de solicitar una rectificación de sus datos personales, deberá de indicar también, las modificaciones a realizarse y aportar la documentación que sustente su petición.",
+          ],
         },
         {
-          title: "F. Medios y procedimiento para ejercer Derechos ARCO",
+          title: "Modificaciones al Aviso de Privacidad",
           body: [
-            "Como titular de los datos personales, usted puede ejercer en cualquier momento sus derechos de Acceso, Rectificación, Cancelación y Oposición (ARCO), así como revocar el consentimiento otorgado, en los términos previstos por la Ley.",
-            "Para ejercer dichos derechos, deberá enviar una solicitud a:",
-            "Correo electrónico: hola@devion.com.mx",
-            "Domicilio: Boulevard Adolfo López Mateos 2165, Interior 607A, Oficina 607A-B, Piso 6, Colonia Los Alpes, Alcaldía Álvaro Obregón, C.P. 01010, Ciudad de México",
-            "Su solicitud deberá contener, al menos:",
-            "• Nombre completo y un medio para comunicarle la respuesta (domicilio, correo electrónico o número telefónico).",
-            "• Copia de un documento que acredite su identidad o, en su caso, la representación legal (credencial oficial, poder, etc.).",
-            "• Descripción clara y precisa de los datos personales respecto de los que busca ejercer alguno de los derechos ARCO.",
-            "• Cualquier elemento que facilite la localización de los datos (por ejemplo, fecha de contratación, número de proyecto, correo utilizado).",
-            "• En caso de rectificación, la descripción de las modificaciones a realizarse y la documentación que sustente su petición.",
-            "La Empresa acusará de recibido su solicitud en los plazos que fija la ley y dará respuesta dentro del término legal correspondiente, informando si la misma resulta procedente."
-          ]
+            "Creovanta se reserva su derecho a efectuar en cualquier momento modificaciones o actualizaciones al presente aviso de privacidad, para la atención en el cumplimiento de invenciones legislativas, cumplimiento de sus fines, y/o nuevos requerimientos para la prestación u ofrecimiento de nuestro servicio o productos. Cualquier cambio será comunicado y estará disponible en nuestra página web: creovanta.com.mx",
+          ],
         },
         {
-          title: "G. Opciones para limitar el uso o divulgación de sus datos",
+          title: "Consentimiento del Titular",
           body: [
-            "Además del ejercicio de derechos ARCO, usted puede limitar el uso o divulgación de sus datos personales con fines promocionales mediante una comunicación dirigida a hola@devion.com.mx indicando su nombre completo y el alcance de la limitación solicitada (por ejemplo, “no deseo recibir correos promocionales”).",
-            "La Empresa incorporará su registro a las listas internas de exclusión correspondientes para evitar el envío de comunicaciones con esas características."
-          ]
+            "Finalmente, Creovanta tiene por consentidos los términos del presente Aviso de Privacidad, en el momento en que Usted, el titular de los datos a tratar, ha sido informado del contenido de la presente Política de Privacidad y se sirva a proporcionarlos.",
+          ],
         },
-        {
-          title: "H. Seguridad de la información",
-          body: [
-            "La Empresa implementa medidas de seguridad administrativas, técnicas y físicas para proteger sus datos personales contra daño, pérdida, alteración, destrucción o el uso, acceso o tratamiento no autorizado.",
-            "Entre otras, se aplican controles de acceso a la información, uso de conexiones seguras en los sistemas que lo requieren, políticas internas de manejo de datos y acuerdos de confidencialidad con personal y proveedores que tienen contacto con la información."
-          ]
-        },
-        {
-          title: "I. Cambios al Aviso de Privacidad",
-          body: [
-            "La Empresa se reserva el derecho de modificar o actualizar en cualquier momento el contenido de este Aviso de Privacidad, para reflejar cambios en sus prácticas de tratamiento de datos, en la normativa aplicable o en los servicios ofrecidos.",
-            "Las modificaciones estarán disponibles en el sitio web y se indicará en dicho medio la fecha de la última actualización. Le recomendamos revisar este Aviso de forma periódica."
-          ]
-        },
-        {
-          title: "J. Aceptación del Aviso de Privacidad",
-          body: [
-            "Al utilizar el sitio web, proporcionar sus datos a través de nuestros formularios de contacto o contratar alguno de nuestros planes o proyectos digitales, usted declara que ha leído este Aviso de Privacidad y que otorga su consentimiento para el tratamiento de sus datos personales conforme a los términos aquí establecidos."
-          ]
-        }
-      ]
+      ],
     },
     en: {
       title: "Privacy Policy",
+      subtitle: "OPERATION MIDELTON, S.A. DE C.V.",
       date: "Last updated: September 2026",
+      intro:
+        "Creovanta, commercial name of OPERATION MIDELTON, S.A. DE C.V., with offices in Mexico City, undertakes to comply with current personal data protection regulations, safeguarding the integrity of the personal and sensitive data that you, as the data subject, provide to us.",
       sections: [
         {
-          title: "A. Identity and address of the responsible party",
+          title: "Purpose of Personal Data Processing",
           body: [
-            "SAINTBASSILS SYSTEMS, S.A.P.I. DE C.V. (hereinafter, \"the Company\"), located at Boulevard Adolfo López Mateos 2165, Interior 607A, Oficina 607A-B, Piso 6, Colonia Los Alpes, Alcaldía Álvaro Obregón, C.P. 01010, Mexico City, is responsible for the processing of the personal data you provide to us through the use of the Devion.COM.MX website and the contracting of our digital services.",
-            "For any matter related to this Privacy Policy, you can contact us at the email hola@devion.com.mx and at the phone number [+52] 55 9826 1186.",
-            "This Policy is issued in compliance with the Federal Law on Protection of Personal Data Held by Private Parties, its Regulations, and the Privacy Policy Guidelines."
-          ]
+            "For Creovanta, processing your data is necessary to provide the requested services, inform you about changes to them, and evaluate the quality of the service provided. For these purposes, we require the following personal data: full name, employment or business information, email address, and phone number.",
+          ],
         },
         {
-          title: "B. Personal data we collect",
+          title: "Primary and Necessary Purposes",
           body: [
-            "The Company collects, by electronic and/or remote means, the following types of personal data when you browse the site, request information, or contract any of our digital plans or projects:",
-            "• Identification data: full name, business name (if applicable), Tax ID (RFC).",
-            "• Contact data: email address, phone number, city, or location.",
-            "• Billing data: Tax ID (RFC), business name, tax address, CFDI usage.",
-            "• Contracting data: services or plans of interest, quote history, contracted projects, payment amounts, and dates.",
-            "• Browsing data: IP address, browser type, operating system, pages visited, time spent, cookies, and similar technologies.",
-            "In principle, the Company does not request sensitive personal data; in the event that, exceptionally, it is necessary to collect this type of data, your express written consent will be requested in terms of the applicable legislation."
-          ]
+            "You are hereby informed, as the Data Subject, that the personal data you provide in communications will be used to carry out the primary and necessary purposes for the correct execution of our service provision, which are listed below:",
+            "• Respond to, manage, and follow up on your service history.",
+            "• Handle inquiries.",
+            "• Clarify doubts.",
+            "• Payment management.",
+            "• Conduct the necessary investigations to obtain the status of your purchase and/or credit history.",
+            "• Register and update data in Creovanta's administration system.",
+            "• Generate a customer database for better control and execution of subsequent consultation processes.",
+          ],
         },
         {
-          title: "C. Purposes of processing",
+          title: "Accuracy and Security of Data",
           body: [
-            "The personal data we collect will be used for the following purposes:",
-            "Primary purposes: Those necessary for the existence, maintenance, and fulfillment of the legal relationship with you:",
-            "• Identify you as a Client and register your request for information or contracting of digital services.",
-            "• Prepare quotes, proposals, and service provision contracts.",
-            "• Manage the contracting, configuration, and development of the digital plans and projects you request (websites, online stores, platforms, branding, etc.).",
-            "• Process payments through authorized gateways and issue corresponding tax receipts.",
-            "• Follow up on support requests, clarifications, project modifications, and delivery of results.",
-            "• Comply with accounting, tax, and administrative obligations derived from the relationship with you.",
-            "Refusal to use your data for these primary purposes could prevent the Company from providing the services it offers.",
-            "Secondary purposes: Additionally, we may use your personal data to:",
-            "• Send you commercial communications related to new plans, promotions, content, events, or updates about our digital services.",
-            "• Conduct satisfaction surveys and internal studies on service quality and process improvement.",
-            "• Prepare statistics and internal reports on contracting habits and site usage.",
-            "If you do not want your data to be processed for these secondary purposes, you can state so at any time by sending an email to hola@devion.com.mx with the subject \"Limitation of secondary purposes\". Your refusal will not be a reason for us to deny you the contracted services."
-          ]
+            "Creovanta guarantees the accuracy of the data and the correct use of the information, which will be handled only for the purposes described above. We implement appropriate physical, technological, and administrative security procedures and measures to protect the information collected, storing it in controlled databases with limited access.",
+          ],
         },
         {
-          title: "D. Use of cookies and similar technologies",
+          title: "Transfer of Personal Data",
           body: [
-            "The Devion.com.mx site uses cookies and similar technologies that allow:",
-            "• Facilitating navigation and remembering certain user preferences.",
-            "• Analyzing traffic and site performance.",
-            "• Identifying sections of greatest interest to improve content and user experience.",
-            "You can disable or delete cookies through your browser settings; however, certain site functions may not operate correctly if you do so."
-          ]
+            "Creovanta informs you that, for the necessary purposes described above, it will transfer your data when necessary, always verifying that the minimum essential security measures are met. Likewise, for those purposes required by law or by competent authorities, Creovanta will only transfer the necessary data in cases legally provided for.",
+          ],
         },
         {
-          title: "E. Personal data transfers",
+          title: "Exercise of ARCO Rights",
           body: [
-            "The Company may share your personal data with national or foreign third parties in the following cases:",
-            "• Technology service providers (web hosting, email, project management tools, analytics platforms, CRM), exclusively to support the site's operation and the provision of services.",
-            "• Online payment service providers and gateways, to process credit or debit card transactions or electronic means.",
-            "• External advisors (accounting, tax, legal, auditing) for compliance with legal obligations.",
-            "• Competent authorities, when a law, regulation, or court order so requires.",
-            "In all cases, the Company will ensure that third parties maintain the confidentiality of the information and use it solely for the purposes indicated in this Policy, adopting applicable security measures. Transfers other than the above that require your consent will be brought to your attention beforehand, in order to obtain it as required by law."
-          ]
+            "Furthermore, you are informed that to exercise any of your ARCO rights (access, rectification, cancellation, and opposition), you may send your request to the email address administracion@creovanta.com.mx, Monday through Friday from 09:00 to 18:00, where our Personal Data Department will provide timely attention. The request must be in writing regarding the right to be exercised, addressed to the responsible party, and accompanied by the following information and documentation:",
+            "• Full name.",
+            "• Email address.",
+            "• Phone number.",
+            "This data must be accurate so that the response to the ARCO Request can be communicated to you.",
+            "To verify that a request is being made on behalf of the Data Subject, you must attach any document or information that facilitates the location of your personal data. In the case of requesting a rectification of your personal data, you must also indicate the modifications to be made and provide the documentation supporting your request.",
+          ],
         },
         {
-          title: "F. Means and procedure to exercise ARCO Rights",
+          title: "Changes to the Privacy Notice",
           body: [
-            "As the owner of personal data, you can exercise your rights of Access, Rectification, Cancellation, and Opposition (ARCO) at any time, as well as revoke the consent granted, under the terms provided by the Law.",
-            "To exercise these rights, you must send a request to:",
-            "Email: hola@devion.com.mx",
-            "Address: Boulevard Adolfo López Mateos 2165, Interior 607A, Oficina 607A-B, Piso 6, Colonia Los Alpes, Alcaldía Álvaro Obregón, C.P. 01010, Mexico City",
-            "Your request must contain at least:",
-            "• Full name and a means to communicate the response (address, email, or phone number).",
-            "• Copy of a document proving your identity or, where applicable, legal representation (official ID, power of attorney, etc.).",
-            "• Clear and precise description of the personal data regarding which you seek to exercise any of the ARCO rights.",
-            "• Any element that facilitates the location of the data (e.g., hiring date, project number, email used).",
-            "• In the case of rectification, the description of the modifications to be made and the documentation supporting your request.",
-            "The Company will acknowledge receipt of your request within the deadlines established by law and will respond within the corresponding legal term, informing whether it is accepted."
-          ]
+            "Creovanta reserves the right to make changes or updates to this privacy notice at any time, in order to comply with legislative innovations, fulfill its purposes, and/or meet new requirements for the provision or offering of our service or products. Any change will be communicated and will be available on our website: creovanta.com.mx",
+          ],
         },
         {
-          title: "G. Options to limit the use or disclosure of your data",
+          title: "Data Subject's Consent",
           body: [
-            "In addition to exercising ARCO rights, you can limit the use or disclosure of your personal data for promotional purposes by communicating to hola@devion.com.mx indicating your full name and the scope of the requested limitation (for example, \"I do not wish to receive promotional emails\").",
-            "The Company will add your record to the corresponding internal exclusion lists to prevent the sending of communications with those characteristics."
-          ]
+            "Finally, Creovanta considers the terms of this Privacy Notice accepted at the moment You, the data subject, have been informed of the content of this Privacy Policy and proceed to provide them.",
+          ],
         },
-        {
-          title: "H. Information Security",
-          body: [
-            "The Company implements administrative, technical, and physical security measures to protect your personal data against damage, loss, alteration, destruction, or unauthorized use, access, or processing.",
-            "Among others, information access controls, the use of secure connections in systems that require it, internal data management policies, and confidentiality agreements with personnel and suppliers who have contact with the information are applied."
-          ]
-        },
-        {
-          title: "I. Changes to the Privacy Policy",
-          body: [
-            "The Company reserves the right to modify or update the content of this Privacy Policy at any time to reflect changes in its data processing practices, applicable regulations, or offered services.",
-            "The modifications will be available on the website, and the date of the last update will be indicated therein. We recommend that you review this Policy periodically."
-          ]
-        },
-        {
-          title: "J. Acceptance of the Privacy Policy",
-          body: [
-            "By using the website, providing your data through our contact forms, or contracting any of our digital plans or projects, you declare that you have read this Privacy Policy and give your consent to the processing of your personal data under the terms established herein."
-          ]
-        }
-      ]
-    }
+      ],
+    },
   };
 
   const t = content[lang] || content.es;
@@ -232,7 +140,10 @@ export default function PrivacidadPage() {
     <main className="min-h-screen bg-cream-paper py-20 sm:py-32">
       <div className="container mx-auto max-w-4xl px-4 sm:px-6">
         <h1 className="display text-4xl font-bold text-ink sm:text-5xl">{t.title}</h1>
+        <p className="mt-2 text-lg text-ink/60">{t.subtitle}</p>
         <p className="mt-4 font-mono text-sm uppercase tracking-widest text-clay">{t.date}</p>
+        <p className="mt-8 text-[0.95rem] italic leading-relaxed text-ink/80">{t.intro}</p>
+
         <div className="mt-12 space-y-12">
           {t.sections.map((sec, i) => (
             <section key={i}>

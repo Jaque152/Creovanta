@@ -9,292 +9,186 @@ export default function TerminosPage() {
   const content = {
     es: {
       title: "Términos y Condiciones",
-      subtitle: "SAINTBASSILS SYSTEMS, S.A.P.I. DE C.V.",
+      subtitle: "OPERATION MIDELTON, S.A. DE C.V.",
       date: "Fecha de entrada en vigor: Septiembre de 2026",
+      intro:
+        "Creovanta, nombre comercial de OPERATION MIDELTON, S.A. DE C.V., con oficinas en la Ciudad de México, pone a su disposición los presentes términos y condiciones, que regulan el uso de este sitio web (creovanta.com.mx) y cualquier otro contrato o relación jurídica conexa celebrada con el titular de manera jurídicamente vinculante. Se recomienda a los usuarios leer atentamente este documento previo a cualquier interacción relacionada con el presente sitio web.",
       sections: [
         {
-          title: "A. Marco general del servicio",
+          title: "1. Información del Titular",
           body: [
-            "La prestación de los servicios descritos en este sitio web corre a cargo de SAINTBASSILS SYSTEMS, S.A.P.I. DE C.V. (en adelante, “la Empresa”), con domicilio en Boulevard Adolfo López Mateos 2165, Interior 607A, Oficina 607A-B, Piso 6, Colonia Los Alpes, Alcaldía Álvaro Obregón, C.P. 01010, Ciudad de México.",
-            "El uso del sitio Devion.com.mx y la contratación de cualquiera de los planes o proyectos digitales implica que el usuario (el “Cliente”) ha leído, comprende y acepta íntegramente estos Términos y Condiciones.",
-            "Para consultas, aclaraciones o soporte, el Cliente puede contactar a la Empresa en el correo hola@devion.com.mx y en el teléfono [+52] 55 9826 1186"
-          ]
+            "Este sitio web es ofrecido por: OPERATION MIDELTON, S.A. de C.V.",
+            "Correo electrónico de contacto: administracion@creovanta.com.mx",
+          ],
         },
         {
-          title: "B. Naturaleza de los servicios",
+          title: "2. Condiciones de Uso",
           body: [
-            "La Empresa ofrece, de forma enunciativa, servicios de diseño y desarrollo web, implementación de tiendas en línea, plataformas especializadas (LMS, portales inmobiliarios, portales de empleo), así como soluciones de identidad digital, SEO y marketing digital.",
-            "Los servicios se comercializan principalmente mediante planes predefinidos (por ejemplo: Plan Landing Page Emprendedor, Plan Sitio Web Profesional, Plan Ecommerce Avanzado, Plan Plataforma de Cursos Online, Plan Web para Restaurantes, Plan Web para Profesionistas, Planes de branding + web, etc.) y mediante proyectos digitales a la medida cotizados caso por caso.",
-            "Salvo que se indique lo contrario de forma expresa, todos los servicios se prestan 100% en línea, y la entrega consiste en la puesta en marcha del sitio/plataforma o la entrega de los archivos digitales correspondientes (por ejemplo, logotipos en formatos PNG/JPG/vectorial)."
-          ]
+            "Las condiciones de uso detalladas en esta sección se aplicarán de forma general al uso de este sitio web. En situaciones específicas, pueden aplicarse condiciones de uso adicionales, las cuales se indicarán de forma adicional en este documento. Al utilizar este sitio web, los usuarios confirman que cumplen los siguientes requisitos.",
+          ],
         },
         {
-          title: "C. Público al que se dirige el sitio",
+          title: "3. Contenido en el Sitio Web",
           body: [
-            "El sitio está dirigido exclusivamente a personas mayores de edad con capacidad legal para contratar bajo las leyes mexicanas, ya sea a título personal o como representantes de empresas o negocios.",
-            "El Cliente se compromete a utilizar el sitio solo con fines lícitos y para contratar servicios digitales relacionados con la presencia en internet, diseño web, comercio electrónico o proyectos afines.",
-            "No se permite el uso del sitio para actividades fraudulentas, ilícitas o que vulneren derechos de terceros."
-          ]
+            "A menos que se especifique lo contrario o se pueda reconocer de forma clara, todos los contenidos disponibles en este sitio web son propiedad del titular o son proporcionados por este o sus licenciantes. El titular se compromete a actuar con diligencia para garantizar que los contenidos proporcionados no infrinjan ninguna disposición legal ni vulneren los derechos de terceros. Sin embargo, no siempre será posible conseguir dicho objetivo. En tales casos, se ruega a los usuarios que comuniquen cualquier queja utilizando los datos de contacto facilitados.",
+          ],
         },
         {
-          title: "D. Información de planes, alcances y precios",
+          title: "4. Acceso a Recursos Externos",
           body: [
-            "En el sitio se describen los distintos planes y servicios, incluyendo, entre otros, los siguientes ejemplos:",
-            "• Planes de landing page y presencia básica.",
-            "• Planes de sitio web profesional y empresarial.",
-            "• Planes de tienda en línea y ecommerce.",
-            "• Planes específicos para sectores.",
-            "• Planes combinados de marca + sitio web.",
-            "• Proyectos digitales a la medida, que se cotizan individualmente.",
-            "Para cada plan se indica un precio en pesos mexicanos (MXN) al que debe añadirse el Impuesto al Valor Agregado (IVA) correspondiente, salvo que se señale expresamente que el precio ya incluye impuestos.",
-            "Las descripciones de los planes definen el alcance estándar del servicio. Cualquier funcionalidad, integración o desarrollo que exceda lo listado se considerará trabajo adicional y será objeto de cotización independiente.",
-            "La Empresa puede actualizar en cualquier momento el catálogo de planes, sus características, precios y promociones, sin afectar los servicios ya contratados bajo condiciones previamente aceptadas."
-          ]
+            "A través de este sitio web, los usuarios podrán acceder a recursos externos proporcionados por terceros. Los usuarios reconocen y aceptan que el titular no tiene ningún control sobre dichos recursos y, por tanto, no es responsable de sus contenidos y disponibilidad. Las condiciones aplicables a los recursos proporcionados por terceros se derivan de los términos y condiciones de dichos terceros o, en su defecto, de las leyes aplicables.",
+          ],
         },
         {
-          title: "E. Flujo de contratación y aceptación",
+          title: "5. Usos Aceptables",
           body: [
-            "El proceso general de contratación a través del sitio suele seguir estas etapas:",
-            "• Paso 1: El Cliente revisa los planes disponibles o la opción de proyecto a la medida.",
-            "• Paso 2: El Cliente selecciona un plan o solicita un proyecto personalizado.",
-            "• Paso 3: El sitio muestra el resumen del servicio, precio, impuestos aplicables y, en su caso, opciones de pago en línea.",
-            "• Paso 4: El Cliente proporciona los datos necesarios de contacto y facturación y procede a realizar el pago.",
-            "• Paso 5: La Empresa confirma la recepción del pago o envía una propuesta formal que el Cliente deberá aprobar.",
-            "La aceptación del presupuesto, plan o propuesta implica la conformidad del Cliente con estos Términos y Condiciones."
-          ]
+            "Este sitio web y el servicio solo podrán utilizarse dentro del ámbito para el cual se proporcionan, de acuerdo con estas condiciones y la legislación aplicable. Los usuarios serán los únicos responsables de asegurarse de que su uso de este sitio web y/o del servicio no infringe ninguna ley o reglamento ni vulnera derechos de terceros.",
+          ],
         },
         {
-          title: "F. Pagos, formas de cobro y agregador de pagos",
+          title: "6. Disposiciones Comunes",
           body: [
-            "Los importes de los planes y proyectos pueden cobrarse como pago único o bajo esquemas acordados caso por caso, según se señale en el sitio o en la propuesta enviada al Cliente.",
-            "En el sitio, cuando se habilita el pago en línea, los cargos se procesan a través de un agregador de pagos autorizado. La Empresa no procesa directamente los datos completos de la tarjeta; dicha información se gestiona en la plataforma del agregador de pagos.",
-            "El Cliente se obliga a cubrir puntualmente los importes pactados. En caso de falta de pago, pago incompleto o contracargos injustificados, la Empresa podrá suspender el desarrollo o retirar temporalmente el sitio."
-          ]
+            "La falta de ejercicio de cualquier derecho o el hecho de no invocar una disposición en virtud de estas condiciones no constituirán una renuncia a dicho derecho o disposición. Para garantizar el mejor nivel de servicio posible, el titular se reserva el derecho de interrumpir el servicio para labores de mantenimiento, actualizaciones del sistema o cualquier otro cambio, informando adecuadamente a los usuarios. Dentro de los límites de la ley, el titular también podrá decidir suspender o dejar de prestar el servicio por completo. En caso de que el servicio deje de prestarse, el titular cooperará con los usuarios para permitirles retirar datos personales o información y respetará los derechos de los usuarios relativos al uso continuado del producto y/o la compensación, según establezca la ley aplicable. El servicio puede no estar disponible debido a motivos fuera del control razonable del titular, como “fuerza mayor” (por ejemplo, averías en las infraestructuras o apagones).",
+          ],
         },
         {
-          title: "G. Entrega de los servicios digitales",
+          title: "7. Reventa del Servicio",
           body: [
-            "La entrega de los servicios puede adoptar alguna de las siguientes modalidades:",
-            "• Publicación del sitio o tienda en el servidor del Cliente.",
-            "• Entrega de archivos y/o acceso a plataforma.",
-            "• Puesta en marcha de plataformas específicas.",
-            "• En el caso de identidad de marca, entrega de elementos en archivos digitales.",
-            "Los plazos de entrega son estimados y pueden verse afectados por tiempos de aprobación, tiempos de entrega de contenidos del Cliente, cambios solicitados o fuerza mayor. La Empresa no será responsable por retrasos derivados de la falta de respuesta por parte del Cliente."
-          ]
+            "Los usuarios no reproducirán, duplicarán, copiarán, venderán, revenderán ni explotarán ninguna parte de este sitio web y de su servicio sin la autorización previa, expresa y por escrito del titular, ya sea directamente o a través de un programa de reventa legítimo.",
+          ],
         },
         {
-          title: "H. Responsabilidades del Cliente durante el proyecto",
+          title: "8. Derechos de Propiedad Intelectual",
           body: [
-            "El Cliente se compromete a:",
-            "• Proporcionar información veraz y completa sobre su negocio.",
-            "• Entregar en tiempo los textos, imágenes, logotipos que deba aportar.",
-            "• Asegurarse de contar con los derechos de uso sobre todo material que facilite y sacar en paz y a salvo a la Empresa frente a cualquier reclamación.",
-            "El Cliente es responsable de revisar y aprobar las propuestas. Cambios significativos solicitados después de su aprobación podrán implicar costos adicionales."
-          ]
+            "Los derechos de propiedad intelectual, tales como los derechos de autor, derechos derivados de marcas registradas, derechos de patentes y derechos de diseños relativos a este sitio web son propiedad exclusiva del titular o de sus licenciantes y están protegidos por las leyes en vigor en materia de marcas y los tratados internacionales relacionados. Todas las marcas registradas —sean denominativas o gráficas— y cualquier otra marca, nombre comercial, marca de servicio, signo denominativo, ilustraciones, imágenes o logotipos que aparezcan en relación con este sitio web son y seguirán siendo propiedad exclusiva del titular o de sus licenciantes y están protegidos por las leyes en vigor en materia de marcas y los tratados internacionales relacionados.",
+          ],
         },
         {
-          title: "I. Alcance, cambios y trabajo adicional",
+          title: "9. Cambios de las Condiciones",
           body: [
-            "Cada plan incluye un conjunto definido de entregables. Cuando el Cliente requiera funcionalidades adicionales, la Empresa emitirá una cotización adicional que deberá ser aceptada.",
-            "Pequeños ajustes podrán estar incluidos; sin embargo, rondas adicionales que alteren sustancialmente el diseño inicialmente aprobado podrán generar cargos extra."
-          ]
+            "El titular se reserva el derecho de cambiar o modificar de cualquier otro modo estas condiciones en cualquier momento. En tales casos, el titular informará adecuadamente a los usuarios de esos cambios. Dichos cambios solo afectarán a la relación con los usuarios a partir de la fecha comunicada a estos. La continuidad en el uso del servicio indicará la aceptación por parte de los usuarios de las condiciones modificadas. Si los usuarios no desean quedar vinculados por estos cambios, deberán dejar de usar el servicio y podrán resolver el contrato. La versión aplicable previa regulará la relación antes de la aceptación del usuario. Los usuarios podrán obtener cualquier versión previa del titular.",
+          ],
         },
         {
-          title: "J. Uso, mantenimiento y soporte posterior",
+          title: "10. Cesión del Contrato",
           body: [
-            "Salvo que se haya contratado expresamente un servicio de mantenimiento o soporte continuo, la obligación principal de la Empresa se limita al desarrollo y entrega del proyecto.",
-            "Servicios posteriores como actualización de contenidos, mantenimiento técnico de CMS o soporte por manipulaciones del Cliente, se considerarán servicios independientes."
-          ]
+            "El titular se reserva el derecho de transferir, ceder, disponer mediante novación o subcontratar cualquiera de los derechos u obligaciones establecidos conforme a estas condiciones, teniendo en cuenta los intereses legítimos de los usuarios. Los usuarios no podrán ceder ni transferir sus derechos u obligaciones conforme a estas condiciones en modo alguno, salvo con el permiso por escrito del titular.",
+          ],
         },
         {
-          title: "K. Propiedad intelectual y licencias",
+          title: "11. Contacto",
           body: [
-            "Salvo pacto diferente, una vez liquidado el servicio contratado, el Cliente adquiere el derecho de uso sobre el sitio web, tienda o plataforma desarrollada.",
-            "No obstante, la Empresa podrá conservar derechos sobre frameworks, plantillas, código reutilizable y metodologías, manteniendo una licencia de uso a favor del Cliente.",
-            "El Cliente autoriza a la Empresa a incluir referencias visuales de los proyectos desarrollados en su portafolio o sitio web, salvo que se acuerde por escrito lo contrario."
-          ]
+            "Todas las comunicaciones relativas a la utilización de este sitio web deberán remitirse utilizando los datos de contacto señalados en este documento.",
+          ],
         },
         {
-          title: "L. Datos personales y confidencialidad",
+          title: "12. Posibilidad de Separar una Disposición",
           body: [
-            "El tratamiento de los datos personales que el Cliente facilite a través del sitio se rige por el Aviso de Privacidad de la Empresa.",
-            "La Empresa y el Cliente se obligan a mantener la confidencialidad de la información técnica o comercial que llegue a su conocimiento con motivo de la relación contractual."
-          ]
+            "En el caso de que cualquier disposición de estas condiciones fuera declarada o se convirtiera en inválida o inejecutable conforme a la ley aplicable, la invalidez o inejecutabilidad de dicha disposición no afectará la validez de las disposiciones restantes, que continuarán gozando de plena vigencia y efectividad.",
+          ],
         },
         {
-          title: "M. Cancelaciones, reembolsos y proyectos a la medida",
+          title: "13. Consentimiento del Titular",
           body: [
-            "Las reglas sobre cancelaciones, reembolsos parciales y devoluciones se detallan en la Política de Reembolsos y Devoluciones de la Empresa, disponible en el sitio web.",
-            "En proyectos a la medida, los pagos de anticipos suelen destinarse al trabajo ya ejecutado; en consecuencia, los montos reembolsables se determinarán con base en el esfuerzo invertido."
-          ]
+            "Finalmente, Creovanta tiene por consentidos los términos y condiciones previstos en este texto, en el momento en que Usted, el titular de los datos a tratar, ha sido informado del contenido de la presente Política y se sirva a proporcionarlos.",
+          ],
         },
-        {
-          title: "N. Limitación de responsabilidad",
-          body: [
-            "La Empresa no garantiza resultados comerciales específicos (ventas, posicionamiento, visitas), ya que dependen de factores ajenos a su control.",
-            "En la máxima medida permitida por la ley, la responsabilidad total de la Empresa frente al Cliente se limitará al monto efectivamente pagado, sin incluir daños indirectos, pérdida de datos o lucro cesante."
-          ]
-        },
-        {
-          title: "O. Modificaciones de los Términos",
-          body: [
-            "La Empresa puede actualizar estos Términos y Condiciones en cualquier momento. La versión vigente estará siempre disponible en el sitio web.",
-            "Las contrataciones anteriores se regirán por las condiciones vigentes al momento de su aceptación; el uso continuado implica la aceptación de dichos cambios."
-          ]
-        },
-        {
-          title: "P. Ley aplicable y jurisdicción",
-          body: [
-            "Estos Términos y Condiciones se interpretan y aplican de conformidad con las leyes de los Estados Unidos Mexicanos.",
-            "Para cualquier controversia, la Empresa y el Cliente se someten a la jurisdicción de los tribunales competentes de la Ciudad de México."
-          ]
-        }
-      ]
+      ],
+      privacyLinkParagraph:
+        "El tratamiento de los datos personales que el Cliente facilite a través del sitio se rige por el ",
+      privacyLinkLabel: "Aviso de Privacidad de la Empresa.",
     },
     en: {
       title: "Terms and Conditions",
-      subtitle: "SAINTBASSILS SYSTEMS, S.A.P.I. DE C.V.",
+      subtitle: "OPERATION MIDELTON, S.A. DE C.V.",
       date: "Effective date: September 2026",
+      intro:
+        "Creovanta, commercial name of OPERATION MIDELTON, S.A. DE C.V., with offices in Mexico City, makes these terms and conditions available to you. They govern the use of this website (creovanta.com.mx) and any other contract or related legal relationship entered into with the owner in a legally binding manner. Users are advised to read this document carefully before any interaction related to this website.",
       sections: [
         {
-          title: "A. General Service Framework",
+          title: "1. Owner Information",
           body: [
-            "The provision of services described on this website is carried out by SAINTBASSILS SYSTEMS, S.A.P.I. DE C.V. (hereinafter, “the Company”), located at Boulevard Adolfo López Mateos 2165, Interior 607A, Oficina 607A-B, Piso 6, Colonia Los Alpes, Alcaldía Álvaro Obregón, C.P. 01010, Mexico City.",
-            "The use of the website Devion.com.mx and the contracting of any of the digital plans or projects implies that the user (the “Client”) has read, understands, and fully accepts these Terms and Conditions.",
-            "For inquiries, clarifications, or support, the Client may contact the Company at hola@devion.com.mx and by phone at [+52] 55 9826 1186"
-          ]
+            "This website is offered by: OPERATION MIDELTON, S.A. de C.V.",
+            "Contact email: administracion@creovanta.com.mx",
+          ],
         },
         {
-          title: "B. Nature of the Services",
+          title: "2. Conditions of Use",
           body: [
-            "The Company offers, by way of illustration, web design and development services, online store implementation, specialized platforms (LMS, real estate portals, job portals), as well as digital identity, SEO, and digital marketing solutions.",
-            "Services are primarily commercialized through predefined plans (e.g., Entrepreneur Landing Page Plan, Professional Website Plan, Advanced Ecommerce Plan, etc.) and custom digital projects quoted on a case-by-case basis.",
-            "Unless expressly stated otherwise, all services are provided 100% online, and delivery consists of the launch of the site/platform or the delivery of corresponding digital files (e.g., logos in PNG/JPG/vector formats)."
-          ]
+            "The conditions of use detailed in this section apply generally to the use of this website. In specific situations, additional conditions of use may apply, which will be indicated separately in this document. By using this website, users confirm that they meet the following requirements.",
+          ],
         },
         {
-          title: "C. Target Audience of the Site",
+          title: "3. Content on the Website",
           body: [
-            "The site is exclusively aimed at adults of legal age with the legal capacity to contract under Mexican law, either personally or as representatives of companies or businesses.",
-            "The Client agrees to use the site only for lawful purposes and to contract digital services related to internet presence, web design, e-commerce, or related projects.",
-            "The use of the site for fraudulent, illegal activities, or activities that violate the rights of third parties is not permitted."
-          ]
+            "Unless otherwise specified or clearly recognizable, all content available on this website is the property of the owner or is provided by the owner or its licensors. The owner undertakes to act diligently to ensure that the content provided does not infringe any legal provision or violate the rights of third parties. However, it may not always be possible to achieve this goal. In such cases, users are asked to report any complaint using the contact details provided.",
+          ],
         },
         {
-          title: "D. Plan Information, Scope, and Pricing",
+          title: "4. Access to External Resources",
           body: [
-            "The site describes the various plans and services, including, among others:",
-            "• Landing page and basic presence plans.",
-            "• Professional and corporate website plans.",
-            "• Online store and e-commerce plans.",
-            "• Industry-specific plans.",
-            "• Combined brand + website plans.",
-            "• Custom digital projects, quoted individually.",
-            "For each plan, a price is indicated in Mexican pesos (MXN) to which the corresponding Value Added Tax (IVA) must be added, unless expressly stated that the price includes taxes.",
-            "Plan descriptions define the standard scope of service. Any functionality, integration, or development exceeding the listed items will be considered additional work and subject to independent quotation.",
-            "The Company may update the plan catalog, features, pricing, and promotions at any time, without affecting previously contracted services under accepted conditions."
-          ]
+            "Through this website, users may access external resources provided by third parties. Users acknowledge and accept that the owner has no control over such resources and is therefore not responsible for their content and availability. The conditions applicable to resources provided by third parties derive from those third parties' terms and conditions or, failing that, from applicable law.",
+          ],
         },
         {
-          title: "E. Contracting and Acceptance Flow",
+          title: "5. Acceptable Use",
           body: [
-            "The general contracting process through the site typically follows these stages:",
-            "• Step 1: The Client reviews available plans or custom project options.",
-            "• Step 2: The Client selects a plan or requests a customized project.",
-            "• Step 3: The site displays a service summary, price, applicable taxes, and payment options.",
-            "• Step 4: The Client provides necessary contact and billing details and proceeds with payment.",
-            "• Step 5: The Company confirms payment receipt or sends a formal proposal for the Client's approval.",
-            "Acceptance of the budget, plan, or proposal implies the Client's agreement with these Terms and Conditions."
-          ]
+            "This website and the service may only be used within the scope for which they are provided, in accordance with these conditions and applicable law. Users are solely responsible for ensuring that their use of this website and/or the service does not infringe any law or regulation or violate the rights of third parties.",
+          ],
         },
         {
-          title: "F. Payments, Billing Methods, and Payment Aggregator",
+          title: "6. Common Provisions",
           body: [
-            "Plan and project amounts may be charged as a single payment or under agreed-upon schemes on a case-by-case basis.",
-            "On the site, when online payment is enabled, charges are processed through an authorized payment aggregator. The Company does not directly process full card details; this info is managed by the payment aggregator's platform.",
-            "The Client is obligated to punctually cover the agreed amounts. In the event of non-payment, incomplete payment, or unjustified chargebacks, the Company may suspend development or temporarily take down the site."
-          ]
+            "The failure to exercise any right or the failure to invoke a provision under these conditions shall not constitute a waiver of that right or provision. To ensure the best possible level of service, the owner reserves the right to interrupt the service for maintenance work, system updates, or any other changes, duly informing users. Within the limits of the law, the owner may also decide to suspend or stop providing the service entirely. If the service is discontinued, the owner will cooperate with users to allow them to retrieve personal data or information and will respect users' rights regarding continued use of the product and/or compensation, as established by applicable law. The service may be unavailable due to reasons beyond the owner's reasonable control, such as “force majeure” (for example, infrastructure failures or power outages).",
+          ],
         },
         {
-          title: "G. Delivery of Digital Services",
+          title: "7. Resale of the Service",
           body: [
-            "Delivery may take any of the following forms:",
-            "• Publishing the site/store on the Client's server.",
-            "• Delivery of files and/or platform access.",
-            "• Launch of specific platforms.",
-            "• For brand identity, delivery of digital elements.",
-            "Delivery times are estimated and may be affected by approval times, client content delivery delays, requested changes, or force majeure. The Company is not liable for delays caused by lack of client response."
-          ]
+            "Users shall not reproduce, duplicate, copy, sell, resell, or exploit any part of this website and its service without the prior, express, and written authorization of the owner, whether directly or through a legitimate resale program.",
+          ],
         },
         {
-          title: "H. Client Responsibilities During the Project",
+          title: "8. Intellectual Property Rights",
           body: [
-            "The Client agrees to:",
-            "• Provide truthful and complete information about their business.",
-            "• Deliver texts, images, and logos on time.",
-            "• Ensure they hold usage rights for all provided materials, indemnifying the Company against third-party claims.",
-            "The Client is responsible for reviewing and approving proposals. Significant changes requested post-approval may incur additional costs."
-          ]
+            "Intellectual property rights, such as copyrights, rights derived from registered trademarks, patent rights, and design rights related to this website are the exclusive property of the owner or its licensors and are protected by applicable trademark laws and related international treaties. All registered trademarks — whether word marks or figurative marks — and any other trademark, trade name, service mark, word sign, illustrations, images, or logos appearing in connection with this website are and shall remain the exclusive property of the owner or its licensors and are protected by applicable trademark laws and related international treaties.",
+          ],
         },
         {
-          title: "I. Scope, Changes, and Additional Work",
+          title: "9. Changes to the Conditions",
           body: [
-            "Each plan includes a defined set of deliverables. When additional features are required, the Company will issue a separate quote.",
-            "Minor reasonable adjustments may be included; however, extensive additional revision rounds altering the initial approved design may generate extra charges."
-          ]
+            "The owner reserves the right to change or otherwise modify these conditions at any time. In such cases, the owner will duly inform users of those changes. Such changes will only affect the relationship with users from the date communicated to them. Continued use of the service indicates users' acceptance of the modified conditions. If users do not wish to be bound by these changes, they must stop using the service and may terminate the contract. The applicable prior version shall govern the relationship before the user's acceptance. Users may obtain any prior version from the owner.",
+          ],
         },
         {
-          title: "J. Post-Delivery Use, Maintenance, and Support",
+          title: "10. Assignment of the Contract",
           body: [
-            "Unless continuous support is expressly contracted, the Company's obligation is limited to the development and delivery of the project.",
-            "Subsequent services like content updates, CMS technical maintenance, or support due to client manipulation are considered independent services."
-          ]
+            "The owner reserves the right to transfer, assign, dispose of by novation, or subcontract any of the rights or obligations set forth under these conditions, taking into account the legitimate interests of users. Users may not assign or transfer their rights or obligations under these conditions in any way, except with the written permission of the owner.",
+          ],
         },
         {
-          title: "K. Intellectual Property and Licenses",
+          title: "11. Contact",
           body: [
-            "Unless otherwise agreed, once the service is fully paid, the Client acquires usage rights over the developed site/platform.",
-            "However, the Company retains rights over pre-existing frameworks, templates, reusable code, and methodologies, granting the Client a usage license.",
-            "The Client authorizes the Company to include visual references of the developed projects in its portfolio, unless agreed otherwise in writing."
-          ]
+            "All communications relating to the use of this website must be sent using the contact details indicated in this document.",
+          ],
         },
         {
-          title: "L. Personal Data and Confidentiality",
+          title: "12. Severability",
           body: [
-            "The processing of personal data provided by the Client is governed by the Company's Privacy Policy.",
-            "Both parties agree to maintain the confidentiality of technical or commercial info shared during the contractual relationship."
-          ]
+            "If any provision of these conditions is declared or becomes invalid or unenforceable under applicable law, the invalidity or unenforceability of that provision shall not affect the validity of the remaining provisions, which shall continue to be fully valid and effective.",
+          ],
         },
         {
-          title: "M. Cancellations, Refunds, and Custom Projects",
+          title: "13. Owner's Consent",
           body: [
-            "Rules regarding cancellations and partial refunds are detailed in the Company's Refunds and Cancellations Policy, available on the site.",
-            "In custom projects, advance payments generally cover work already executed; refundable amounts, if any, are based on the invested effort."
-          ]
+            "Finally, Creovanta considers the terms and conditions set forth in this text accepted at the moment You, the data subject, have been informed of the content of this Policy and proceed to provide them.",
+          ],
         },
-        {
-          title: "N. Limitation of Liability",
-          body: [
-            "The Company does not guarantee specific commercial results (sales, SEO ranking, traffic), as they depend on external factors.",
-            "To the maximum extent permitted by law, the Company's total liability is limited to the amount effectively paid by the Client, excluding indirect damages or loss of profits."
-          ]
-        },
-        {
-          title: "O. Modifications to Terms",
-          body: [
-            "The Company may update these Terms and Conditions at any time. The current version will always be available on the site.",
-            "Prior contracts are governed by conditions active at their acceptance; continued use implies acceptance of the changes."
-          ]
-        },
-        {
-          title: "P. Governing Law and Jurisdiction",
-          body: [
-            "These Terms and Conditions are interpreted and enforced under the laws of the United Mexican States.",
-            "For any dispute, the Company and the Client submit to the jurisdiction of the competent courts of Mexico City."
-          ]
-        }
-      ]
-    }
+      ],
+      privacyLinkParagraph:
+        "The processing of personal data provided by the Client through the site is governed by the ",
+      privacyLinkLabel: "Company's Privacy Policy.",
+    },
   };
 
   const t = content[lang] || content.es;
@@ -305,24 +199,22 @@ export default function TerminosPage() {
         <h1 className="display text-4xl font-bold text-ink sm:text-5xl">{t.title}</h1>
         <p className="mt-2 text-lg text-ink/60">{t.subtitle}</p>
         <p className="mt-4 font-mono text-sm uppercase tracking-widest text-clay">{t.date}</p>
-        
+        <p className="mt-8 text-[0.95rem] italic leading-relaxed text-ink/80">{t.intro}</p>
+
         <div className="mt-12 space-y-12">
           {t.sections.map((sec, i) => (
             <section key={i}>
               <h2 className="display mb-4 text-2xl font-semibold text-ink">{sec.title}</h2>
               <div className="space-y-3 text-[0.95rem] leading-relaxed text-ink/80">
                 {sec.body.map((paragraph, j) => {
-                  if (paragraph.includes("Aviso de Privacidad de la Empresa.") || paragraph.includes("Company's Privacy Policy.")) {
-                    return (
-                      <p key={j}>
-                        {lang === "es" ? "El tratamiento de los datos personales que el Cliente facilite a través del sitio se rige por el " : "The processing of personal data provided by the Client is governed by the "}
-                        <Link href="/privacidad" className="font-medium text-clay underline underline-offset-4">
-                          {lang === "es" ? "Aviso de Privacidad de la Empresa." : "Company's Privacy Policy."}
-                        </Link>
-                      </p>
-                    )
+                  // Enlace al aviso de privacidad dentro de la sección de contacto
+                  if (
+                    sec.title.includes("Contacto") ||
+                    sec.title.includes("Contact")
+                  ) {
+                    return <p key={j}>{paragraph}</p>;
                   }
-                  return <p key={j}>{paragraph}</p>
+                  return <p key={j}>{paragraph}</p>;
                 })}
               </div>
             </section>
