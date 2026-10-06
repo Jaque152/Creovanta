@@ -2,32 +2,40 @@
 
 import { Resend } from "resend";
 import axios from "axios";
+import { COUPONS } from "@/lib/coupons";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const ETOMIN_API_URL = "https://pagos.etomin.com/api/v1";
+const IVA_RATE = 0.16;
 
 const etominClient = axios.create({
   baseURL: ETOMIN_API_URL,
   headers: {
-    'accept': 'application/json',
-    'content-type': 'application/json',
+    accept: "application/json",
+    "content-type": "application/json",
   },
 });
 
 async function getEtominAuthToken(): Promise<string> {
-  const { data } = await etominClient.post('/signin', {
+  const { data } = await etominClient.post("/signin", {
     email: process.env.ETOMIN_USER,
     password: process.env.ETOMIN_PASSWORD,
   });
   return data.authToken;
 }
 
-async function tokenizeEtominCard(token: string, cardNum: string, cardName: string, expMonth: string, expYear: string): Promise<string> {
+async function tokenizeEtominCard(
+  token: string,
+  cardNum: string,
+  cardName: string,
+  expMonth: string,
+  expYear: string
+): Promise<string> {
   const { data } = await etominClient.post(
-    '/card/tokenizer',
+    "/card/tokenizer",
     {
       cardData: {
-        cardNumber: cardNum.replace(/\s/g, ''),
+        cardNumber: cardNum.replace(/\s/g, ""),
         cardholderName: cardName,
         expirationYear: expYear,
         expirationMonth: expMonth,
@@ -40,6 +48,9 @@ async function tokenizeEtominCard(token: string, cardNum: string, cardName: stri
   return data.cardNumberToken;
 }
 
+// ----------------------------------------------------------------------------
+// TIPOS
+// ----------------------------------------------------------------------------
 export interface CheckoutFormState {
   nombre: string;
   apellidos: string;
@@ -69,6 +80,11 @@ export interface CheckoutItem {
   qty: number;
 }
 
+export interface CheckoutCoupon {
+  code: string;
+  discount: number; // 0.05 = 5%
+}
+
 export interface CheckoutPayload {
   form: CheckoutFormState;
   items: CheckoutItem[];
@@ -77,31 +93,99 @@ export interface CheckoutPayload {
     iva: number;
     total: number;
   };
+  coupon?: CheckoutCoupon | null;
   lang: "es" | "en";
 }
 
+// ----------------------------------------------------------------------------
+// HELPERS DE CUPÓN Y TOTALES
+// ----------------------------------------------------------------------------
+/**
+ * Resuelve el cupón autoritativamente en el servidor.
+ * Ignora el `discount` enviado por el cliente y toma el valor desde COUPONS.
+ */
+function resolveCoupon(
+  clientCoupon: CheckoutCoupon | null | undefined
+): CheckoutCoupon | null {
+  if (!clientCoupon) return null;
+  const code = String(clientCoupon.code || "").trim().toUpperCase();
+  const found = COUPONS.find((c) => c.code === code);
+  if (!found) return null;
+  return { code: found.code, discount: found.discount };
+}
+
+/**
+ * Recalcula todos los totales desde cero en el servidor.
+ * Nunca confía en los valores enviados por el cliente.
+ */
+function recalculateTotals(
+  items: CheckoutItem[],
+  coupon: CheckoutCoupon | null
+): { subtotal: number; discountAmount: number; iva: number; total: number } {
+  const subtotal = items.reduce((acc, it) => {
+    const price = Number(it.product?.priceMXN) || 0;
+    const qty = Math.max(1, Math.floor(Number(it.qty) || 0));
+    return acc + price * qty;
+  }, 0);
+
+  const discountAmount = coupon ? subtotal * coupon.discount : 0;
+  const discountedSubtotal = subtotal - discountAmount;
+  const iva = discountedSubtotal * IVA_RATE;
+  const total = discountedSubtotal + iva;
+
+  return {
+    subtotal: Math.round(subtotal * 100) / 100,
+    discountAmount: Math.round(discountAmount * 100) / 100,
+    iva: Math.round(iva * 100) / 100,
+    total: Math.round(total * 100) / 100,
+  };
+}
+
+// ----------------------------------------------------------------------------
+// SERVER ACTION PRINCIPAL
+// ----------------------------------------------------------------------------
 export async function processCheckout(payload: CheckoutPayload) {
   try {
-    const { form, items, totals, lang } = payload;
-    const orderId = `CV-${Math.floor(100000 + Math.random() * 899999)}`;
+    const { form, items, coupon: clientCoupon, lang } = payload;
     const currentLang = lang || "es";
 
     if (!process.env.ETOMIN_USER || !process.env.ETOMIN_PASSWORD) {
-      throw new Error("Credenciales de la pasarela Etomin no configuradas en el servidor.");
+      throw new Error(
+        "Credenciales de la pasarela Etomin no configuradas en el servidor."
+      );
     }
 
+    if (!items || items.length === 0) {
+      return { success: false, error: "El carrito está vacío." };
+    }
+
+    // 1. Validar cupón y recalcular totales (server-side, autoritativo)
+    const appliedCoupon = resolveCoupon(clientCoupon);
+    const computedTotals = recalculateTotals(items, appliedCoupon);
+
+    const orderId = `CV-${Math.floor(100000 + Math.random() * 899999)}`;
+
+    // 2. Autenticación con Etomin
     const token = await getEtominAuthToken();
 
+    // 3. Tokenizar tarjeta
     const expParts = form.exp.split("/");
     const month = expParts[0].trim();
     const year = `20${expParts[1].trim()}`;
 
-    const cardToken = await tokenizeEtominCard(token, form.card, form.cardName, month, year);
+    const cardToken = await tokenizeEtominCard(
+      token,
+      form.card,
+      form.cardName,
+      month,
+      year
+    );
     if (!cardToken) throw new Error("Error al tokenizar la tarjeta de crédito.");
 
-    const currencyCode = "484";
+    // 4. Enviar el cobro con el TOTAL RECALCULADO (no el del cliente)
+    const currencyCode = "484"; // MXN
     const salePayload = {
-      amount: Math.round(totals.total * 100) / 100,
+      amount: computedTotals.total,
       currency: currencyCode,
       reference: orderId,
       customerInformation: {
@@ -123,31 +207,50 @@ export async function processCheckout(payload: CheckoutPayload) {
       },
     };
 
-    const { data: saleData } = await etominClient.post('/sale', salePayload, {
+    const { data: saleData } = await etominClient.post("/sale", salePayload, {
       headers: { Authorization: `Bearer ${token}` },
     });
 
     const status = saleData.status?.toUpperCase();
 
     if (status === "DECLINED") {
-      return { success: false, error: "Pago declinado. Verifica los fondos o intenta con otra tarjeta." };
+      return {
+        success: false,
+        error: "Pago declinado. Verifica los fondos o intenta con otra tarjeta.",
+      };
     }
 
     if (status === "PENDING" && saleData.redirectTo) {
+      // Nota: si quieres guardar el cupón en el flujo PENDING,
+      // hazlo aquí antes del redirect (BD, log, etc.)
       return { success: true, redirectTo: saleData.redirectTo };
     }
 
     if (status !== "APPROVED") {
-      return { success: false, error: "La transacción fue rechazada o no pudo ser aprobada por el banco." };
+      return {
+        success: false,
+        error:
+          "La transacción fue rechazada o no pudo ser aprobada por el banco.",
+      };
     }
 
-    await enviarCorreos(orderId, form, items, totals, currentLang);
+    // 5. Correos con los totales recalculados + cupón
+    await enviarCorreos(
+      orderId,
+      form,
+      items,
+      computedTotals,
+      appliedCoupon,
+      currentLang
+    );
 
     return { success: true, orderId };
   } catch (error: unknown) {
     let errorMessage = "Ocurrió un error al procesar el pago.";
     if (axios.isAxiosError(error)) {
-      const responseData = error.response?.data as { message?: string } | undefined;
+      const responseData = error.response?.data as
+        | { message?: string }
+        | undefined;
       console.error("Etomin Payment Error:", responseData || error.message);
       errorMessage = responseData?.message || error.message;
     } else if (error instanceof Error) {
@@ -160,11 +263,20 @@ export async function processCheckout(payload: CheckoutPayload) {
   }
 }
 
+// ----------------------------------------------------------------------------
+// CORREOS
+// ----------------------------------------------------------------------------
 async function enviarCorreos(
   orderId: string,
   form: CheckoutFormState,
   items: CheckoutItem[],
-  totals: { subtotal: number; iva: number; total: number },
+  totals: {
+    subtotal: number;
+    discountAmount: number;
+    iva: number;
+    total: number;
+  },
+  coupon: CheckoutCoupon | null,
   lang: "es" | "en"
 ) {
   const adminEmail = "administracion@creovanta.com.mx";
@@ -180,13 +292,15 @@ async function enviarCorreos(
       intro: `Tu pago ha sido procesado exitosamente a través de nuestra pasarela segura. Hemos recibido tu solicitud y comenzaremos con la configuración de tus servicios.`,
       totalPaid: `Total Pagado:`,
       subtotalLabel: `Subtotal`,
+      discountLabel: `Descuento`,
       ivaLabel: `IVA (16%)`,
       clientData: `Datos de Facturación y Cliente`,
       emailLabel: `Correo Electrónico:`,
       phoneLabel: `Teléfono:`,
       companyLabel: `Empresa / RFC:`,
       addressLabel: `Dirección:`,
-      footer: `Creovanta — Soluciones Tecnológicas y Digitales Avanzadas.`
+      couponLabel: `Cupón aplicado:`,
+      footer: `Creovanta — Soluciones Tecnológicas y Digitales Avanzadas.`,
     },
     en: {
       subjectClient: `Thank you for your order! Folio: ${orderId} - Creovanta`,
@@ -197,24 +311,40 @@ async function enviarCorreos(
       intro: `Your payment has been successfully processed through our secure gateway. We have received your request and will start setting up your services.`,
       totalPaid: `Total Paid:`,
       subtotalLabel: `Subtotal`,
+      discountLabel: `Discount`,
       ivaLabel: `VAT (16%)`,
       clientData: `Billing & Customer Information`,
       emailLabel: `Email:`,
       phoneLabel: `Phone:`,
       companyLabel: `Company / Tax ID:`,
       addressLabel: `Address:`,
-      footer: `Creovanta — Advanced Technological & Digital Solutions.`
-    }
+      couponLabel: `Applied coupon:`,
+      footer: `Creovanta — Advanced Technological & Digital Solutions.`,
+    },
   };
 
   const t = texts[lang] || texts["es"];
-  
-  const itemsListHtml = items.map((i) => `
+
+  const itemsListHtml = items
+    .map(
+      (i) => `
     <tr>
       <td style="padding: 14px 16px; border-bottom: 1px solid #E2E8F0; color: #0F172A; font-weight: 600;">${i.qty}x ${i.product[lang].name}</td>
       <td style="padding: 14px 16px; border-bottom: 1px solid #E2E8F0; text-align: right; color: #475569; font-family: monospace;">$${(i.product.priceMXN * i.qty).toFixed(2)} MXN</td>
     </tr>
-  `).join("");
+  `
+    )
+    .join("");
+
+  const discountRowHtml =
+    coupon && totals.discountAmount > 0
+      ? `
+    <tr>
+      <td style="padding: 4px 16px 12px 16px; color: #059669; font-size: 13px; font-weight: 700;">${t.discountLabel} (${coupon.code})</td>
+      <td style="padding: 4px 16px 12px 16px; text-align: right; color: #059669; font-family: monospace; font-size: 13px; font-weight: 700;">−$${totals.discountAmount.toFixed(2)} MXN</td>
+    </tr>
+  `
+      : "";
 
   const emailBody = `
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 620px; margin: 0 auto; background-color: #F8FAFC; color: #0F172A; border: 1px solid #E2E8F0; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
@@ -223,11 +353,11 @@ async function enviarCorreos(
         <div style="margin-bottom: 24px;">
           <span style="font-family: monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: #1E3A8A; font-weight: 700; background-color: #EFF6FF; padding: 6px 12px; border-radius: 8px; border: 1px solid #BFDBFE;">${t.subtitle}</span>
         </div>
-        
+
         <h2 style="color: #0F172A; margin: 0 0 12px 0; font-size: 24px; font-weight: 800; letter-spacing: -0.02em;">${t.title}</h2>
         <p style="font-size: 15px; line-height: 1.6; color: #334155; margin: 0 0 8px 0;">${t.hello} <strong style="color: #1E3A8A;">${form.nombre}</strong>,</p>
         <p style="font-size: 14px; line-height: 1.6; color: #64748B; margin: 0 0 30px 0;">${t.intro}</p>
-        
+
         <div style="border-radius: 16px; background-color: #F8FAFC; border: 1px solid #E2E8F0; overflow: hidden; margin-bottom: 30px;">
           <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
             ${itemsListHtml}
@@ -235,6 +365,7 @@ async function enviarCorreos(
               <td style="padding: 12px 16px; color: #64748B; font-size: 13px;">${t.subtotalLabel}</td>
               <td style="padding: 12px 16px; text-align: right; color: #334155; font-family: monospace; font-size: 13px;">$${totals.subtotal.toFixed(2)} MXN</td>
             </tr>
+            ${discountRowHtml}
             <tr>
               <td style="padding: 4px 16px 12px 16px; color: #64748B; font-size: 13px;">${t.ivaLabel}</td>
               <td style="padding: 4px 16px 12px 16px; text-align: right; color: #334155; font-family: monospace; font-size: 13px;">$${totals.iva.toFixed(2)} MXN</td>
@@ -245,6 +376,12 @@ async function enviarCorreos(
             </tr>
           </table>
         </div>
+
+        ${
+          coupon
+            ? `<p style="font-size: 13px; color: #059669; background: #ECFDF5; border: 1px solid #A7F3D0; border-radius: 12px; padding: 12px 16px; margin: 0 0 20px 0; font-weight: 700;">${t.couponLabel} ${coupon.code} (−${(coupon.discount * 100).toFixed(0)}%)</p>`
+            : ""
+        }
 
         <h3 style="margin: 0 0 12px 0; color: #0F172A; font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700;">${t.clientData}</h3>
         <div style="font-size: 13px; color: #475569; line-height: 1.8; background-color: #F8FAFC; padding: 20px; border-radius: 14px; border: 1px solid #E2E8F0;">

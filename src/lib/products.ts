@@ -290,8 +290,7 @@ export const webPlans: ProductPlan[] = [
     priceMXN: 22890.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1533750349077-cdcd106d2032?auto=format&fit=crop&w=1200&q=85',
-    sku: 'INN-QCPEQZ',
+    imageUrl: 'https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&w=1200&q=85',    sku: 'INN-QCPEQZ',
     category: 'Fila 4',
     es: {
       name: 'Paquete 7 - Gestión de Público y Segmentación',
@@ -317,8 +316,7 @@ export const webPlans: ProductPlan[] = [
     priceMXN: 25456.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=1200&q=85',
-    sku: 'INN-XV1J08',
+    imageUrl: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=85',    sku: 'INN-XV1J08',
     category: 'Fila 4',
     es: {
       name: 'Paquete 8 - Herramientas de Marketing de IA Básicas',
@@ -344,8 +342,7 @@ export const webPlans: ProductPlan[] = [
     priceMXN: 30123.00,
     taxIncluded: false,
     currency: 'MXN + IVA',
-    imageUrl: 'https://images.unsplash.com/photo-1542744094-3a312462c4d0?auto=format&fit=crop&w=1200&q=85',
-    sku: 'INN-2UWFRO',
+    imageUrl: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=85',    sku: 'INN-2UWFRO',
     category: 'Fila 4',
     es: {
       name: 'Paquete 9 - Creación de Contenido Avanzada',
