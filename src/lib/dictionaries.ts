@@ -25,7 +25,7 @@ export const dictionaries = {
       legal: [
         "Aviso de Privacidad",
         "Términos y Condiciones",
-        "Política de Innovación",
+        "Política de Devoluciones y Reembolsos",
       ],
       contactEyebrow: "Comienza a conectar",
       addressEyebrow: "Nuestra sede",
@@ -355,7 +355,7 @@ export const dictionaries = {
       legal: [
         "Privacy Policy",
         "Terms and Conditions",
-        "Innovation Policy",
+        "Refund and Cancellation Policy",
       ],
       contactEyebrow: "Start connecting",
       addressEyebrow: "Our Headquarters",
